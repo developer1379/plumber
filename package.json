@@ -1,0 +1,19 @@
+{
+  "name": "bmv-plumbing-site",
+  "private": true,
+  "workspaces": [
+    "web",
+    "studio"
+  ],
+  "scripts": {
+    "dev": "npm --workspace web run dev",
+    "studio": "npm --workspace studio run dev",
+    "dev:all": "concurrently \"npm run dev\" \"npm run studio\"",
+    "build": "npm --workspace web run build",
+    "build:studio": "npm --workspace studio run build",
+    "deploy:studio": "npm --workspace studio run deploy"
+  },
+  "devDependencies": {
+    "concurrently": "^10.0.3"
+  }
+}

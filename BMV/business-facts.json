@@ -1,0 +1,87 @@
+{
+  "_comment": "Verified business facts — the ONLY data any copywriter, developer, or AI assistant may assert in schema, copy, or metadata for this site. Anything not in this file (or not explicitly confirmed by Rob Holton) must NOT be published. Modelled on the Marley Moves facts.json discipline — one source of truth, no invented numbers/claims. Update this file the moment Rob confirms a new fact, before it goes anywhere else.",
+
+  "site_domain": "bmvplumbing.co.uk",
+  "public_brand_name": "BMV Plumbing",
+  "registered_business_name": "RH Plumbing & Heating",
+  "brand_name_OPEN_QUESTION": "The brief was given as 'website for bmvplumbing.co.uk — services provided by RH Plumbing & Heating'. CONFIRM WITH ROB before final copy locks: (a) is 'BMV Plumbing' the public-facing trading name and 'RH Plumbing & Heating' the registered/legal entity name that should appear on invoices/legal pages only, or (b) should the site display a combined name e.g. 'BMV Plumbing (RH Plumbing & Heating)' throughout? Whichever is confirmed, use ONE consistent form site-wide per the claim-consistency rule — do not let the two names drift page to page.",
+
+  "owner": {
+    "name": "Rob Holton",
+    "role_to_confirm": "Owner. Job title TBC with Rob — likely 'Owner & Plumbing and Gas Engineer' or similar. Do NOT publish 'Gas Safe Registered' or any registration/licence number until Rob supplies the actual Gas Safe registration number for verification — this is a legal claim, not a marketing one.",
+    "knowsAbout_draft": [
+      "Boiler servicing",
+      "Boiler installation",
+      "Boiler repairs",
+      "Landlord gas safety checks (CP12)",
+      "Gas installations",
+      "Emergency plumbing callouts",
+      "Central heating systems",
+      "North Dorset, South Wiltshire and Somerset border homes"
+    ],
+    "photo_needed": "A real photo of Rob for the Person schema `image` field and the About page — same E-E-A-T pattern as Marley's Connor. Do not use a stock/generic photo for the named owner."
+  },
+
+  "contact": {
+    "phone": "07958 795 361",
+    "email": "rob@bmvplumbing.co.uk",
+    "full_address_JSONLD_AND_LEGAL_PAGES_ONLY": {
+      "streetAddress": "5 Deer Gardens",
+      "addressLocality": "Gillingham",
+      "addressRegion": "Dorset",
+      "postalCode": "SP8 4WF",
+      "addressCountry": "GB"
+    },
+    "customer_facing_display_form": "Gillingham, SP8 — per the address-display rule, full street address and inward postcode NEVER appear in marketing copy, headlines, or footers. Only in: JSON-LD source, /privacy-policy and /terms-conditions, and form placeholders."
+  },
+
+  "coverage_area": {
+    "type": "radius",
+    "origin_postcode": "SP8",
+    "radius_miles": 10,
+    "radius_metres_for_geoCircle": 16000,
+    "counties_touched": ["Dorset", "Wiltshire", "Somerset"],
+    "note": "10 miles from SP8 (Gillingham) reaches Shaftesbury (~5mi), Wincanton (~8mi), Sturminster Newton (~9-10mi, verify exact road-miles before publish), Mere, Motcombe, Bourton, East/West Stour. Do not imply coverage beyond the 10-mile radius without Rob confirming a wider catchment."
+  },
+
+  "services": {
+    "boiler": {
+      "display_name": "Boiler Servicing, Installation & Repairs",
+      "sub_services": ["Boiler Servicing", "Boiler Installation", "Boiler Repairs"],
+      "note": "Ships as ONE dedicated service page with three clearly-headed subsections (not three separate pages) — this is what makes the '4 dedicated pages' count work against the 4 services named in the brief."
+    },
+    "landlord_safety_checks": {
+      "display_name": "Landlord Safety Checks",
+      "aka": "Landlord Gas Safety Certificate / CP12",
+      "legal_requirement_note": "UK landlords must have a valid Gas Safety Certificate (CP12) renewed every 12 months, issued only by a Gas Safe registered engineer, and given to tenants within 28 days. Cite this as a general legal fact (publicly verifiable), not as a claim about Rob's registration status until confirmed."
+    },
+    "gas_installations": {
+      "display_name": "Gas Installations"
+    },
+    "emergency_callouts": {
+      "display_name": "Emergency Callouts",
+      "response_time_and_pricing": "NOT YET CONFIRMED. Do not publish a specific response-time promise (e.g. 'within 60 minutes') or a call-out fee figure until Rob confirms actual numbers. Placeholder language only until then: 'fast local response' style claims, no specific minutes/£ figures."
+    }
+  },
+
+  "area_pages": [
+    { "slug": "shaftesbury", "town": "Shaftesbury", "county": "Dorset", "postcode_outward": "SP7", "approx_miles_from_base": 5 },
+    { "slug": "wincanton", "town": "Wincanton", "county": "Somerset", "postcode_outward": "BA9", "approx_miles_from_base": 8 },
+    { "slug": "sturminster-newton", "town": "Sturminster Newton", "county": "Dorset", "postcode_outward": "DT10", "approx_miles_from_base": 9.5, "note": "Estimate — verify exact road-miles via Google/AA route planner before publish (recipe requires ROAD miles, not crow-flies)." }
+  ],
+
+  "claims_banned_until_confirmed": [
+    "Any specific emergency response time (e.g. 'within the hour', 'within 60 minutes') — Rob has not confirmed a number",
+    "Any call-out fee or service price figure ('from £X') — no prices confirmed yet",
+    "Gas Safe registration number / 'Gas Safe registered' badge — needs the real registration number from Rob before it appears anywhere, incl. schema",
+    "Any review count or star rating not read live from Google Business Profile at publish time",
+    "'Years trading' / 'since 19XX' / founding date — not supplied, do not invent",
+    "Any trade body membership (e.g. APHC, Checkatrade, TrustMark) — only include if Rob confirms actual membership"
+  ],
+
+  "sameAs_social_TO_CONFIRM": {
+    "google_business_profile": "TBC — needs GBP listing URL once claimed/verified",
+    "facebook": "TBC",
+    "checkatrade_or_similar": "TBC — confirm which trade directories Rob is actually listed on"
+  }
+}

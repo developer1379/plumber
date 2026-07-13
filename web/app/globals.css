@@ -1,0 +1,136 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #1a1a1a; /* Clean ink color from reference */
+  
+  --primary: #1a1a1a;
+  --primary-hover: #333333;
+  --secondary: #C03838; /* Red brand accent matching marleymoves */
+  --secondary-hover: #a8221c;
+  --accent: #d97706; /* Amber */
+  --muted: #5c5a54; /* Warm slate gray */
+  --border: #efebe4; /* Soft warm border */
+  --card: #faf9f6; /* Warm cream background */
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-secondary: var(--secondary);
+  --color-secondary-hover: var(--secondary-hover);
+  --color-accent: var(--accent);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+  --color-card: var(--card);
+  
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
+  --font-sans: 'Montserrat', system-ui, sans-serif;
+}
+
+
+body, input, select, textarea, button {
+  font-family: var(--font-sans);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+}
+
+h1, h2, h3, h4, h5, h6, .font-serif {
+  font-family: var(--font-serif);
+}
+
+.nav-link {
+  position: relative;
+  padding-bottom: 2px;
+  color: currentColor;
+  opacity: 0.85;
+  transition: all 0.3s ease;
+}
+.nav-link:hover {
+  opacity: 1;
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 1.5px;
+  width: 100%;
+  background-color: var(--secondary); /* Teal accent */
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.3s ease;
+}
+.nav-link:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+/* Premium Hero Animation Keyframes */
+@keyframes slow-zoom {
+  from {
+    transform: scale(1.06);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animation Classes */
+.animate-slow-zoom {
+  animation: slow-zoom 8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Stagger Delay Utilities */
+.delay-100 {
+  animation-delay: 100ms;
+  animation-fill-mode: both;
+}
+
+.delay-200 {
+  animation-delay: 200ms;
+  animation-fill-mode: both;
+}
+
+.delay-300 {
+  animation-delay: 300ms;
+  animation-fill-mode: both;
+}
+
+/* Masked Slide-Up Reveal Keyframes */
+@keyframes reveal-text {
+  from {
+    transform: translateY(110%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.animate-reveal-text {
+  animation: reveal-text 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+
+
