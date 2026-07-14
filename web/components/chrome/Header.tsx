@@ -81,12 +81,12 @@ export function Header() {
       }`}
     >
       {/* Top USP Bar */}
-      <div className="w-full py-2 text-center text-[10px] md:text-[10.5px] font-bold uppercase tracking-[0.09em] bg-gradient-to-r from-primary via-[#0d1e36] to-primary text-slate-200 border-b border-white/5 flex items-center justify-center gap-1.5 flex-wrap">
+      <div className="w-full py-2 text-center text-[9px] sm:text-[10.5px] font-bold uppercase tracking-[0.09em] bg-gradient-to-r from-primary via-[#0d1e36] to-primary text-slate-200 border-b border-white/5 flex items-center justify-center gap-1 flex-wrap px-4">
         <span className="opacity-95">Written Fixed Quotes Within The Hour</span>
-        <span className="inline-block w-1.5 h-1.5 rounded-full bg-secondary animate-pulse mx-2" />
+        <span className="inline-block w-1 h-1 sm:w-1.5 sm:h-1.5 rounded-full bg-secondary animate-pulse mx-1 sm:mx-2" />
         <span className="opacity-95">Gas Safe Registered</span>
-        <span className="inline-block w-1.5 h-1.5 rounded-full bg-secondary animate-pulse mx-2" />
-        <span className="opacity-95">No Obligation</span>
+        <span className="hidden md:inline-block w-1.5 h-1.5 rounded-full bg-secondary animate-pulse mx-2" />
+        <span className="hidden md:inline-block opacity-95">No Obligation</span>
       </div>
 
       {/* Main Logo & Action Bar */}
@@ -238,159 +238,159 @@ export function Header() {
       </div>
 
       {/* Mobile Drawer Navigation Sidebar */}
-      <div 
-        className={`fixed inset-0 bg-black/60 backdrop-blur-xs z-50 transition-opacity duration-300 ${
-          isOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
-        }`} 
-        onClick={() => setIsOpen(false)} 
-      />
+      {isOpen && (
+        <>
+          <div 
+            className="fixed inset-0 bg-black/60 backdrop-blur-xs z-50 animate-fade-in" 
+            onClick={() => setIsOpen(false)} 
+          />
 
-      <div 
-        className={`fixed inset-y-0 right-0 w-[300px] max-w-[85vw] z-50 shadow-2xl transition-transform duration-300 ease-out transform ${
-          isOpen ? 'translate-x-0' : 'translate-x-full'
-        } ${
-          isLight ? 'bg-white text-primary border-l border-slate-100' : 'bg-[#0b0f17] text-white border-l border-white/5'
-        } flex flex-col`}
-      >
-        {/* Drawer Header */}
-        <div className="p-5 flex items-center justify-between border-b border-white/5">
-          <Link href="/" onClick={() => setIsOpen(false)} className="focus:outline-none">
-            <img 
-              src={isLight ? '/logo-dark-text.png' : '/logo-white-text-transparent.png'} 
-              alt="R&H Plumbing & Heating" 
-              className="h-10 w-auto object-contain" 
-            />
-          </Link>
-          <button
-            onClick={() => setIsOpen(false)}
-            className={`rounded-full p-2 focus:outline-none transition-colors duration-300 ${
-              isLight ? 'hover:bg-slate-100 text-slate-600' : 'hover:bg-white/5 text-gray-400'
-            }`}
-            aria-label="Close Mobile Menu"
+          <div 
+            className={`fixed inset-y-0 right-0 w-[300px] max-w-[85vw] z-50 shadow-2xl animate-slide-in ${
+              isLight ? 'bg-white text-primary border-l border-slate-100' : 'bg-[#0b0f17] text-white border-l border-white/5'
+            } flex flex-col`}
           >
-            <X className="h-5 w-5" />
-          </button>
-        </div>
+            {/* Drawer Header */}
+            <div className="p-5 flex items-center justify-between border-b border-white/5">
+              <Link href="/" onClick={() => setIsOpen(false)} className="focus:outline-none">
+                <img 
+                  src={isLight ? '/logo-dark-text.png' : '/logo-white-text-transparent.png'} 
+                  alt="R&H Plumbing & Heating" 
+                  className="h-10 w-auto object-contain" 
+                />
+              </Link>
+              <button
+                onClick={() => setIsOpen(false)}
+                className={`rounded-full p-2 focus:outline-none transition-colors duration-300 ${
+                  isLight ? 'hover:bg-slate-100 text-slate-600' : 'hover:bg-white/5 text-gray-400'
+                }`}
+                aria-label="Close Mobile Menu"
+              >
+                <X className="h-5 w-5" />
+              </button>
+            </div>
 
-        {/* Drawer Body - Scrollable Links */}
-        <div className="flex-1 overflow-y-auto px-5 py-6 space-y-5">
-          <Link
-            href="/"
-            onClick={() => setIsOpen(false)}
-            className={`block py-1.5 text-[13px] font-bold uppercase tracking-[0.08em] pl-[0.08em] transition-colors ${
-              isLight ? 'hover:text-secondary' : 'hover:text-secondary-light'
-            }`}
-          >
-            Home
-          </Link>
+            {/* Drawer Body - Scrollable Links */}
+            <div className="flex-1 overflow-y-auto px-5 py-6 space-y-5">
+              <Link
+                href="/"
+                onClick={() => setIsOpen(false)}
+                className={`block py-1.5 text-[13px] font-bold uppercase tracking-[0.08em] pl-[0.08em] transition-colors ${
+                  isLight ? 'hover:text-secondary' : 'hover:text-secondary-light'
+                }`}
+              >
+                Home
+              </Link>
 
-          {/* Collapsible Services Accordion */}
-          <div className="space-y-2">
-            <button
-              onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
-              className={`flex w-full items-center justify-between py-1.5 text-[13px] font-bold uppercase tracking-[0.08em] pl-[0.08em] text-left transition-colors focus:outline-none cursor-pointer ${
-                isLight ? 'hover:text-secondary' : 'hover:text-secondary-light'
-              }`}
-            >
-              <span>Services</span>
-              <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${mobileServicesOpen ? 'rotate-180' : ''}`} />
-            </button>
-
-            <div className={`space-y-1 pl-4 transition-all duration-300 overflow-hidden ${
-              mobileServicesOpen ? 'max-h-[300px] opacity-100 mt-2' : 'max-h-0 opacity-0'
-            }`}>
-              {services.map((s) => (
-                <Link
-                  key={s.href}
-                  href={s.href}
-                  onClick={() => setIsOpen(false)}
-                  className={`block py-2 text-[11px] font-bold uppercase tracking-[0.05em] pl-[0.05em] transition-colors ${
-                    isLight ? 'text-slate-500 hover:text-secondary' : 'text-gray-400 hover:text-secondary-light'
+              {/* Collapsible Services Accordion */}
+              <div className="space-y-2">
+                <button
+                  onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
+                  className={`flex w-full items-center justify-between py-1.5 text-[13px] font-bold uppercase tracking-[0.08em] pl-[0.08em] text-left transition-colors focus:outline-none cursor-pointer ${
+                    isLight ? 'hover:text-secondary' : 'hover:text-secondary-light'
                   }`}
                 >
-                  {s.label}
-                </Link>
-              ))}
+                  <span>Services</span>
+                  <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${mobileServicesOpen ? 'rotate-180' : ''}`} />
+                </button>
+
+                <div className={`space-y-1 pl-4 transition-all duration-300 overflow-hidden ${
+                  mobileServicesOpen ? 'max-h-[300px] opacity-100 mt-2' : 'max-h-0 opacity-0'
+                }`}>
+                  {services.map((s) => (
+                    <Link
+                      key={s.href}
+                      href={s.href}
+                      onClick={() => setIsOpen(false)}
+                      className={`block py-2 text-[11px] font-bold uppercase tracking-[0.05em] pl-[0.05em] transition-colors ${
+                        isLight ? 'text-slate-500 hover:text-secondary' : 'text-gray-400 hover:text-secondary-light'
+                      }`}
+                    >
+                      {s.label}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+
+              <Link
+                href="/about"
+                onClick={() => setIsOpen(false)}
+                className={`block py-1.5 text-[13px] font-bold uppercase tracking-[0.08em] pl-[0.08em] transition-colors ${
+                  isLight ? 'hover:text-secondary' : 'hover:text-secondary-light'
+                }`}
+              >
+                About
+              </Link>
+
+              <Link
+                href="/insights"
+                onClick={() => setIsOpen(false)}
+                className={`block py-1.5 text-[13px] font-bold uppercase tracking-[0.08em] pl-[0.08em] transition-colors ${
+                  isLight ? 'hover:text-secondary' : 'hover:text-secondary-light'
+                }`}
+              >
+                Insights
+              </Link>
+
+              <Link
+                href="/guides"
+                onClick={() => setIsOpen(false)}
+                className={`block py-1.5 text-[13px] font-bold uppercase tracking-[0.08em] pl-[0.08em] transition-colors ${
+                  isLight ? 'hover:text-secondary' : 'hover:text-secondary-light'
+                }`}
+              >
+                Guides
+              </Link>
+
+              <Link
+                href="/faqs"
+                onClick={() => setIsOpen(false)}
+                className={`block py-1.5 text-[13px] font-bold uppercase tracking-[0.08em] pl-[0.08em] transition-colors ${
+                  isLight ? 'hover:text-secondary' : 'hover:text-secondary-light'
+                }`}
+              >
+                FAQs
+              </Link>
+
+              <Link
+                href="/contact"
+                onClick={() => setIsOpen(false)}
+                className={`block py-1.5 text-[13px] font-bold uppercase tracking-[0.08em] pl-[0.08em] transition-colors ${
+                  isLight ? 'hover:text-secondary' : 'hover:text-secondary-light'
+                }`}
+              >
+                Contact
+              </Link>
+            </div>
+
+            {/* Drawer Drawer Footer Actions */}
+            <div className={`p-5 border-t space-y-3.5 ${isLight ? 'border-slate-100 bg-slate-50/50' : 'border-white/5 bg-black/20'}`}>
+              <a
+                href={siteConfig.contact.primaryPhoneHref}
+                className={`flex items-center justify-center gap-2.5 rounded-full border py-3 text-xs font-bold uppercase tracking-wider transition-colors duration-300 ${
+                  isLight 
+                    ? 'border-slate-200 text-primary hover:border-slate-350 hover:bg-slate-100/50' 
+                    : 'border-white/10 text-white hover:border-white/20 hover:bg-white/5'
+                }`}
+              >
+                <Phone className="h-4 w-4 text-secondary" />
+                <span>{siteConfig.contact.primaryPhone}</span>
+              </a>
+
+              <button
+                onClick={() => {
+                  setIsOpen(false)
+                  window.dispatchEvent(new CustomEvent('open-quote-modal'))
+                }}
+                className="group/btn flex w-full justify-center items-center rounded-full bg-secondary text-white py-3.5 text-xs font-bold uppercase tracking-wider hover:bg-secondary-hover hover:shadow-secondary/20 hover:shadow-lg transition-all gap-1.5 cursor-pointer"
+              >
+                <span>Get a Quote</span>
+                <ArrowRight className="h-3.5 w-3.5 transition-transform duration-200 group-hover/btn:translate-x-1" />
+              </button>
             </div>
           </div>
-
-          <Link
-            href="/about"
-            onClick={() => setIsOpen(false)}
-            className={`block py-1.5 text-[13px] font-bold uppercase tracking-[0.08em] pl-[0.08em] transition-colors ${
-              isLight ? 'hover:text-secondary' : 'hover:text-secondary-light'
-            }`}
-          >
-            About
-          </Link>
-
-          <Link
-            href="/insights"
-            onClick={() => setIsOpen(false)}
-            className={`block py-1.5 text-[13px] font-bold uppercase tracking-[0.08em] pl-[0.08em] transition-colors ${
-              isLight ? 'hover:text-secondary' : 'hover:text-secondary-light'
-            }`}
-          >
-            Insights
-          </Link>
-
-          <Link
-            href="/guides"
-            onClick={() => setIsOpen(false)}
-            className={`block py-1.5 text-[13px] font-bold uppercase tracking-[0.08em] pl-[0.08em] transition-colors ${
-              isLight ? 'hover:text-secondary' : 'hover:text-secondary-light'
-            }`}
-          >
-            Guides
-          </Link>
-
-          <Link
-            href="/faqs"
-            onClick={() => setIsOpen(false)}
-            className={`block py-1.5 text-[13px] font-bold uppercase tracking-[0.08em] pl-[0.08em] transition-colors ${
-              isLight ? 'hover:text-secondary' : 'hover:text-secondary-light'
-            }`}
-          >
-            FAQs
-          </Link>
-
-          <Link
-            href="/contact"
-            onClick={() => setIsOpen(false)}
-            className={`block py-1.5 text-[13px] font-bold uppercase tracking-[0.08em] pl-[0.08em] transition-colors ${
-              isLight ? 'hover:text-secondary' : 'hover:text-secondary-light'
-            }`}
-          >
-            Contact
-          </Link>
-        </div>
-
-        {/* Drawer Footer Actions */}
-        <div className={`p-5 border-t space-y-3.5 ${isLight ? 'border-slate-100 bg-slate-50/50' : 'border-white/5 bg-black/20'}`}>
-          <a
-            href={siteConfig.contact.primaryPhoneHref}
-            className={`flex items-center justify-center gap-2.5 rounded-full border py-3 text-xs font-bold uppercase tracking-wider transition-colors duration-300 ${
-              isLight 
-                ? 'border-slate-200 text-primary hover:border-slate-350 hover:bg-slate-100/50' 
-                : 'border-white/10 text-white hover:border-white/20 hover:bg-white/5'
-            }`}
-          >
-            <Phone className="h-4 w-4 text-secondary" />
-            <span>{siteConfig.contact.primaryPhone}</span>
-          </a>
-
-          <button
-            onClick={() => {
-              setIsOpen(false)
-              window.dispatchEvent(new CustomEvent('open-quote-modal'))
-            }}
-            className="group/btn flex w-full justify-center items-center rounded-full bg-secondary text-white py-3.5 text-xs font-bold uppercase tracking-wider hover:bg-secondary-hover hover:shadow-secondary/20 hover:shadow-lg transition-all gap-1.5 cursor-pointer"
-          >
-            <span>Get a Quote</span>
-            <ArrowRight className="h-3.5 w-3.5 transition-transform duration-200 group-hover/btn:translate-x-1" />
-          </button>
-        </div>
-      </div>
+        </>
+      )}
     </header>
   )
 }
