@@ -118,7 +118,7 @@ export function Header() {
         </Link>
 
         {/* Center: Desktop Navigation Bar */}
-        <nav className="hidden lg:flex items-center gap-x-7 text-[11px] font-bold uppercase tracking-[0.1em]">
+        <nav className="hidden lg:flex items-center gap-x-7 text-[13px] font-bold uppercase tracking-[0.1em]">
           <Link href="/" className="nav-link">
             Home
           </Link>
