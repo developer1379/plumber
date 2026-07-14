@@ -81,25 +81,34 @@ export function Header() {
       <div className="mx-auto max-w-[1400px] px-6 md:px-12 py-3 md:py-4 flex items-center justify-between">
         {/* Left: Brand Logo / Identity */}
         <Link href="/" className={`group flex items-center focus:outline-none transition-colors duration-300 ${isLight ? 'text-primary' : 'text-white'}`}>
-          <svg className="h-10 md:h-12 w-auto transition-transform duration-300 group-hover:scale-105" viewBox="0 0 160 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <text x="12" y="52" className="font-serif text-[42px] font-extrabold" fill="currentColor">R</text>
+          <svg className="h-12 md:h-15 w-auto transition-transform duration-300 group-hover:scale-105" viewBox="0 0 180 85" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <text x="18" y="52" className="font-serif text-[44px] font-extrabold" fill="currentColor">R</text>
             <path 
-              d="M 75 58 C 70 54 68 45 71 35 C 74 25 78 18 78 8 C 78 16 83 23 88 32 C 92 40 91 50 88 56 C 85 62 78 60 75 58 Z" 
+              d="M 83 58 C 78 54 76 45 79 35 C 82 25 86 18 86 8 C 86 16 91 23 96 32 C 100 40 99 50 96 56 C 93 62 86 60 83 58 Z" 
               fill="url(#logo-flame-grad)" 
             />
             <path 
-              d="M 83 58 C 89 58 94 54 94 47 C 94 40 86 30 83 25 C 80 30 72 40 72 47 C 72 54 77 58 83 58 Z" 
+              d="M 91 58 C 97 58 102 54 102 47 C 102 40 94 30 91 25 C 88 30 80 40 80 47 C 80 54 85 58 91 58 Z" 
               fill="url(#logo-drop-grad)" 
             />
-            <text x="100" y="52" className="font-serif text-[42px] font-extrabold" fill="currentColor">H</text>
-            <text x="12" y="73" className="font-sans text-[9px] font-black tracking-[0.16em]" fill="currentColor">PLUMBING &amp; HEATING</text>
+            <text x="114" y="52" className="font-serif text-[44px] font-extrabold" fill="currentColor">H</text>
+            <text 
+              x="90" 
+              y="74" 
+              textAnchor="middle" 
+              style={{ letterSpacing: '0.15em', fontWeight: 900 }} 
+              className="font-sans text-[11px]" 
+              fill="currentColor"
+            >
+              PLUMBING &amp; HEATING
+            </text>
             <defs>
-              <linearGradient id="logo-flame-grad" x1="70" y1="8" x2="90" y2="58" gradientUnits="userSpaceOnUse">
+              <linearGradient id="logo-flame-grad" x1="78" y1="8" x2="98" y2="58" gradientUnits="userSpaceOnUse">
                 <stop offset="0%" stopColor="#fbbf24" />
                 <stop offset="40%" stopColor="#f97316" />
                 <stop offset="100%" stopColor="#ea580c" />
               </linearGradient>
-              <linearGradient id="logo-drop-grad" x1="72" y1="25" x2="94" y2="58" gradientUnits="userSpaceOnUse">
+              <linearGradient id="logo-drop-grad" x1="80" y1="25" x2="102" y2="58" gradientUnits="userSpaceOnUse">
                 <stop offset="0%" stopColor="#38bdf8" />
                 <stop offset="60%" stopColor="#0284c7" />
                 <stop offset="100%" stopColor="#0369a1" />
