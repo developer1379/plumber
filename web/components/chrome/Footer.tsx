@@ -200,15 +200,7 @@ export function Footer() {
               <p className="text-[13px] leading-relaxed text-gray-500">
                 Family-run plumbing and gas heating across Gillingham, Shaftesbury, Wincanton, and Sturminster Newton. Fixed written quotes and local response.
               </p>
-              <div className="pt-2">
-                <div className="inline-flex items-center gap-2.5 rounded-lg bg-emerald-500/10 border border-emerald-500/20 px-3.5 py-2 text-[10px] text-emerald-400 font-bold uppercase tracking-[0.08em] pl-[0.08em] shadow-[0_2px_10px_rgba(16,185,129,0.05)]">
-                  <span className="relative flex h-2 w-2">
-                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                    <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
-                  </span>
-                  <span>Gas Safe Registered &bull; TBC</span>
-                </div>
-              </div>
+
             </div>
 
             {/* Col 2: Services Link List */}
