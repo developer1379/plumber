@@ -4,6 +4,7 @@ import { Footer } from '@/components/chrome/Footer'
 import { RelatedAreas, RelatedServices, RelatedPosts } from '@/components/sections/RelatedBlocks'
 import { TypingHeading } from '@/components/sections/TypingHeading'
 import { TiltCard } from '@/components/sections/TiltCard'
+import { EnquiryButton } from '@/components/sections/EnquiryButton'
 import { siteConfig } from '@/lib/site-config'
 import { CheckCircle, Shield, Award, ArrowRight, HardHat, MessageCircle, Clock, ShieldCheck } from 'lucide-react'
 
@@ -99,18 +100,10 @@ export default function Home() {
                   Boiler servicing, installations, gas cooker fittings, and landlord CP12 certificates. Clear, fixed quotes and reliable service from Rob Holton, based in Gillingham.
                 </p>
                 
-                {/* Gas Safe & Call actions */}
+                {/* Hero CTA actions */}
                 <div className="pt-2 flex flex-wrap gap-4 items-center animate-fade-in-up delay-300">
-                  {/* Official looking Gas Safe Badge */}
-                  <div className="inline-flex items-center gap-3 rounded-xl bg-white/[0.04] border border-white/10 px-4 py-2.5 backdrop-blur-sm">
-                    <div className="flex h-7 w-7 flex-shrink-0 items-center justify-center rounded bg-[#ff6b00] text-white font-extrabold text-[9px] shadow-[0_2px_8px_rgba(255,107,0,0.4)]">
-                      GAS
-                    </div>
-                    <div className="text-left leading-none">
-                      <span className="text-[11px] font-extrabold uppercase tracking-wider text-white">Gas Safe Registered</span>
-                      <span className="block text-[8px] font-bold uppercase tracking-widest text-slate-300 mt-0.5">Rob Holton &bull; Ref TBC</span>
-                    </div>
-                  </div>
+                  {/* Online Enquiry Button */}
+                  <EnquiryButton />
 
                   {/* WhatsApp button */}
                   <a 
