@@ -45,9 +45,21 @@ export function TiltCard({ className = '' }: TiltCardProps) {
       }}
       className={`transition-shadow duration-300 ${className}`}
     >
-      <div className="w-full rounded-2xl border border-white/10 bg-slate-950/70 backdrop-blur-xl p-6 shadow-[0_20px_50px_rgba(0,0,0,0.5)] border-t-4 border-t-secondary space-y-6">
+      <div className="relative overflow-hidden w-full rounded-2xl border border-white/10 bg-slate-950/70 backdrop-blur-xl p-6 shadow-[0_20px_50px_rgba(0,0,0,0.5)] border-t-4 border-t-secondary space-y-6 group">
+        {/* SVG Plumbing/Heating Watermark */}
+        <div className="absolute -right-6 -bottom-6 w-36 h-36 text-secondary/5 group-hover:text-secondary/8 transition-all duration-500 pointer-events-none z-0">
+          <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="1.2">
+            <circle cx="50" cy="50" r="30" />
+            <circle cx="50" cy="50" r="25" strokeDasharray="3 3" />
+            <path d="M 50 50 L 68 32" strokeWidth="2" strokeLinecap="round" />
+            <path d="M 50 80 L 50 95 M 40 95 L 60 95" strokeWidth="1.5" />
+            <path d="M 20 50 L 10 50 L 10 30" strokeWidth="1.5" />
+            <path d="M 80 50 L 90 50 L 90 70" strokeWidth="1.5" />
+          </svg>
+        </div>
+
         {/* Live Badge */}
-        <div className="flex items-center justify-between pb-3 border-b border-white/5">
+        <div className="relative z-10 flex items-center justify-between pb-3 border-b border-white/5">
           <div className="flex items-center gap-2">
             <span className="relative flex h-2 w-2">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
@@ -59,7 +71,7 @@ export function TiltCard({ className = '' }: TiltCardProps) {
         </div>
 
         {/* Shield and Guarantee Header */}
-        <div className="flex items-center gap-4">
+        <div className="relative z-10 flex items-center gap-4">
           <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-secondary/15 border border-secondary/25 text-secondary-light shadow-[0_4px_20px_rgba(255,107,0,0.15)]">
             <Award className="h-6 w-6" />
           </div>
@@ -70,7 +82,7 @@ export function TiltCard({ className = '' }: TiltCardProps) {
         </div>
 
         {/* Guarantee Bullets */}
-        <div className="space-y-4">
+        <div className="relative z-10 space-y-4">
           <div className="flex items-start gap-3">
             <CheckCircle className="h-4.5 w-4.5 text-secondary mt-0.5 flex-shrink-0" />
             <div>
@@ -97,7 +109,7 @@ export function TiltCard({ className = '' }: TiltCardProps) {
         </div>
 
         {/* Action button inside the 3D card */}
-        <div className="pt-2">
+        <div className="relative z-10 pt-2">
           <button
             onClick={handleCallbackClick}
             className="w-full py-3.5 rounded-xl bg-white/5 border border-white/10 hover:border-secondary-light/40 hover:bg-secondary-light/10 text-white font-bold uppercase tracking-wider text-[11px] active:scale-95 transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer"
