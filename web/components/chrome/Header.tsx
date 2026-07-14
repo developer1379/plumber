@@ -82,7 +82,7 @@ export function Header() {
         {/* Left: Brand Logo / Identity */}
         <Link href="/" className="group flex items-center focus:outline-none">
           <img 
-            src={isLight ? '/logo-dark-text.png' : '/logo-white-text.jpg'} 
+            src={isLight ? '/logo-dark-text.png' : '/logo-white-text-transparent.png'} 
             alt="R&H Plumbing & Heating" 
             className="h-12 md:h-15 w-auto object-contain transition-transform duration-300 group-hover:scale-105" 
           />

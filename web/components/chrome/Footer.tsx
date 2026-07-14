@@ -192,7 +192,7 @@ export function Footer() {
             <div className="space-y-4">
               <Link href="/" className="inline-block text-white hover:opacity-90 focus:outline-none">
                 <img 
-                  src="/logo-white-text.jpg" 
+                  src="/logo-white-text-transparent.png" 
                   alt="R&H Plumbing & Heating" 
                   className="h-12 md:h-14 w-auto object-contain transition-transform duration-300 group-hover:scale-105" 
                 />
