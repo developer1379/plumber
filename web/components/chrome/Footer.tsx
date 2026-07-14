@@ -181,8 +181,8 @@ export function Footer() {
         </div>
       </section>
 
-      {/* 2. Dark Charcoal Footer */}
-      <section className="w-full bg-[#0d0d0d] text-gray-400 py-16 border-t border-white/5">
+      {/* 2. Midnight Slate Footer */}
+      <section className="w-full bg-[#060b13] text-gray-400 py-16 border-t border-white/5">
         <div className="mx-auto max-w-[1400px] px-6 md:px-12">
           
           {/* Main Footer Links Grid */}
@@ -190,8 +190,8 @@ export function Footer() {
             
             {/* Col 1: Bio */}
             <div className="space-y-4">
-              <span className="font-serif text-[20px] font-medium uppercase tracking-[0.05em] text-white leading-none inline-block">
-                {siteConfig.brand.name}
+              <span className="font-serif text-[20px] font-black uppercase tracking-[0.05em] text-white leading-none inline-block">
+                BMV <span className="text-secondary">Plumbing</span>
               </span>
               <p className="text-[13px] leading-relaxed text-gray-500">
                 Family-run plumbing and gas heating across Gillingham, Shaftesbury, Wincanton, and Sturminster Newton. Fixed written quotes and local response.
@@ -313,7 +313,7 @@ export function Footer() {
             <div className="flex items-center gap-3">
               <Link 
                 href="/contact" 
-                className="group/btn rounded-full bg-secondary text-white px-5 py-2.5 font-bold uppercase tracking-[0.05em] text-[11px] hover:bg-secondary-hover transition-all duration-300 shadow-md hover:shadow-lg active:scale-95 flex items-center gap-1.5"
+                className="group/btn rounded-full bg-secondary text-white px-5 py-2.5 font-bold uppercase tracking-[0.05em] text-[11px] hover:bg-secondary-hover hover:shadow-secondary/20 hover:shadow-lg transition-all duration-300 active:scale-95 flex items-center gap-1.5"
               >
                 <span>Get a Quote</span>
                 <ArrowRight className="h-3.5 w-3.5 transition-transform duration-200 group-hover/btn:translate-x-1" />

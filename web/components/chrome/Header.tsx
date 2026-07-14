@@ -69,14 +69,12 @@ export function Header() {
       }`}
     >
       {/* Top USP Bar */}
-      <div className={`w-full py-1.5 text-center text-[10px] md:text-[11px] font-semibold uppercase tracking-[0.08em] transition-colors duration-300 ${
-        isLight ? 'bg-[#0a0a0a] text-gray-300' : 'bg-black/40 text-gray-400 border-b border-white/5'
-      }`}>
-        <span className="opacity-90">Written Fixed Quotes Within The Hour</span>
-        <span className="mx-3 opacity-40">&middot;</span>
-        <span className="opacity-90">Gas Safe Registered</span>
-        <span className="mx-3 opacity-40">&middot;</span>
-        <span className="opacity-90">No Obligation</span>
+      <div className="w-full py-2 text-center text-[10px] md:text-[10.5px] font-bold uppercase tracking-[0.09em] bg-gradient-to-r from-primary via-[#0d1e36] to-primary text-slate-200 border-b border-white/5 flex items-center justify-center gap-1.5 flex-wrap">
+        <span className="opacity-95">Written Fixed Quotes Within The Hour</span>
+        <span className="inline-block w-1.5 h-1.5 rounded-full bg-secondary animate-pulse mx-2" />
+        <span className="opacity-95">Gas Safe Registered</span>
+        <span className="inline-block w-1.5 h-1.5 rounded-full bg-secondary animate-pulse mx-2" />
+        <span className="opacity-95">No Obligation</span>
       </div>
 
       {/* Main Logo & Action Bar */}
@@ -86,7 +84,7 @@ export function Header() {
           <span className={`font-sans text-[20px] md:text-[22px] font-black uppercase leading-none tracking-tight transition-colors duration-300 group-hover:text-secondary ${
             isLight ? 'text-primary' : 'text-white'
           }`}>
-            BMV Plumbing
+            BMV <span className="text-secondary group-hover:text-secondary-hover transition-colors duration-300">Plumbing</span>
           </span>
           <span className={`block text-[9px] md:text-[10px] font-bold uppercase tracking-[0.08em] transition-colors duration-300 mt-1.5 ${
             isLight ? 'text-secondary' : 'text-secondary-light'
@@ -202,7 +200,7 @@ export function Header() {
 
           <button
             onClick={() => window.dispatchEvent(new CustomEvent('open-quote-modal'))}
-            className="group/btn rounded-full bg-secondary text-white px-5 py-2.5 font-bold uppercase tracking-[0.05em] text-[11px] hover:bg-secondary-hover transition-all shadow-md hover:shadow-lg active:scale-95 flex items-center gap-1.5 cursor-pointer"
+            className="group/btn rounded-full bg-secondary text-white px-5 py-2.5 font-bold uppercase tracking-[0.05em] text-[11px] hover:bg-secondary-hover hover:shadow-secondary/20 hover:shadow-lg transition-all active:scale-95 flex items-center gap-1.5 cursor-pointer"
           >
             <span>Get a Quote</span>
             <ArrowRight className="h-3.5 w-3.5 transition-transform duration-200 group-hover/btn:translate-x-1" />
@@ -321,7 +319,7 @@ export function Header() {
                 setIsOpen(false)
                 window.dispatchEvent(new CustomEvent('open-quote-modal'))
               }}
-              className="group/btn flex w-full justify-center items-center rounded-full bg-secondary text-white py-3 text-xs font-bold uppercase tracking-wider hover:bg-secondary-hover transition-colors gap-1.5 cursor-pointer"
+              className="group/btn flex w-full justify-center items-center rounded-full bg-secondary text-white py-3 text-xs font-bold uppercase tracking-wider hover:bg-secondary-hover hover:shadow-secondary/20 hover:shadow-lg transition-all gap-1.5 cursor-pointer"
             >
               <span>Get a Quote</span>
               <ArrowRight className="h-3.5 w-3.5 transition-transform duration-200 group-hover/btn:translate-x-1" />
