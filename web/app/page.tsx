@@ -77,8 +77,8 @@ export default function Home() {
               className="w-full h-full object-cover animate-slow-zoom"
             />
             {/* Dark overlay gradients to ensure content is readable */}
-            <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/45 to-black/20" />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#121212]/60 via-transparent to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/65 to-black/25" />
+            <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-[#121212]/90" />
           </div>
 
           <div className="relative z-10 mx-auto max-w-7xl px-6 md:px-12 w-full">
@@ -126,48 +126,48 @@ export default function Home() {
                 </div>
 
                 {/* 2x2 Grid of Key USPs */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 max-w-xl pt-6 border-t border-white/10 animate-fade-in-up delay-400">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 max-w-xl pt-6 border-t border-white/10 animate-fade-in-up delay-400">
                   {/* USP 1 */}
-                  <div className="flex items-center gap-3 rounded-xl border border-white/5 bg-white/5 backdrop-blur-sm p-3.5 hover:bg-white/10 transition-colors duration-200">
-                    <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-[#ff6b6b]/20 text-[#ff6b6b]">
-                      <Clock className="h-5 w-5" />
+                  <div className="group flex items-center gap-3.5 rounded-xl border border-white/10 bg-white/[0.03] backdrop-blur-md p-4 shadow-[0_8px_32px_rgba(0,0,0,0.15)] hover:border-white/20 hover:bg-white/[0.07] hover:-translate-y-0.5 transition-all duration-300 ease-out">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#ff6b6b]/10 border border-[#ff6b6b]/20 text-[#ff6b6b] transition-all duration-300 group-hover:scale-110 group-hover:rotate-3">
+                      <Clock className="h-5.5 w-5.5" />
                     </div>
                     <div>
-                      <p className="text-[12px] font-bold text-white/95 leading-tight">Fixed quotes in the hour</p>
-                      <p className="text-[10px] text-white/50 mt-0.5">Transparent rates, no pressure</p>
+                      <p className="text-[13px] font-bold text-white/95 leading-tight">Fixed quotes in the hour</p>
+                      <p className="text-[10.5px] text-white/50 mt-1">Transparent rates, no pressure</p>
                     </div>
                   </div>
 
                   {/* USP 2 */}
-                  <div className="flex items-center gap-3 rounded-xl border border-white/5 bg-white/5 backdrop-blur-sm p-3.5 hover:bg-white/10 transition-colors duration-200">
-                    <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-amber-400/20 text-amber-400">
-                      <Star className="h-5 w-5 fill-amber-400/10" />
+                  <div className="group flex items-center gap-3.5 rounded-xl border border-white/10 bg-white/[0.03] backdrop-blur-md p-4 shadow-[0_8px_32px_rgba(0,0,0,0.15)] hover:border-white/20 hover:bg-white/[0.07] hover:-translate-y-0.5 transition-all duration-300 ease-out">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-amber-400/10 border border-amber-400/20 text-amber-400 transition-all duration-300 group-hover:scale-110 group-hover:rotate-3">
+                      <Star className="h-5.5 w-5.5 fill-amber-400/10" />
                     </div>
                     <div>
-                      <p className="text-[12px] font-bold text-white/95 leading-tight">5.0 Google rating</p>
-                      <p className="text-[10px] text-white/50 mt-0.5">100% satisfaction rating</p>
+                      <p className="text-[13px] font-bold text-white/95 leading-tight">5.0 Google rating</p>
+                      <p className="text-[10.5px] text-white/50 mt-1">100% satisfaction rating</p>
                     </div>
                   </div>
 
                   {/* USP 3 */}
-                  <div className="flex items-center gap-3 rounded-xl border border-white/5 bg-white/5 backdrop-blur-sm p-3.5 hover:bg-white/10 transition-colors duration-200">
-                    <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-[#ff6b6b]/20 text-[#ff6b6b]">
-                      <ShieldCheck className="h-5 w-5" />
+                  <div className="group flex items-center gap-3.5 rounded-xl border border-white/10 bg-white/[0.03] backdrop-blur-md p-4 shadow-[0_8px_32px_rgba(0,0,0,0.15)] hover:border-white/20 hover:bg-white/[0.07] hover:-translate-y-0.5 transition-all duration-300 ease-out">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#ff6b6b]/10 border border-[#ff6b6b]/20 text-[#ff6b6b] transition-all duration-300 group-hover:scale-110 group-hover:rotate-3">
+                      <ShieldCheck className="h-5.5 w-5.5" />
                     </div>
                     <div>
-                      <p className="text-[12px] font-bold text-white/95 leading-tight">Insured to &pound;2.5M</p>
-                      <p className="text-[10px] text-white/50 mt-0.5">Comprehensive trade cover</p>
+                      <p className="text-[13px] font-bold text-white/95 leading-tight">Insured to &pound;2.5M</p>
+                      <p className="text-[10.5px] text-white/50 mt-1">Comprehensive trade cover</p>
                     </div>
                   </div>
 
                   {/* USP 4 */}
-                  <div className="flex items-center gap-3 rounded-xl border border-white/5 bg-white/5 backdrop-blur-sm p-3.5 hover:bg-white/10 transition-colors duration-200">
-                    <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-white/10 text-white/80">
-                      <Users className="h-5 w-5" />
+                  <div className="group flex items-center gap-3.5 rounded-xl border border-white/10 bg-white/[0.03] backdrop-blur-md p-4 shadow-[0_8px_32px_rgba(0,0,0,0.15)] hover:border-white/20 hover:bg-white/[0.07] hover:-translate-y-0.5 transition-all duration-300 ease-out">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-white/10 border border-white/15 text-white/80 transition-all duration-300 group-hover:scale-110 group-hover:rotate-3">
+                      <Users className="h-5.5 w-5.5" />
                     </div>
                     <div>
-                      <p className="text-[12px] font-bold text-white/95 leading-tight">Owner-operator only</p>
-                      <p className="text-[10px] text-white/50 mt-0.5">No agency or sales overheads</p>
+                      <p className="text-[13px] font-bold text-white/95 leading-tight">Owner-operator only</p>
+                      <p className="text-[10.5px] text-white/50 mt-1">No agency or sales overheads</p>
                     </div>
                   </div>
                 </div>

@@ -91,7 +91,7 @@ export function QuickQuoteForm() {
             value={name}
             onChange={(e) => setName(e.target.value)}
             disabled={status === 'submitting'}
-            className="w-full rounded-lg border border-slate-200 bg-white px-3.5 h-[44px] text-[13px] text-primary placeholder:text-slate-400 focus:border-[#C03838] focus:outline-none transition-colors"
+            className="w-full rounded-lg border border-slate-200 bg-white px-3.5 h-[44px] text-[13px] text-primary placeholder:text-slate-400 focus:border-[#C03838] focus:shadow-[0_0_0_3px_rgba(192,56,56,0.12)] focus:outline-none transition-all duration-300"
             required
           />
         </div>
@@ -108,7 +108,7 @@ export function QuickQuoteForm() {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             disabled={status === 'submitting'}
-            className="w-full rounded-lg border border-slate-200 bg-white px-3.5 h-[44px] text-[13px] text-primary placeholder:text-slate-400 focus:border-[#C03838] focus:outline-none transition-colors"
+            className="w-full rounded-lg border border-slate-200 bg-white px-3.5 h-[44px] text-[13px] text-primary placeholder:text-slate-400 focus:border-[#C03838] focus:shadow-[0_0_0_3px_rgba(192,56,56,0.12)] focus:outline-none transition-all duration-300"
             required
           />
         </div>
@@ -127,7 +127,7 @@ export function QuickQuoteForm() {
               value={postcode}
               onChange={(e) => setPostcode(e.target.value)}
               disabled={status === 'submitting'}
-              className="w-full rounded-lg border border-slate-200 bg-white px-3.5 h-[44px] text-[13px] text-primary placeholder:text-slate-400 focus:border-[#C03838] focus:outline-none transition-colors"
+              className="w-full rounded-lg border border-slate-200 bg-white px-3.5 h-[44px] text-[13px] text-primary placeholder:text-slate-400 focus:border-[#C03838] focus:shadow-[0_0_0_3px_rgba(192,56,56,0.12)] focus:outline-none transition-all duration-300"
               required
             />
           </div>
@@ -143,7 +143,7 @@ export function QuickQuoteForm() {
                 value={service}
                 onChange={(e) => setService(e.target.value)}
                 disabled={status === 'submitting'}
-                className="w-full rounded-lg border border-slate-200 bg-white pl-3.5 pr-8 h-[44px] text-[13px] text-primary focus:border-[#C03838] focus:outline-none transition-colors appearance-none cursor-pointer"
+                className="w-full rounded-lg border border-slate-200 bg-white pl-3.5 pr-8 h-[44px] text-[13px] text-primary focus:border-[#C03838] focus:shadow-[0_0_0_3px_rgba(192,56,56,0.12)] focus:outline-none transition-all duration-300 appearance-none cursor-pointer"
               >
                 <option value="boiler-service">Boiler Servicing</option>
                 <option value="boiler-repair">Boiler Repair</option>

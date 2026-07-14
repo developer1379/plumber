@@ -64,8 +64,8 @@ export function Header() {
       onMouseLeave={() => setIsHovered(false)}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-out border-b ${
         isLight 
-          ? 'bg-white text-primary border-slate-150 shadow-[0_2px_12px_rgba(0,0,0,0.06)]' 
-          : 'bg-transparent text-white border-transparent'
+          ? 'bg-white text-primary border-slate-150 shadow-[0_4px_20px_rgba(0,0,0,0.08)]' 
+          : 'bg-black/25 backdrop-blur-[6px] text-white border-white/[0.08] shadow-[0_4px_30px_rgba(0,0,0,0.05)]'
       }`}
     >
       {/* Top USP Bar */}
