@@ -191,40 +191,11 @@ export function Footer() {
             {/* Col 1: Bio */}
             <div className="space-y-4">
               <Link href="/" className="inline-block text-white hover:opacity-90 focus:outline-none">
-                <svg className="h-12 md:h-14 w-auto" viewBox="0 0 180 85" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <text x="18" y="52" className="font-serif text-[44px] font-extrabold" fill="currentColor">R</text>
-                  <path 
-                    d="M 83 58 C 78 54 76 45 79 35 C 82 25 86 18 86 8 C 86 16 91 23 96 32 C 100 40 99 50 96 56 C 93 62 86 60 83 58 Z" 
-                    fill="url(#footer-logo-flame)" 
-                  />
-                  <path 
-                    d="M 91 58 C 97 58 102 54 102 47 C 102 40 94 30 91 25 C 88 30 80 40 80 47 C 80 54 85 58 91 58 Z" 
-                    fill="url(#footer-logo-drop)" 
-                  />
-                  <text x="114" y="52" className="font-serif text-[44px] font-extrabold" fill="currentColor">H</text>
-                  <text 
-                    x="90" 
-                    y="74" 
-                    textAnchor="middle" 
-                    style={{ letterSpacing: '0.15em', fontWeight: 900 }} 
-                    className="font-sans text-[11px]" 
-                    fill="currentColor"
-                  >
-                    PLUMBING &amp; HEATING
-                  </text>
-                  <defs>
-                    <linearGradient id="footer-logo-flame" x1="78" y1="8" x2="98" y2="58" gradientUnits="userSpaceOnUse">
-                      <stop offset="0%" stopColor="#fbbf24" />
-                      <stop offset="40%" stopColor="#f97316" />
-                      <stop offset="100%" stopColor="#ea580c" />
-                    </linearGradient>
-                    <linearGradient id="footer-logo-drop" x1="80" y1="25" x2="102" y2="58" gradientUnits="userSpaceOnUse">
-                      <stop offset="0%" stopColor="#38bdf8" />
-                      <stop offset="60%" stopColor="#0284c7" />
-                      <stop offset="100%" stopColor="#0369a1" />
-                    </linearGradient>
-                  </defs>
-                </svg>
+                <img 
+                  src="/logo-light.png" 
+                  alt="R&H Plumbing & Heating" 
+                  className="h-12 md:h-14 w-auto object-contain transition-transform duration-300 group-hover:scale-105" 
+                />
               </Link>
               <p className="text-[13px] leading-relaxed text-gray-500">
                 Family-run plumbing and gas heating across Gillingham, Shaftesbury, Wincanton, and Sturminster Newton. Fixed written quotes and local response.
