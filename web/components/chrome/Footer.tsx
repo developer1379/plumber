@@ -190,9 +190,33 @@ export function Footer() {
             
             {/* Col 1: Bio */}
             <div className="space-y-4">
-              <span className="font-serif text-[20px] font-black uppercase tracking-[0.05em] text-white leading-none inline-block">
-                BMV <span className="text-secondary">Plumbing</span>
-              </span>
+              <Link href="/" className="inline-block text-white hover:opacity-90 focus:outline-none">
+                <svg className="h-10 w-auto" viewBox="0 0 160 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <text x="12" y="52" className="font-serif text-[42px] font-extrabold" fill="currentColor">R</text>
+                  <path 
+                    d="M 75 58 C 70 54 68 45 71 35 C 74 25 78 18 78 8 C 78 16 83 23 88 32 C 92 40 91 50 88 56 C 85 62 78 60 75 58 Z" 
+                    fill="url(#footer-logo-flame)" 
+                  />
+                  <path 
+                    d="M 83 58 C 89 58 94 54 94 47 C 94 40 86 30 83 25 C 80 30 72 40 72 47 C 72 54 77 58 83 58 Z" 
+                    fill="url(#footer-logo-drop)" 
+                  />
+                  <text x="100" y="52" className="font-serif text-[42px] font-extrabold" fill="currentColor">H</text>
+                  <text x="12" y="73" className="font-sans text-[9px] font-black tracking-[0.16em]" fill="currentColor">PLUMBING &amp; HEATING</text>
+                  <defs>
+                    <linearGradient id="footer-logo-flame" x1="70" y1="8" x2="90" y2="58" gradientUnits="userSpaceOnUse">
+                      <stop offset="0%" stopColor="#fbbf24" />
+                      <stop offset="40%" stopColor="#f97316" />
+                      <stop offset="100%" stopColor="#ea580c" />
+                    </linearGradient>
+                    <linearGradient id="footer-logo-drop" x1="72" y1="25" x2="94" y2="58" gradientUnits="userSpaceOnUse">
+                      <stop offset="0%" stopColor="#38bdf8" />
+                      <stop offset="60%" stopColor="#0284c7" />
+                      <stop offset="100%" stopColor="#0369a1" />
+                    </linearGradient>
+                  </defs>
+                </svg>
+              </Link>
               <p className="text-[13px] leading-relaxed text-gray-500">
                 Family-run plumbing and gas heating across Gillingham, Shaftesbury, Wincanton, and Sturminster Newton. Fixed written quotes and local response.
               </p>
