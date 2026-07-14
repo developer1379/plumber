@@ -1,17 +1,18 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #1a1a1a; /* Clean ink color from reference */
+  --background: #fcfcfd;
+  --foreground: #0f172a;
   
-  --primary: #1a1a1a;
-  --primary-hover: #333333;
-  --secondary: #C03838; /* Red brand accent matching marleymoves */
-  --secondary-hover: #a8221c;
-  --accent: #d97706; /* Amber */
-  --muted: #5c5a54; /* Warm slate gray */
-  --border: #efebe4; /* Soft warm border */
-  --card: #faf9f6; /* Warm cream background */
+  --primary: #0f172a;
+  --primary-hover: #1e293b;
+  --secondary: #d97706; /* Burnt Copper / Amber brand accent */
+  --secondary-hover: #b45309;
+  --secondary-light: #e05a47; /* Warm Coral / Flame highlight */
+  --accent: #10b981; /* Emerald accent */
+  --muted: #475569; /* Slate gray */
+  --border: #e2e8f0; /* Soft professional border */
+  --card: #ffffff; /* Clean white card bg */
 }
 
 @theme inline {
@@ -22,6 +23,7 @@
   --color-primary-hover: var(--primary-hover);
   --color-secondary: var(--secondary);
   --color-secondary-hover: var(--secondary-hover);
+  --color-secondary-light: var(--secondary-light);
   --color-accent: var(--accent);
   --color-muted: var(--muted);
   --color-border: var(--border);
@@ -30,6 +32,7 @@
   --font-serif: 'Roboto', system-ui, sans-serif;
   --font-sans: 'Roboto', system-ui, sans-serif;
 }
+
 
 
 body, input, select, textarea, button {

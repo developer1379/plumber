@@ -89,7 +89,7 @@ export function Header() {
             BMV Plumbing
           </span>
           <span className={`block text-[9px] md:text-[10px] font-bold uppercase tracking-[0.08em] transition-colors duration-300 mt-1.5 ${
-            isLight ? 'text-[#C03838]' : 'text-[#ff6b6b]'
+            isLight ? 'text-secondary' : 'text-secondary-light'
           }`}>
             Plumbing &amp; Heating &middot; Gillingham
           </span>
@@ -118,7 +118,7 @@ export function Header() {
               <div
                 className={`absolute left-1/2 -translate-x-1/2 mt-2 w-[420px] rounded-2xl border p-5 shadow-[0_24px_64px_rgba(0,0,0,0.12)] z-50 transition-all duration-300 normal-case ${
                   isLight 
-                    ? 'border-slate-100 bg-white/95 backdrop-blur-md text-[#1a1a1a] shadow-slate-200/60' 
+                    ? 'border-slate-100 bg-white/95 backdrop-blur-md text-primary shadow-slate-200/60' 
                     : 'border-white/10 bg-black/95 backdrop-blur-md text-white shadow-black/80'
                 }`}
               >
@@ -139,7 +139,7 @@ export function Header() {
                         <div className={`mt-0.5 rounded-xl p-2.5 transition-all duration-300 flex-shrink-0 ${
                           isLight 
                             ? 'bg-slate-50 text-slate-600 group-hover/item:bg-secondary/10 group-hover/item:text-secondary group-hover/item:scale-110' 
-                            : 'bg-white/5 text-gray-300 group-hover/item:bg-[#ff6b6b]/10 group-hover/item:text-[#ff6b6b] group-hover/item:scale-110'
+                            : 'bg-white/5 text-gray-300 group-hover/item:bg-secondary-light/10 group-hover/item:text-secondary-light group-hover/item:scale-110'
                         }`}>
                           <Icon className="h-5 w-5 transition-transform duration-300 group-hover/item:rotate-6" />
                         </div>
@@ -147,7 +147,7 @@ export function Header() {
                           <h4 className={`text-[12px] font-bold uppercase tracking-[0.06em] pl-[0.06em] transition-colors duration-300 ${
                             isLight 
                               ? 'text-primary group-hover/item:text-secondary' 
-                              : 'text-white group-hover/item:text-[#ff6b6b]'
+                              : 'text-white group-hover/item:text-secondary-light'
                           }`}>
                             {s.title}
                           </h4>
@@ -196,13 +196,13 @@ export function Header() {
               isLight ? 'text-primary hover:text-secondary' : 'text-white hover:text-secondary'
             }`}
           >
-            <Phone className="h-4 w-4 text-[#C03838]" />
+            <Phone className="h-4 w-4 text-secondary" />
             <span>{siteConfig.contact.primaryPhone}</span>
           </a>
 
           <button
             onClick={() => window.dispatchEvent(new CustomEvent('open-quote-modal'))}
-            className="group/btn rounded-full bg-[#C03838] text-white px-5 py-2.5 font-bold uppercase tracking-[0.05em] text-[11px] hover:bg-[#a8221c] transition-all shadow-md hover:shadow-lg active:scale-95 flex items-center gap-1.5 cursor-pointer"
+            className="group/btn rounded-full bg-secondary text-white px-5 py-2.5 font-bold uppercase tracking-[0.05em] text-[11px] hover:bg-secondary-hover transition-all shadow-md hover:shadow-lg active:scale-95 flex items-center gap-1.5 cursor-pointer"
           >
             <span>Get a Quote</span>
             <ArrowRight className="h-3.5 w-3.5 transition-transform duration-200 group-hover/btn:translate-x-1" />
@@ -321,7 +321,7 @@ export function Header() {
                 setIsOpen(false)
                 window.dispatchEvent(new CustomEvent('open-quote-modal'))
               }}
-              className="group/btn flex w-full justify-center items-center rounded-full bg-[#C03838] text-white py-3 text-xs font-bold uppercase tracking-wider hover:bg-[#a8221c] transition-colors gap-1.5 cursor-pointer"
+              className="group/btn flex w-full justify-center items-center rounded-full bg-secondary text-white py-3 text-xs font-bold uppercase tracking-wider hover:bg-secondary-hover transition-colors gap-1.5 cursor-pointer"
             >
               <span>Get a Quote</span>
               <ArrowRight className="h-3.5 w-3.5 transition-transform duration-200 group-hover/btn:translate-x-1" />

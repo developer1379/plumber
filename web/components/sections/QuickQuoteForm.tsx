@@ -86,7 +86,7 @@ export function QuickQuoteForm() {
 
   if (status === 'success') {
     return (
-      <div className="w-full max-w-[460px] rounded-2xl border border-border border-t-[5px] border-t-[#C03838] bg-[#faf9f6] p-6 sm:p-8 shadow-[0_20px_40px_rgba(0,0,0,0.12)] text-center space-y-5">
+      <div className="w-full max-w-[460px] rounded-2xl border border-border border-t-[5px] border-t-secondary bg-[#faf9f6] p-6 sm:p-8 shadow-[0_20px_40px_rgba(0,0,0,0.12)] text-center space-y-5">
         <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-emerald-100 text-emerald-600">
           <CheckCircle2 className="h-7 w-7" />
         </div>
@@ -110,7 +110,7 @@ export function QuickQuoteForm() {
   }
 
   return (
-    <div className="w-full max-w-[460px] rounded-2xl border border-border border-t-[5px] border-t-[#C03838] bg-[#faf9f6] p-6 sm:p-8 shadow-[0_20px_40px_rgba(0,0,0,0.12)] text-left">
+    <div className="w-full max-w-[460px] rounded-2xl border border-border border-t-[5px] border-t-secondary bg-[#faf9f6] p-6 sm:p-8 shadow-[0_20px_40px_rgba(0,0,0,0.12)] text-left">
       {/* Title & Description */}
       <div>
         <h2 className="font-sans text-[24px] leading-[1.1] tracking-tight text-primary font-bold">
@@ -136,7 +136,7 @@ export function QuickQuoteForm() {
             value={name}
             onChange={(e) => setName(e.target.value)}
             disabled={status === 'submitting'}
-            className="w-full rounded-lg border border-slate-200 bg-white px-3.5 h-[44px] text-[13px] text-primary placeholder:text-slate-400 focus:border-[#C03838] focus:shadow-[0_0_0_3px_rgba(192,56,56,0.12)] focus:outline-none transition-all duration-300"
+            className="w-full rounded-lg border border-slate-200 bg-white px-3.5 h-[44px] text-[13px] text-primary placeholder:text-slate-400 focus:border-secondary focus:ring-3 focus:ring-secondary/15 focus:outline-none transition-all duration-300"
             required
           />
         </div>
@@ -153,7 +153,7 @@ export function QuickQuoteForm() {
             value={phone}
             onChange={(e) => setPhone(e.target.value)}
             disabled={status === 'submitting'}
-            className="w-full rounded-lg border border-slate-200 bg-white px-3.5 h-[44px] text-[13px] text-primary placeholder:text-slate-400 focus:border-[#C03838] focus:shadow-[0_0_0_3px_rgba(192,56,56,0.12)] focus:outline-none transition-all duration-300"
+            className="w-full rounded-lg border border-slate-200 bg-white px-3.5 h-[44px] text-[13px] text-primary placeholder:text-slate-400 focus:border-secondary focus:ring-3 focus:ring-secondary/15 focus:outline-none transition-all duration-300"
             required
           />
         </div>
@@ -170,7 +170,7 @@ export function QuickQuoteForm() {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             disabled={status === 'submitting'}
-            className="w-full rounded-lg border border-slate-200 bg-white px-3.5 h-[44px] text-[13px] text-primary placeholder:text-slate-400 focus:border-[#C03838] focus:shadow-[0_0_0_3px_rgba(192,56,56,0.12)] focus:outline-none transition-all duration-300"
+            className="w-full rounded-lg border border-slate-200 bg-white px-3.5 h-[44px] text-[13px] text-primary placeholder:text-slate-400 focus:border-secondary focus:ring-3 focus:ring-secondary/15 focus:outline-none transition-all duration-300"
             required
           />
         </div>
@@ -189,7 +189,7 @@ export function QuickQuoteForm() {
               value={postcode}
               onChange={(e) => setPostcode(e.target.value)}
               disabled={status === 'submitting'}
-              className="w-full rounded-lg border border-slate-200 bg-white px-3.5 h-[44px] text-[13px] text-primary placeholder:text-slate-400 focus:border-[#C03838] focus:shadow-[0_0_0_3px_rgba(192,56,56,0.12)] focus:outline-none transition-all duration-300"
+              className="w-full rounded-lg border border-slate-200 bg-white px-3.5 h-[44px] text-[13px] text-primary placeholder:text-slate-400 focus:border-secondary focus:ring-3 focus:ring-secondary/15 focus:outline-none transition-all duration-300"
               required
             />
           </div>
@@ -205,7 +205,7 @@ export function QuickQuoteForm() {
                 value={service}
                 onChange={(e) => setService(e.target.value)}
                 disabled={status === 'submitting'}
-                className="w-full rounded-lg border border-slate-200 bg-white pl-3.5 pr-8 h-[44px] text-[13px] text-primary focus:border-[#C03838] focus:shadow-[0_0_0_3px_rgba(192,56,56,0.12)] focus:outline-none transition-all duration-300 appearance-none cursor-pointer"
+                className="w-full rounded-lg border border-slate-200 bg-white pl-3.5 pr-8 h-[44px] text-[13px] text-primary focus:border-secondary focus:ring-3 focus:ring-secondary/15 focus:outline-none transition-all duration-300 appearance-none cursor-pointer"
               >
                 <option value="boiler-service">Boiler Servicing</option>
                 <option value="boiler-repair">Boiler Repair</option>
@@ -238,7 +238,7 @@ export function QuickQuoteForm() {
               onChange={(e) => setUserCaptcha(e.target.value)}
               placeholder="Answer"
               disabled={status === 'submitting'}
-              className="w-24 rounded-lg border border-slate-200 bg-white px-3 h-[40px] text-sm text-primary text-center font-bold placeholder:text-slate-400 focus:border-[#C03838] focus:shadow-[0_0_0_3px_rgba(192,56,56,0.12)] focus:outline-none transition-all duration-300"
+              className="w-24 rounded-lg border border-slate-200 bg-white px-3 h-[40px] text-sm text-primary text-center font-bold placeholder:text-slate-400 focus:border-secondary focus:ring-3 focus:ring-secondary/15 focus:outline-none transition-all duration-300"
             />
           </div>
         </div>
@@ -248,7 +248,7 @@ export function QuickQuoteForm() {
           <button
             type="submit"
             disabled={status === 'submitting'}
-            className="w-full h-[46px] rounded-full text-[12px] font-bold uppercase tracking-[0.1em] text-white bg-[#C03838] hover:bg-[#a8221c] transition-all duration-300 shadow-md active:scale-95 flex items-center justify-center cursor-pointer disabled:bg-slate-300 disabled:cursor-not-allowed"
+            className="w-full h-[46px] rounded-full text-[12px] font-bold uppercase tracking-[0.1em] text-white bg-secondary hover:bg-secondary-hover transition-all duration-300 shadow-md active:scale-95 flex items-center justify-center cursor-pointer disabled:bg-slate-300 disabled:cursor-not-allowed"
           >
             {status === 'submitting' ? 'Sending...' : 'Get My Quote →'}
           </button>

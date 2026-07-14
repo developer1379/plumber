@@ -87,7 +87,7 @@ export default function Home() {
               <div className="lg:col-span-8 space-y-6">
                 
                 {/* Subtitle tag */}
-                <p className="text-[11px] font-bold uppercase tracking-[0.1em] text-[#ff6b6b] animate-fade-in-up">
+                <p className="text-[11px] font-bold uppercase tracking-[0.1em] text-secondary-light animate-fade-in-up">
                   Trusted across Dorset, Somerset &amp; Wiltshire
                 </p>
 
@@ -131,7 +131,7 @@ export default function Home() {
                     <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
                   </span>
                   <p className="text-[15px] sm:text-[17px] font-bold text-white tracking-wide font-sans">
-                    Need a Plumber Fast? <span className="text-[#ff6b6b]">We're Here 24/7!</span>
+                    Need a Plumber Fast? <span className="text-secondary-light">We're Here 24/7!</span>
                   </p>
                 </div>
 
@@ -198,7 +198,7 @@ export default function Home() {
                       </span>
                       {/* Underline expansion effect */}
                       <div className="relative mt-2 h-[2px] bg-slate-100 overflow-hidden w-16">
-                        <div className="absolute left-0 top-0 h-full w-full bg-[#C03838] origin-left scale-x-0 group-hover/card:scale-x-100 transition-transform duration-500 ease-out" />
+                        <div className="absolute left-0 top-0 h-full w-full bg-secondary origin-left scale-x-0 group-hover/card:scale-x-100 transition-transform duration-500 ease-out" />
                       </div>
                       <h3 className="font-serif text-[22px] font-medium text-primary mt-4 transition-colors duration-300 group-hover/card:text-secondary">
                         {service.title}

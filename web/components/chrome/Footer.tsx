@@ -125,7 +125,7 @@ export function Footer() {
                 </span>
                 {/* Expanding Red Accent Line */}
                 <div className="relative mt-2 h-[2px] bg-white/5 overflow-hidden w-8">
-                  <div className="absolute left-0 top-0 h-full w-full bg-[#C03838] origin-left scale-x-0 group-hover/col:scale-x-100 transition-transform duration-500 ease-out" />
+                  <div className="absolute left-0 top-0 h-full w-full bg-secondary origin-left scale-x-0 group-hover/col:scale-x-100 transition-transform duration-500 ease-out" />
                 </div>
               </div>
               <ul className="space-y-3 pt-2 text-[13px]">
@@ -150,7 +150,7 @@ export function Footer() {
                 </span>
                 {/* Expanding Red Accent Line */}
                 <div className="relative mt-2 h-[2px] bg-white/5 overflow-hidden w-8">
-                  <div className="absolute left-0 top-0 h-full w-full bg-[#C03838] origin-left scale-x-0 group-hover/col:scale-x-100 transition-transform duration-500 ease-out" />
+                  <div className="absolute left-0 top-0 h-full w-full bg-secondary origin-left scale-x-0 group-hover/col:scale-x-100 transition-transform duration-500 ease-out" />
                 </div>
               </div>
               <ul className="space-y-3 pt-2 text-[13px]">
@@ -175,13 +175,13 @@ export function Footer() {
                 </span>
                 {/* Expanding Red Accent Line */}
                 <div className="relative mt-2 h-[2px] bg-white/5 overflow-hidden w-8">
-                  <div className="absolute left-0 top-0 h-full w-full bg-[#C03838] origin-left scale-x-0 group-hover/col:scale-x-100 transition-transform duration-500 ease-out" />
+                  <div className="absolute left-0 top-0 h-full w-full bg-secondary origin-left scale-x-0 group-hover/col:scale-x-100 transition-transform duration-500 ease-out" />
                 </div>
               </div>
               <div className="space-y-3 pt-2 text-[13px] text-gray-500">
                 <p className="flex items-center gap-2 text-[15px] font-bold text-white tracking-tight">
-                  <Phone className="h-4 w-4 text-[#C03838] flex-shrink-0" />
-                  <a href={siteConfig.contact.primaryPhoneHref} className="hover:text-[#ff6b6b] transition-colors">
+                  <Phone className="h-4 w-4 text-secondary flex-shrink-0" />
+                  <a href={siteConfig.contact.primaryPhoneHref} className="hover:text-secondary-light transition-colors">
                     {siteConfig.contact.primaryPhone}
                   </a>
                 </p>
@@ -223,7 +223,7 @@ export function Footer() {
             <div className="flex items-center gap-3">
               <Link 
                 href="/contact" 
-                className="group/btn rounded-full bg-[#C03838] text-white px-5 py-2.5 font-bold uppercase tracking-[0.05em] text-[11px] hover:bg-[#a8221c] transition-all duration-300 shadow-md hover:shadow-lg active:scale-95 flex items-center gap-1.5"
+                className="group/btn rounded-full bg-secondary text-white px-5 py-2.5 font-bold uppercase tracking-[0.05em] text-[11px] hover:bg-secondary-hover transition-all duration-300 shadow-md hover:shadow-lg active:scale-95 flex items-center gap-1.5"
               >
                 <span>Get a Quote</span>
                 <ArrowRight className="h-3.5 w-3.5 transition-transform duration-200 group-hover/btn:translate-x-1" />

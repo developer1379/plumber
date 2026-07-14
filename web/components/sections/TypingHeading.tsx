@@ -55,21 +55,21 @@ export function TypingHeading() {
       {!mounted ? (
         <>
           <span className="block pb-1">Dorset plumbing and</span>
-          <span className="block pb-1">gas heating, <span className="text-[#ff6b6b] font-black">done properly.</span></span>
+          <span className="block pb-1">gas heating, <span className="text-secondary-light font-black">done properly.</span></span>
         </>
       ) : (
         <>
           <span className="block pb-1">
             {text1}
             {text1.length < 'Dorset plumbing and'.length && (
-              <span className="inline-block w-[3px] h-[34px] md:h-[40px] lg:h-[48px] bg-[#ff6b6b] ml-1.5 animate-pulse align-middle" />
+              <span className="inline-block w-[3px] h-[34px] md:h-[40px] lg:h-[48px] bg-secondary-light ml-1.5 animate-pulse align-middle" />
             )}
           </span>
           <span className="block pb-1">
             {text2}
-            <span className="text-[#ff6b6b] font-black">{text3}</span>
+            <span className="text-secondary-light font-black">{text3}</span>
             {text1.length === 'Dorset plumbing and'.length && text3.length < 'done properly.'.length && (
-              <span className="inline-block w-[3px] h-[34px] md:h-[40px] lg:h-[48px] bg-[#ff6b6b] ml-1.5 animate-pulse align-middle" />
+              <span className="inline-block w-[3px] h-[34px] md:h-[40px] lg:h-[48px] bg-secondary-light ml-1.5 animate-pulse align-middle" />
             )}
           </span>
         </>

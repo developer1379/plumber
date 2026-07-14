@@ -189,11 +189,11 @@ export async function RelatedPosts({ excludeSlug }: { excludeSlug?: string } = {
       {/* Section Header Row */}
       <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-10 pb-4 border-b border-slate-100">
         <h2 className="font-serif text-[28px] md:text-[32px] lg:text-[36px] text-primary font-normal leading-[1.05] tracking-tight">
-          Practical <span className="text-[#b91c1c]">heating &amp; plumbing advice.</span>
+          Practical <span className="text-secondary">heating &amp; plumbing advice.</span>
         </h2>
         <Link 
           href="/insights" 
-          className="text-[13px] font-semibold uppercase tracking-[0.06em] pl-[0.06em] text-primary hover:text-[#b91c1c] transition-colors border-b border-primary hover:border-[#b91c1c] pb-1 whitespace-nowrap self-start md:self-auto"
+          className="text-[13px] font-semibold uppercase tracking-[0.06em] pl-[0.06em] text-primary hover:text-secondary transition-colors border-b border-primary hover:border-secondary pb-1 whitespace-nowrap self-start md:self-auto"
         >
           All Articles &rarr;
         </Link>
@@ -231,7 +231,7 @@ export async function RelatedPosts({ excludeSlug }: { excludeSlug?: string } = {
                 )}
 
                 {/* Heading */}
-                <h3 className="font-serif text-[18px] md:text-[20px] font-normal text-primary group-hover:text-[#b91c1c] transition-colors mt-3 leading-snug line-clamp-2">
+                <h3 className="font-serif text-[18px] md:text-[20px] font-normal text-primary group-hover:text-secondary transition-colors mt-3 leading-snug line-clamp-2">
                   {p.title}
                 </h3>
 
@@ -244,7 +244,7 @@ export async function RelatedPosts({ excludeSlug }: { excludeSlug?: string } = {
               </div>
 
               {/* Read trigger link */}
-              <span className="text-[12px] font-bold uppercase tracking-wider text-slate-800 group-hover:text-[#b91c1c] transition-colors mt-5 inline-block">
+              <span className="text-[12px] font-bold uppercase tracking-wider text-slate-800 group-hover:text-secondary transition-colors mt-5 inline-block">
                 Read &rarr;
               </span>
             </div>

@@ -60,11 +60,11 @@ export function TiltCard({ className = '' }: TiltCardProps) {
 
         {/* Shield and Guarantee Header */}
         <div className="flex items-center gap-4">
-          <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-secondary/15 border border-secondary/25 text-[#ff6b6b] shadow-[0_4px_20px_rgba(192,56,56,0.15)]">
+          <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-secondary/15 border border-secondary/25 text-secondary-light shadow-[0_4px_20px_rgba(217,119,6,0.15)]">
             <Award className="h-6 w-6" />
           </div>
           <div className="text-left">
-            <span className="block text-[10px] font-bold uppercase tracking-widest text-[#ff6b6b]">Rob Holton's</span>
+            <span className="block text-[10px] font-bold uppercase tracking-widest text-secondary-light">Rob Holton's</span>
             <span className="block text-[15px] font-bold text-white leading-tight">Service Guarantee</span>
           </div>
         </div>
@@ -100,10 +100,10 @@ export function TiltCard({ className = '' }: TiltCardProps) {
         <div className="pt-2">
           <button
             onClick={handleCallbackClick}
-            className="w-full py-3.5 rounded-xl bg-white/5 border border-white/10 hover:border-[#ff6b6b]/40 hover:bg-[#ff6b6b]/10 text-white font-bold uppercase tracking-wider text-[11px] active:scale-95 transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer"
+            className="w-full py-3.5 rounded-xl bg-white/5 border border-white/10 hover:border-secondary-light/40 hover:bg-secondary-light/10 text-white font-bold uppercase tracking-wider text-[11px] active:scale-95 transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer"
           >
             <span>Request Callback</span>
-            <ArrowRight className="h-3.5 w-3.5 text-[#ff6b6b]" />
+            <ArrowRight className="h-3.5 w-3.5 text-secondary-light" />
           </button>
         </div>
       </div>
