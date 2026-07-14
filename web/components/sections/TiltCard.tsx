@@ -60,7 +60,7 @@ export function TiltCard({ className = '' }: TiltCardProps) {
 
         {/* Shield and Guarantee Header */}
         <div className="flex items-center gap-4">
-          <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-secondary/15 border border-secondary/25 text-secondary-light shadow-[0_4px_20px_rgba(217,119,6,0.15)]">
+          <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-secondary/15 border border-secondary/25 text-secondary-light shadow-[0_4px_20px_rgba(255,107,0,0.15)]">
             <Award className="h-6 w-6" />
           </div>
           <div className="text-left">

@@ -2,18 +2,19 @@
 
 :root {
   --background: #fcfcfd;
-  --foreground: #0f172a;
+  --foreground: #0a192f;
   
-  --primary: #0f172a;
-  --primary-hover: #1e293b;
-  --secondary: #d97706; /* Burnt Copper / Amber brand accent */
-  --secondary-hover: #b45309;
-  --secondary-light: #e05a47; /* Warm Coral / Flame highlight */
-  --accent: #10b981; /* Emerald accent */
-  --muted: #475569; /* Slate gray */
-  --border: #e2e8f0; /* Soft professional border */
-  --card: #ffffff; /* Clean white card bg */
+  --primary: #0a192f;
+  --primary-hover: #172a45;
+  --secondary: #ff6b00; /* Rich vibrant orange (fire/heating/gas) */
+  --secondary-hover: #e05e00;
+  --secondary-light: #2563eb; /* Rich cobalt blue (water/plumbing) */
+  --accent: #2563eb;
+  --muted: #4b5563; /* Cool slate gray */
+  --border: #e2e8f0;
+  --card: #ffffff;
 }
+
 
 @theme inline {
   --color-background: var(--background);
