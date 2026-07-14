@@ -23,68 +23,158 @@ export function Footer() {
   return (
     <footer className="w-full flex flex-col font-sans">
       
-      {/* 1. Deep Crimson Contact Banner */}
-      <section className="w-full bg-[#8c1d1d] text-white py-12 border-b border-black/10">
-        <div className="mx-auto max-w-[1400px] px-6 md:px-12">
-          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4 divide-y divide-white/5 lg:divide-y-0 lg:divide-x lg:divide-white/10">
+      {/* 1. Interactive 3D Contact Banner */}
+      <section className="relative w-full bg-gradient-to-br from-[#060b13] via-primary to-[#0f1d35] text-white py-16 md:py-20 border-b border-white/5 overflow-hidden">
+        {/* Subtle SVG Grid/Piping Pattern Backdrop */}
+        <div className="absolute inset-0 opacity-[0.03] pointer-events-none">
+          <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+            <pattern id="pipe-grid" width="60" height="60" patternUnits="userSpaceOnUse">
+              <path d="M 60 0 L 0 0 0 60" fill="none" stroke="currentColor" strokeWidth="1" />
+              <circle cx="0" cy="0" r="3" fill="currentColor" />
+              <circle cx="60" cy="0" r="3" fill="currentColor" />
+              <circle cx="0" cy="60" r="3" fill="currentColor" />
+              <path d="M 30 0 L 30 60 M 0 30 L 60 30" fill="none" stroke="currentColor" strokeWidth="0.5" strokeDasharray="4 4" />
+            </pattern>
+            <rect width="100%" height="100%" fill="url(#pipe-grid)" />
+          </svg>
+        </div>
+
+        {/* Diagonal Light Beam Gradient */}
+        <div className="absolute inset-0 bg-gradient-to-tr from-secondary/5 via-transparent to-secondary-light/10 pointer-events-none" />
+
+        <div className="mx-auto max-w-[1400px] px-6 md:px-12 relative z-10">
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
             
             {/* Col 1: Get a Quote */}
-            <div className="group/contact flex flex-col gap-3 lg:px-6 py-4 lg:py-0 transition-colors duration-200">
-              <div className="flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.08em] pl-[0.08em] text-white/90">
-                <MessageSquare className="h-4 w-4 text-white/80 transition-transform duration-300 group-hover/contact:scale-115 group-hover/contact:rotate-6" />
-                <span>Get a Quote</span>
+            <div className="relative overflow-hidden rounded-2xl border border-white/5 bg-white/[0.02] backdrop-blur-md p-6 flex flex-col justify-between h-full transition-all duration-500 ease-out [transform-style:preserve-3d] [perspective:1000px] hover:[transform:perspective(1000px)_rotateX(8deg)_rotateY(-4deg)_translateY(-8px)] hover:border-secondary/30 hover:bg-white/[0.04] hover:shadow-[0_20px_40px_rgba(255,107,0,0.15)] group/contact min-h-[190px]">
+              {/* SVG Watermark Boiler / Pressure Gauge */}
+              <div className="absolute -right-6 -bottom-6 w-32 h-32 text-secondary/10 group-hover/contact:text-secondary/15 transition-all duration-500 pointer-events-none">
+                <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="1.5">
+                  <circle cx="50" cy="50" r="35" />
+                  <circle cx="50" cy="50" r="5" fill="currentColor" />
+                  <path d="M 50 50 L 70 30" strokeWidth="2" strokeLinecap="round" />
+                  <path d="M 30 30 A 28 28 0 0 1 70 30" strokeDasharray="3 3" />
+                  <path d="M 50 85 L 50 95 M 45 95 L 55 95" />
+                </svg>
               </div>
-              <p className="font-serif text-[18px] md:text-[20px] font-normal leading-snug">
-                Free written quote within the hour
-              </p>
-              <p className="text-[13px] text-white/80">No obligation, no sales pressure.</p>
+              
+              <div className="space-y-4">
+                <div className="flex items-center gap-3">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-white/[0.03] border border-white/10 text-secondary transition-all duration-500 group-hover/contact:bg-secondary group-hover/contact:text-white group-hover/contact:[transform:rotateY(180deg)]">
+                    <MessageSquare className="h-5 w-5" />
+                  </div>
+                  <span className="text-[11px] font-extrabold uppercase tracking-[0.12em] text-slate-300 group-hover/contact:text-secondary transition-colors duration-300">
+                    Get a Quote
+                  </span>
+                </div>
+                <div className="space-y-1">
+                  <p className="font-serif text-[18px] md:text-[20px] font-medium leading-snug text-white">
+                    Free written quote within the hour
+                  </p>
+                  <p className="text-[12.5px] text-slate-400 font-medium">No obligation, no sales pressure.</p>
+                </div>
+              </div>
             </div>
 
             {/* Col 2: Call or Email */}
-            <div className="group/contact flex flex-col gap-3 lg:px-6 pt-6 lg:pt-0 transition-colors duration-200">
-              <div className="flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.08em] pl-[0.08em] text-white/90">
-                <Phone className="h-4 w-4 text-white/80 transition-transform duration-300 group-hover/contact:scale-115 group-hover/contact:rotate-6" />
-                <span>Call or Email</span>
+            <div className="relative overflow-hidden rounded-2xl border border-white/5 bg-white/[0.02] backdrop-blur-md p-6 flex flex-col justify-between h-full transition-all duration-500 ease-out [transform-style:preserve-3d] [perspective:1000px] hover:[transform:perspective(1000px)_rotateX(8deg)_rotateY(-4deg)_translateY(-8px)] hover:border-secondary-light/30 hover:bg-white/[0.04] hover:shadow-[0_20px_40px_rgba(37,99,235,0.15)] group/contact min-h-[190px]">
+              {/* SVG Watermark Pipe System */}
+              <div className="absolute -right-6 -bottom-6 w-32 h-32 text-secondary-light/10 group-hover/contact:text-secondary-light/15 transition-all duration-500 pointer-events-none">
+                <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M 10 30 L 90 30" />
+                  <path d="M 50 30 L 50 70" />
+                  <path d="M 50 70 L 80 70" />
+                  <rect x="44" y="27" width="12" height="6" rx="1" fill="currentColor" />
+                  <rect x="44" y="67" width="12" height="6" rx="1" fill="currentColor" />
+                </svg>
               </div>
-              <p className="font-serif text-[18px] md:text-[20px] font-normal leading-snug hover:underline">
-                <a href={siteConfig.contact.primaryPhoneHref}>
-                  {siteConfig.contact.primaryPhone}
-                </a>
-              </p>
-              <p className="text-[13px] text-white/85">
-                <a href={`mailto:${siteConfig.contact.email}`} className="hover:underline">
-                  {siteConfig.contact.email}
-                </a>
-              </p>
+
+              <div className="space-y-4">
+                <div className="flex items-center gap-3">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-white/[0.03] border border-white/10 text-secondary-light transition-all duration-500 group-hover/contact:bg-secondary-light group-hover/contact:text-white group-hover/contact:[transform:rotateY(180deg)]">
+                    <Phone className="h-5 w-5" />
+                  </div>
+                  <span className="text-[11px] font-extrabold uppercase tracking-[0.12em] text-slate-300 group-hover/contact:text-secondary-light transition-colors duration-300">
+                    Call or Email
+                  </span>
+                </div>
+                <div className="space-y-1.5">
+                  <p className="font-serif text-[18px] md:text-[20px] font-medium leading-snug text-white hover:text-secondary-light transition-colors">
+                    <a href={siteConfig.contact.primaryPhoneHref} className="focus:outline-none">
+                      {siteConfig.contact.primaryPhone}
+                    </a>
+                  </p>
+                  <p className="text-[12.5px] text-slate-400 font-medium hover:text-white transition-colors">
+                    <a href={`mailto:${siteConfig.contact.email}`} className="focus:outline-none">
+                      {siteConfig.contact.email}
+                    </a>
+                  </p>
+                </div>
+              </div>
             </div>
 
             {/* Col 3: Office Hours */}
-            <div className="group/contact flex flex-col gap-3 lg:px-6 pt-6 lg:pt-0 transition-colors duration-200">
-              <div className="flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.08em] pl-[0.08em] text-white/90">
-                <Clock className="h-4 w-4 text-white/80 transition-transform duration-300 group-hover/contact:scale-115 group-hover/contact:rotate-6" />
-                <span>Office Hours</span>
+            <div className="relative overflow-hidden rounded-2xl border border-white/5 bg-white/[0.02] backdrop-blur-md p-6 flex flex-col justify-between h-full transition-all duration-500 ease-out [transform-style:preserve-3d] [perspective:1000px] hover:[transform:perspective(1000px)_rotateX(8deg)_rotateY(-4deg)_translateY(-8px)] hover:border-secondary/30 hover:bg-white/[0.04] hover:shadow-[0_20px_40px_rgba(255,107,0,0.15)] group/contact min-h-[190px]">
+              {/* SVG Watermark Valve */}
+              <div className="absolute -right-6 -bottom-6 w-32 h-32 text-secondary/10 group-hover/contact:text-secondary/15 transition-all duration-500 pointer-events-none">
+                <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="1.5">
+                  <circle cx="50" cy="50" r="32" />
+                  <circle cx="50" cy="50" r="10" />
+                  <path d="M 50 18 L 50 40 M 50 60 L 50 82 M 18 50 L 40 50 M 60 50 L 82 50" strokeWidth="2" />
+                </svg>
               </div>
-              <p className="font-serif text-[18px] md:text-[20px] font-normal leading-snug">
-                Mon &ndash; Sun
-              </p>
-              <p className="text-[13px] text-white/80 leading-snug">
-                8:00am &ndash; 6:00pm<br />
-                <span className="text-[11px] text-white/70 italic">Emergency calls out of hours.</span>
-              </p>
+
+              <div className="space-y-4">
+                <div className="flex items-center gap-3">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-white/[0.03] border border-white/10 text-secondary transition-all duration-500 group-hover/contact:bg-secondary group-hover/contact:text-white group-hover/contact:[transform:rotateY(180deg)]">
+                    <Clock className="h-5 w-5" />
+                  </div>
+                  <span className="text-[11px] font-extrabold uppercase tracking-[0.12em] text-slate-300 group-hover/contact:text-secondary transition-colors duration-300">
+                    Office Hours
+                  </span>
+                </div>
+                <div className="space-y-1">
+                  <p className="font-serif text-[18px] md:text-[20px] font-medium leading-snug text-white">
+                    Mon &ndash; Sun
+                  </p>
+                  <p className="text-[12.5px] text-slate-400 font-medium leading-normal">
+                    8:00am &ndash; 6:00pm <br />
+                    <span className="text-[10px] text-secondary-light font-bold uppercase tracking-wider block mt-1">Emergency calls out of hours</span>
+                  </p>
+                </div>
+              </div>
             </div>
 
             {/* Col 4: Address */}
-            <div className="group/contact flex flex-col gap-3 lg:px-6 pt-6 lg:pt-0 transition-colors duration-200">
-              <div className="flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.08em] pl-[0.08em] text-white/90">
-                <MapPin className="h-4 w-4 text-white/80 transition-transform duration-300 group-hover/contact:scale-115 group-hover/contact:rotate-6" />
-                <span>Address</span>
+            <div className="relative overflow-hidden rounded-2xl border border-white/5 bg-white/[0.02] backdrop-blur-md p-6 flex flex-col justify-between h-full transition-all duration-500 ease-out [transform-style:preserve-3d] [perspective:1000px] hover:[transform:perspective(1000px)_rotateX(8deg)_rotateY(-4deg)_translateY(-8px)] hover:border-secondary-light/30 hover:bg-white/[0.04] hover:shadow-[0_20px_40px_rgba(37,99,235,0.15)] group/contact min-h-[190px]">
+              {/* SVG Watermark Tools */}
+              <div className="absolute -right-6 -bottom-6 w-32 h-32 text-secondary-light/10 group-hover/contact:text-secondary-light/15 transition-all duration-500 pointer-events-none">
+                <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M 20 80 L 80 20" strokeWidth="3" />
+                  <path d="M 72 28 C 76 22 84 22 88 28 C 91 32 90 38 86 42 L 78 34 Z" fill="currentColor" />
+                  <path d="M 20 20 L 80 80" strokeWidth="2" />
+                  <circle cx="50" cy="50" r="6" fill="currentColor" />
+                </svg>
               </div>
-              <p className="font-serif text-[18px] md:text-[20px] font-normal leading-snug">
-                {siteConfig.address.display}
-              </p>
-              <p className="text-white/70 uppercase text-[9px] tracking-[0.08em] pl-[0.08em]">
-                Dorset, Somerset, Wiltshire &bull; UK-wide
-              </p>
+
+              <div className="space-y-4">
+                <div className="flex items-center gap-3">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-white/[0.03] border border-white/10 text-secondary-light transition-all duration-500 group-hover/contact:bg-secondary-light group-hover/contact:text-white group-hover/contact:[transform:rotateY(180deg)]">
+                    <MapPin className="h-5 w-5" />
+                  </div>
+                  <span className="text-[11px] font-extrabold uppercase tracking-[0.12em] text-slate-300 group-hover/contact:text-secondary-light transition-colors duration-300">
+                    Address
+                  </span>
+                </div>
+                <div className="space-y-1">
+                  <p className="font-serif text-[18px] md:text-[20px] font-medium leading-snug text-white">
+                    {siteConfig.address.display}
+                  </p>
+                  <p className="text-[10px] text-slate-400 font-bold uppercase tracking-[0.08em]">
+                    Dorset, Somerset, Wiltshire &bull; UK-wide
+                  </p>
+                </div>
+              </div>
             </div>
 
           </div>
