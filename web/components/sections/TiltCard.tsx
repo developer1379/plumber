@@ -86,6 +86,14 @@ export function TiltCard({ className = '' }: TiltCardProps) {
           <div className="flex items-start gap-3">
             <CheckCircle className="h-4.5 w-4.5 text-secondary mt-0.5 flex-shrink-0" />
             <div>
+              <p className="text-[12.5px] font-bold text-white">Gas Safe Registered</p>
+              <p className="text-[10.5px] text-slate-400 mt-0.5">Rob Holton &bull; Ref TBC</p>
+            </div>
+          </div>
+
+          <div className="flex items-start gap-3">
+            <CheckCircle className="h-4.5 w-4.5 text-secondary mt-0.5 flex-shrink-0" />
+            <div>
               <p className="text-[12.5px] font-bold text-white">Fixed Price Quotes</p>
               <p className="text-[10.5px] text-slate-400 mt-0.5">Written within the hour, no hidden fees.</p>
             </div>
