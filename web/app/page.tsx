@@ -146,21 +146,57 @@ export default function Home() {
         </section>
 
         {/* Guarantees / Value Grid */}
-        <section className="relative z-10 pt-16 pb-16 bg-white border-b border-border">
+        <section className="relative z-10 pt-16 pb-16 bg-gradient-to-b from-[#fcfcfd] to-slate-50 border-b border-border">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
               {USPs.map((usp, i) => (
                 <div 
                   key={i} 
-                  className="group flex flex-col gap-4 rounded-2xl border border-border/80 p-6 bg-card transition-all duration-300 ease-out hover:-translate-y-1.5 hover:shadow-[0_16px_32px_rgba(0,0,0,0.04)] hover:border-slate-300/80"
+                  className="relative overflow-hidden group flex flex-col gap-4 rounded-2xl border border-border/80 p-6 bg-card transition-all duration-500 ease-out [transform-style:preserve-3d] [perspective:1000px] hover:[transform:perspective(1000px)_rotateX(6deg)_rotateY(-3deg)_translateY(-6px)] hover:shadow-xl hover:shadow-secondary/5 hover:border-secondary/25"
                 >
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-secondary/5 text-secondary transition-all duration-300 group-hover:bg-secondary/10 group-hover:scale-105">
-                    <usp.icon className="h-5.5 w-5.5 transition-transform duration-300 group-hover:rotate-6" />
+                  {/* Decorative SVGs */}
+                  {i === 0 && (
+                    <div className="absolute -right-4 -bottom-4 w-24 h-24 text-secondary/5 group-hover:text-secondary/10 transition-all duration-500 pointer-events-none">
+                      <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="1.5">
+                        <path d="M 50 15 C 65 30 75 45 75 65 C 75 80 63 90 50 90 C 37 90 25 80 25 65 C 25 45 35 30 50 15 Z" />
+                        <path d="M 50 35 C 57 45 63 53 63 65 C 63 73 57 78 50 78 C 43 78 37 73 37 65 C 37 53 43 45 50 35 Z" fill="currentColor" fillOpacity="0.1" />
+                      </svg>
+                    </div>
+                  )}
+                  {i === 1 && (
+                    <div className="absolute -right-4 -bottom-4 w-24 h-24 text-secondary-light/5 group-hover:text-secondary-light/10 transition-all duration-500 pointer-events-none">
+                      <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="1.5">
+                        <path d="M 50 15 L 80 25 C 80 55 65 75 50 85 C 35 75 20 55 20 25 Z" />
+                        <path d="M 38 48 L 46 56 L 62 38" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                      </svg>
+                    </div>
+                  )}
+                  {i === 2 && (
+                    <div className="absolute -right-4 -bottom-4 w-24 h-24 text-secondary/5 group-hover:text-secondary/10 transition-all duration-500 pointer-events-none">
+                      <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                        <circle cx="50" cy="50" r="30" />
+                        <path d="M 50 20 L 50 50 L 70 50" strokeWidth="2" />
+                        <path d="M 25 25 L 35 35 M 75 75 L 65 65" />
+                      </svg>
+                    </div>
+                  )}
+                  {i === 3 && (
+                    <div className="absolute -right-4 -bottom-4 w-24 h-24 text-secondary-light/5 group-hover:text-secondary-light/10 transition-all duration-500 pointer-events-none">
+                      <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M 25 65 L 45 45 C 50 40 60 40 65 45 L 75 55" strokeWidth="2" />
+                        <path d="M 35 55 L 55 35 C 60 30 70 30 75 35 L 85 45" strokeWidth="2" />
+                        <circle cx="50" cy="50" r="35" strokeDasharray="3 3" />
+                      </svg>
+                    </div>
+                  )}
+
+                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-secondary/5 text-secondary border border-secondary/10 transition-all duration-500 group-hover:bg-secondary group-hover:text-white group-hover:[transform:rotateY(180deg)]">
+                    <usp.icon className="h-5.5 w-5.5" />
                   </div>
-                  <h3 className="font-serif text-[20px] md:text-[22px] font-medium text-primary transition-colors duration-300 group-hover:text-secondary">
-                    {usp.title}
-                  </h3>
-                  <p className="text-[14px] text-muted leading-relaxed">
+                  <h3 className="font-serif text-[20px] md:text-[22px] font-medium text-primary transition-colors duration-300 group-hover:text-secondary relative z-10">
+                    {usp.title
+                  }</h3>
+                  <p className="text-[14px] text-muted leading-relaxed relative z-10">
                     {usp.text}
                   </p>
                 </div>
@@ -168,6 +204,7 @@ export default function Home() {
             </div>
           </div>
         </section>
+
 
         {/* Detailed Services Showcases */}
         <section className="py-20 bg-white">
@@ -189,8 +226,59 @@ export default function Home() {
               {coreServices.map((service) => (
                 <div
                   key={service.slug}
-                  className="group/card flex flex-col justify-between rounded-2xl border border-border/80 p-8 bg-card shadow-sm hover:shadow-[0_24px_48px_rgba(0,0,0,0.06)] hover:border-slate-300/80 hover:-translate-y-1.5 transition-all duration-300 ease-out"
+                  className="relative overflow-hidden group/card flex flex-col justify-between rounded-2xl border border-border/80 p-8 bg-card shadow-sm transition-all duration-500 ease-out [transform-style:preserve-3d] [perspective:1000px] hover:[transform:perspective(1000px)_rotateX(4deg)_rotateY(-2deg)_translateY(-6px)] hover:shadow-xl hover:shadow-secondary/5 hover:border-secondary/20"
                 >
+                  {/* Decorative SVGs for Plumbing & Heating Services */}
+                  {service.slug === 'boiler-servicing-installation-repairs' && (
+                    <div className="absolute -right-6 -bottom-6 w-36 h-36 text-secondary/5 group-hover/card:text-secondary/8 transition-all duration-500 pointer-events-none">
+                      <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="1.2">
+                        <rect x="30" y="15" width="40" height="70" rx="3" />
+                        <line x1="30" y1="30" x2="70" y2="30" />
+                        <line x1="30" y1="70" x2="70" y2="70" />
+                        <circle cx="50" cy="50" r="10" />
+                        <line x1="50" y1="50" x2="55" y2="45" strokeWidth="1.5" />
+                        <path d="M 38 85 L 38 95 M 50 85 L 50 95 M 62 85 L 62 95" />
+                      </svg>
+                    </div>
+                  )}
+                  {service.slug === 'landlord-safety-checks' && (
+                    <div className="absolute -right-6 -bottom-6 w-36 h-36 text-secondary-light/5 group-hover/card:text-secondary-light/8 transition-all duration-500 pointer-events-none">
+                      <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="1.2">
+                        <rect x="25" y="20" width="50" height="65" rx="3" />
+                        <rect x="40" y="13" width="20" height="7" rx="1" fill="currentColor" fillOpacity="0.05" />
+                        <line x1="35" y1="35" x2="65" y2="35" />
+                        <line x1="35" y1="50" x2="65" y2="50" />
+                        <line x1="35" y1="65" x2="65" y2="65" />
+                        <path d="M 30 35 L 32 37 L 37 32" strokeWidth="1.5" />
+                        <path d="M 30 50 L 32 52 L 37 47" strokeWidth="1.5" />
+                        <path d="M 30 65 L 32 67 L 37 62" strokeWidth="1.5" />
+                      </svg>
+                    </div>
+                  )}
+                  {service.slug === 'gas-installations' && (
+                    <div className="absolute -right-6 -bottom-6 w-36 h-36 text-secondary/5 group-hover/card:text-secondary/8 transition-all duration-500 pointer-events-none">
+                      <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="1.2">
+                        <circle cx="50" cy="50" r="28" />
+                        <circle cx="50" cy="50" r="16" />
+                        <circle cx="50" cy="27" r="1.5" fill="currentColor" />
+                        <circle cx="50" cy="73" r="1.5" fill="currentColor" />
+                        <circle cx="27" cy="50" r="1.5" fill="currentColor" />
+                        <circle cx="73" cy="50" r="1.5" fill="currentColor" />
+                        <path d="M 15 50 L 25 50 M 75 50 L 85 50 M 50 15 L 50 25 M 50 75 L 50 85" strokeWidth="1.5" />
+                      </svg>
+                    </div>
+                  )}
+                  {service.slug === 'emergency-callouts' && (
+                    <div className="absolute -right-6 -bottom-6 w-36 h-36 text-secondary-light/5 group-hover/card:text-secondary-light/8 transition-all duration-500 pointer-events-none">
+                      <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="1.2">
+                        <path d="M 30 30 L 60 30 C 65 30 70 34 70 40 L 70 50" strokeLinecap="round" />
+                        <circle cx="70" cy="62" r="8" />
+                        <path d="M 70 78 L 70 88 M 66 84 L 66 86 M 74 84 L 74 86" strokeWidth="1.5" strokeLinecap="round" />
+                        <rect x="50" y="20" width="10" height="20" rx="1" transform="rotate(45 55 30)" />
+                      </svg>
+                    </div>
+                  )}
+
                   <div className="space-y-6">
                     <div>
                       <span className="text-[11px] font-bold uppercase tracking-[0.12em] text-secondary">
@@ -204,10 +292,10 @@ export default function Home() {
                         {service.title}
                       </h3>
                     </div>
-                    <p className="text-[15px] text-slate-600 leading-relaxed">
+                    <p className="text-[15px] text-slate-600 leading-relaxed relative z-10">
                       {service.description}
                     </p>
-                    <ul className="grid gap-2 text-[13px] text-slate-700 sm:grid-cols-2">
+                    <ul className="grid gap-2 text-[13px] text-slate-700 sm:grid-cols-2 relative z-10">
                       {service.highlights.map((highlight, idx) => (
                         <li key={idx} className="flex items-center gap-2 transition-transform duration-350 hover:translate-x-1">
                           <CheckCircle className="h-4 w-4 text-secondary flex-shrink-0 transition-transform duration-300 group-hover/card:scale-105" />
@@ -216,7 +304,7 @@ export default function Home() {
                       ))}
                     </ul>
                   </div>
-                  <div className="mt-8 pt-6 border-t border-border flex items-center justify-between">
+                  <div className="mt-8 pt-6 border-t border-border flex items-center justify-between relative z-10">
                     <Link
                       href={`/services/${service.slug}`}
                       className="inline-flex items-center gap-1.5 text-[13px] font-bold uppercase tracking-[0.06em] pl-[0.06em] text-primary hover:text-secondary transition-colors"
