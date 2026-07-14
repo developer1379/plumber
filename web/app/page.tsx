@@ -327,7 +327,7 @@ export default function Home() {
         </section>
 
         {/* E-E-A-T Meet Rob Section */}
-        <section className="bg-slate-50/75 py-24 border-y border-slate-200/60">
+        <section className="bg-gradient-to-b from-[#f8fafc] to-[#f1f5f9] py-24 border-y border-slate-200/60">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 items-stretch">
               
@@ -349,7 +349,7 @@ export default function Home() {
                 <div className="pt-4">
                   <Link
                     href="/about"
-                    className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-[#121212] px-6 py-3.5 text-xs font-bold uppercase tracking-[0.15em] text-white hover:bg-secondary hover:border-secondary transition-all shadow-sm"
+                    className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary px-6 py-3.5 text-xs font-bold uppercase tracking-[0.15em] text-white hover:bg-secondary hover:border-secondary transition-all shadow-sm active:scale-95 duration-300"
                   >
                     View My Qualifications &amp; Story &rarr;
                   </Link>
@@ -357,28 +357,37 @@ export default function Home() {
               </div>
 
               {/* Service Guarantee Card - Right Column (occupies 5 cols on desktop) */}
-              <div className="lg:col-span-5 rounded-2xl border border-slate-200/80 bg-white p-8 md:p-10 shadow-xl flex flex-col justify-between">
+              <div className="relative overflow-hidden lg:col-span-5 rounded-2xl border border-slate-200/80 bg-white p-8 md:p-10 shadow-xl flex flex-col justify-between transition-all duration-500 ease-out [transform-style:preserve-3d] [perspective:1000px] hover:[transform:perspective(1000px)_rotateX(6deg)_rotateY(-3deg)_translateY(-8px)] hover:shadow-2xl hover:shadow-secondary/10 group/guarantee">
+                {/* SVG Watermark Certificate Seal */}
+                <div className="absolute -right-6 -bottom-6 w-40 h-40 text-secondary/5 group-hover/guarantee:text-secondary/10 transition-all duration-500 pointer-events-none">
+                  <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="1.2">
+                    <circle cx="50" cy="50" r="38" />
+                    <circle cx="50" cy="50" r="32" strokeDasharray="4 4" />
+                    <path d="M 38 52 L 46 60 L 64 42" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </div>
+
                 <div className="space-y-6">
                   <div className="flex items-center gap-3">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-secondary/10 text-secondary">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-secondary/10 text-secondary border border-secondary/20 transition-all duration-500 group-hover/guarantee:bg-secondary group-hover/guarantee:text-white group-hover/guarantee:[transform:rotateY(180deg)]">
                       <ShieldCheck className="h-5 w-5" />
                     </div>
-                    <h3 className="font-serif text-[22px] font-medium text-primary">
+                    <h3 className="font-serif text-[22px] font-medium text-primary transition-colors duration-300 group-hover/guarantee:text-secondary">
                       My Service &amp; Safety Guarantee
                     </h3>
                   </div>
 
-                  <div className="space-y-5 text-[13px] text-slate-600 leading-relaxed border-t border-slate-100 pt-5">
-                    <div className="space-y-1">
-                      <strong className="text-primary block text-sm">Gas Safety First</strong>
+                  <div className="space-y-5 text-[13px] text-slate-600 leading-relaxed border-t border-slate-100 pt-5 relative z-10">
+                    <div className="space-y-1 hover:translate-x-1 transition-transform duration-300 group/item">
+                      <strong className="text-primary block text-sm group-hover/item:text-secondary transition-colors">Gas Safety First</strong>
                       <p>All gas connections, pressure testing, and flue validations are carried out in strict accordance with the UK Gas Safety Regulations (1998).</p>
                     </div>
-                    <div className="space-y-1">
-                      <strong className="text-primary block text-sm">Transparent Pricing</strong>
+                    <div className="space-y-1 hover:translate-x-1 transition-transform duration-300 group/item">
+                      <strong className="text-primary block text-sm group-hover/item:text-secondary-light transition-colors">Transparent Pricing</strong>
                       <p>I work on clear, fixed-price quotes. If a job requires additional parts or labor, I explain the issue and gain your approval before proceeding.</p>
                     </div>
-                    <div className="space-y-1">
-                      <strong className="text-primary block text-sm">Insured Workmanship</strong>
+                    <div className="space-y-1 hover:translate-x-1 transition-transform duration-300 group/item">
+                      <strong className="text-primary block text-sm group-hover/item:text-secondary transition-colors">Insured Workmanship</strong>
                       <p>Every installation and repair is backed by comprehensive trade insurance, guaranteeing coverage and safety.</p>
                     </div>
                   </div>
