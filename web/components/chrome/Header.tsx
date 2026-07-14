@@ -12,6 +12,7 @@ export function Header() {
 
   const [isOpen, setIsOpen] = useState(false)
   const [servicesOpen, setServicesOpen] = useState(false)
+  const [mobileServicesOpen, setMobileServicesOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
   const [isHovered, setIsHovered] = useState(false)
 
@@ -22,6 +23,17 @@ export function Header() {
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
+
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = ''
+    }
+    return () => {
+      document.body.style.overflow = ''
+    }
+  }, [isOpen])
 
   // On home page, the header starts transparent and turns white on scroll/hover.
   // On all other pages, it is always in the white/light theme.
@@ -225,44 +237,88 @@ export function Header() {
         </div>
       </div>
 
-      {/* Mobile Drawer Navigation Menu */}
-      {isOpen && (
-        <div className={`lg:hidden border-t px-4 py-4 space-y-2 shadow-2xl transition-all duration-300 ${
-          isLight ? 'border-slate-100 bg-white' : 'border-white/10 bg-[#0f0f0f]'
-        }`}>
+      {/* Mobile Drawer Navigation Sidebar */}
+      <div 
+        className={`fixed inset-0 bg-black/60 backdrop-blur-xs z-50 transition-opacity duration-300 ${
+          isOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
+        }`} 
+        onClick={() => setIsOpen(false)} 
+      />
+
+      <div 
+        className={`fixed inset-y-0 right-0 w-[300px] max-w-[85vw] z-50 shadow-2xl transition-transform duration-300 ease-out transform ${
+          isOpen ? 'translate-x-0' : 'translate-x-full'
+        } ${
+          isLight ? 'bg-white text-primary border-l border-slate-100' : 'bg-[#0b0f17] text-white border-l border-white/5'
+        } flex flex-col`}
+      >
+        {/* Drawer Header */}
+        <div className="p-5 flex items-center justify-between border-b border-white/5">
+          <Link href="/" onClick={() => setIsOpen(false)} className="focus:outline-none">
+            <img 
+              src={isLight ? '/logo-dark-text.png' : '/logo-white-text-transparent.png'} 
+              alt="R&H Plumbing & Heating" 
+              className="h-10 w-auto object-contain" 
+            />
+          </Link>
+          <button
+            onClick={() => setIsOpen(false)}
+            className={`rounded-full p-2 focus:outline-none transition-colors duration-300 ${
+              isLight ? 'hover:bg-slate-100 text-slate-600' : 'hover:bg-white/5 text-gray-400'
+            }`}
+            aria-label="Close Mobile Menu"
+          >
+            <X className="h-5 w-5" />
+          </button>
+        </div>
+
+        {/* Drawer Body - Scrollable Links */}
+        <div className="flex-1 overflow-y-auto px-5 py-6 space-y-5">
           <Link
             href="/"
             onClick={() => setIsOpen(false)}
-            className={`block rounded-md px-3 py-2 text-sm font-bold uppercase tracking-wider ${
-              isLight ? 'hover:bg-slate-50 text-primary' : 'hover:bg-white/5 text-white'
+            className={`block py-1.5 text-[13px] font-bold uppercase tracking-[0.08em] pl-[0.08em] transition-colors ${
+              isLight ? 'hover:text-secondary' : 'hover:text-secondary-light'
             }`}
           >
             Home
           </Link>
-          
-          <div className="space-y-1">
-            <span className="block px-3 py-1.5 text-[10px] font-bold uppercase tracking-wider text-slate-400">
-              Services
-            </span>
-            {services.map((s) => (
-              <Link
-                key={s.href}
-                href={s.href}
-                onClick={() => setIsOpen(false)}
-                className={`block rounded-md pl-6 pr-3 py-2 text-xs font-medium ${
-                  isLight ? 'hover:bg-slate-50 text-slate-700' : 'hover:bg-white/5 text-gray-300'
-                }`}
-              >
-                {s.label}
-              </Link>
-            ))}
+
+          {/* Collapsible Services Accordion */}
+          <div className="space-y-2">
+            <button
+              onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
+              className={`flex w-full items-center justify-between py-1.5 text-[13px] font-bold uppercase tracking-[0.08em] pl-[0.08em] text-left transition-colors focus:outline-none cursor-pointer ${
+                isLight ? 'hover:text-secondary' : 'hover:text-secondary-light'
+              }`}
+            >
+              <span>Services</span>
+              <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${mobileServicesOpen ? 'rotate-180' : ''}`} />
+            </button>
+
+            <div className={`space-y-1 pl-4 transition-all duration-300 overflow-hidden ${
+              mobileServicesOpen ? 'max-h-[300px] opacity-100 mt-2' : 'max-h-0 opacity-0'
+            }`}>
+              {services.map((s) => (
+                <Link
+                  key={s.href}
+                  href={s.href}
+                  onClick={() => setIsOpen(false)}
+                  className={`block py-2 text-[11px] font-bold uppercase tracking-[0.05em] pl-[0.05em] transition-colors ${
+                    isLight ? 'text-slate-500 hover:text-secondary' : 'text-gray-400 hover:text-secondary-light'
+                  }`}
+                >
+                  {s.label}
+                </Link>
+              ))}
+            </div>
           </div>
 
           <Link
             href="/about"
             onClick={() => setIsOpen(false)}
-            className={`block rounded-md px-3 py-2 text-sm font-bold uppercase tracking-wider ${
-              isLight ? 'hover:bg-slate-50 text-primary' : 'hover:bg-white/5 text-white'
+            className={`block py-1.5 text-[13px] font-bold uppercase tracking-[0.08em] pl-[0.08em] transition-colors ${
+              isLight ? 'hover:text-secondary' : 'hover:text-secondary-light'
             }`}
           >
             About
@@ -271,8 +327,8 @@ export function Header() {
           <Link
             href="/insights"
             onClick={() => setIsOpen(false)}
-            className={`block rounded-md px-3 py-2 text-sm font-bold uppercase tracking-wider ${
-              isLight ? 'hover:bg-slate-50 text-primary' : 'hover:bg-white/5 text-white'
+            className={`block py-1.5 text-[13px] font-bold uppercase tracking-[0.08em] pl-[0.08em] transition-colors ${
+              isLight ? 'hover:text-secondary' : 'hover:text-secondary-light'
             }`}
           >
             Insights
@@ -281,8 +337,8 @@ export function Header() {
           <Link
             href="/guides"
             onClick={() => setIsOpen(false)}
-            className={`block rounded-md px-3 py-2 text-sm font-bold uppercase tracking-wider ${
-              isLight ? 'hover:bg-slate-50 text-primary' : 'hover:bg-white/5 text-white'
+            className={`block py-1.5 text-[13px] font-bold uppercase tracking-[0.08em] pl-[0.08em] transition-colors ${
+              isLight ? 'hover:text-secondary' : 'hover:text-secondary-light'
             }`}
           >
             Guides
@@ -291,8 +347,8 @@ export function Header() {
           <Link
             href="/faqs"
             onClick={() => setIsOpen(false)}
-            className={`block rounded-md px-3 py-2 text-sm font-bold uppercase tracking-wider ${
-              isLight ? 'hover:bg-slate-50 text-primary' : 'hover:bg-white/5 text-white'
+            className={`block py-1.5 text-[13px] font-bold uppercase tracking-[0.08em] pl-[0.08em] transition-colors ${
+              isLight ? 'hover:text-secondary' : 'hover:text-secondary-light'
             }`}
           >
             FAQs
@@ -301,27 +357,40 @@ export function Header() {
           <Link
             href="/contact"
             onClick={() => setIsOpen(false)}
-            className={`block rounded-md px-3 py-2 text-sm font-bold uppercase tracking-wider ${
-              isLight ? 'hover:bg-slate-50 text-primary' : 'hover:bg-white/5 text-white'
+            className={`block py-1.5 text-[13px] font-bold uppercase tracking-[0.08em] pl-[0.08em] transition-colors ${
+              isLight ? 'hover:text-secondary' : 'hover:text-secondary-light'
             }`}
           >
             Contact
           </Link>
-
-          <div className="pt-4 border-t border-slate-100 mt-2">
-            <button
-              onClick={() => {
-                setIsOpen(false)
-                window.dispatchEvent(new CustomEvent('open-quote-modal'))
-              }}
-              className="group/btn flex w-full justify-center items-center rounded-full bg-secondary text-white py-3 text-xs font-bold uppercase tracking-wider hover:bg-secondary-hover hover:shadow-secondary/20 hover:shadow-lg transition-all gap-1.5 cursor-pointer"
-            >
-              <span>Get a Quote</span>
-              <ArrowRight className="h-3.5 w-3.5 transition-transform duration-200 group-hover/btn:translate-x-1" />
-            </button>
-          </div>
         </div>
-      )}
+
+        {/* Drawer Footer Actions */}
+        <div className={`p-5 border-t space-y-3.5 ${isLight ? 'border-slate-100 bg-slate-50/50' : 'border-white/5 bg-black/20'}`}>
+          <a
+            href={siteConfig.contact.primaryPhoneHref}
+            className={`flex items-center justify-center gap-2.5 rounded-full border py-3 text-xs font-bold uppercase tracking-wider transition-colors duration-300 ${
+              isLight 
+                ? 'border-slate-200 text-primary hover:border-slate-350 hover:bg-slate-100/50' 
+                : 'border-white/10 text-white hover:border-white/20 hover:bg-white/5'
+            }`}
+          >
+            <Phone className="h-4 w-4 text-secondary" />
+            <span>{siteConfig.contact.primaryPhone}</span>
+          </a>
+
+          <button
+            onClick={() => {
+              setIsOpen(false)
+              window.dispatchEvent(new CustomEvent('open-quote-modal'))
+            }}
+            className="group/btn flex w-full justify-center items-center rounded-full bg-secondary text-white py-3.5 text-xs font-bold uppercase tracking-wider hover:bg-secondary-hover hover:shadow-secondary/20 hover:shadow-lg transition-all gap-1.5 cursor-pointer"
+          >
+            <span>Get a Quote</span>
+            <ArrowRight className="h-3.5 w-3.5 transition-transform duration-200 group-hover/btn:translate-x-1" />
+          </button>
+        </div>
+      </div>
     </header>
   )
 }
