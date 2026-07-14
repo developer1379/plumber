@@ -1,45 +1,86 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { siteConfig } from '@/lib/site-config'
-import { CheckCircle2, ChevronDown } from 'lucide-react'
+import { CheckCircle2, ChevronDown, ShieldAlert } from 'lucide-react'
 
 export function QuickQuoteForm() {
   const [name, setName] = useState('')
+  const [phone, setPhone] = useState('')
   const [email, setEmail] = useState('')
   const [postcode, setPostcode] = useState('')
   const [service, setService] = useState('boiler-service')
   
+  // Math captcha state
+  const [captcha, setCaptcha] = useState({ num1: 0, num2: 0 })
+  const [userCaptcha, setUserCaptcha] = useState('')
+
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle')
   const [message, setMessage] = useState('')
 
+  // Generate random math challenge on mount
+  useEffect(() => {
+    generateCaptcha()
+  }, [])
+
+  const generateCaptcha = () => {
+    const n1 = Math.floor(Math.random() * 9) + 1
+    const n2 = Math.floor(Math.random() * 9) + 1
+    setCaptcha({ num1: n1, num2: n2 })
+    setUserCaptcha('')
+  }
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    if (!name || !email || !postcode) {
+    if (!name || !phone || !email || !postcode) {
       setStatus('error')
       setMessage('Please fill in all fields.')
       return
     }
 
+    // Local captcha validation
+    const expected = captcha.num1 + captcha.num2
+    if (parseInt(userCaptcha.trim()) !== expected) {
+      setStatus('error')
+      setMessage('Incorrect security check answer. Please try again.')
+      generateCaptcha()
+      return
+    }
+
     setStatus('submitting')
+    setMessage('')
+
     try {
       const res = await fetch('/api/quote', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name, email, details: `Postcode: ${postcode} | Requested Service: ${service}` }),
+        body: JSON.stringify({ 
+          name, 
+          phone,
+          email, 
+          message: `Quick Quote Request:\nPostcode: ${postcode}\nService: ${service}`,
+          captchaNum1: captcha.num1,
+          captchaNum2: captcha.num2,
+          captchaAnswer: userCaptcha.trim()
+        }),
       })
 
-      if (res.ok) {
+      const data = await res.json()
+
+      if (res.ok && data.ok) {
         setStatus('success')
         setName('')
+        setPhone('')
         setEmail('')
         setPostcode('')
+        setUserCaptcha('')
       } else {
-        throw new Error()
+        throw new Error(data.error || 'Server error')
       }
-    } catch {
+    } catch (err: any) {
       setStatus('error')
-      setMessage('Something went wrong. Please try calling us directly.')
+      setMessage(err.message || 'Something went wrong. Please try calling us directly.')
+      generateCaptcha()
     }
   }
 
@@ -49,15 +90,18 @@ export function QuickQuoteForm() {
         <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-emerald-100 text-emerald-600">
           <CheckCircle2 className="h-7 w-7" />
         </div>
-        <h3 className="font-serif text-[24px] leading-snug tracking-tight text-primary">
+        <h3 className="font-sans text-[24px] leading-snug tracking-tight text-primary font-bold">
           Quote Request Received!
         </h3>
         <p className="text-[13px] text-slate-600 font-medium leading-relaxed">
           Thanks, Rob will review your details and send you a fixed quote within the hour.
         </p>
         <button 
-          onClick={() => setStatus('idle')}
-          className="text-xs font-bold uppercase tracking-wider text-secondary hover:text-secondary-hover transition-colors"
+          onClick={() => {
+            setStatus('idle')
+            generateCaptcha()
+          }}
+          className="text-xs font-bold uppercase tracking-wider text-secondary hover:text-secondary-hover transition-colors cursor-pointer"
         >
           Send Another Request
         </button>
@@ -66,10 +110,10 @@ export function QuickQuoteForm() {
   }
 
   return (
-    <div className="w-full max-w-[460px] rounded-2xl border border-border border-t-[5px] border-t-[#C03838] bg-[#faf9f6] p-6 sm:p-8 shadow-[0_20px_40px_rgba(0,0,0,0.12)]">
+    <div className="w-full max-w-[460px] rounded-2xl border border-border border-t-[5px] border-t-[#C03838] bg-[#faf9f6] p-6 sm:p-8 shadow-[0_20px_40px_rgba(0,0,0,0.12)] text-left">
       {/* Title & Description */}
       <div>
-        <h2 className="font-serif text-[26px] leading-[1.1] tracking-tight text-primary font-normal">
+        <h2 className="font-sans text-[24px] leading-[1.1] tracking-tight text-primary font-bold">
           Get a Fixed Quote
         </h2>
         <p className="text-xs text-slate-500 mt-1.5 leading-normal font-medium">
@@ -79,6 +123,7 @@ export function QuickQuoteForm() {
 
       {/* Form Fields */}
       <form onSubmit={handleSubmit} className="mt-6 flex flex-col gap-4">
+        
         {/* Name */}
         <div>
           <label htmlFor="name" className="block mb-1.5 text-[10px] font-bold uppercase tracking-[0.14em] text-slate-700/85">
@@ -90,6 +135,23 @@ export function QuickQuoteForm() {
             placeholder="First and last name"
             value={name}
             onChange={(e) => setName(e.target.value)}
+            disabled={status === 'submitting'}
+            className="w-full rounded-lg border border-slate-200 bg-white px-3.5 h-[44px] text-[13px] text-primary placeholder:text-slate-400 focus:border-[#C03838] focus:shadow-[0_0_0_3px_rgba(192,56,56,0.12)] focus:outline-none transition-all duration-300"
+            required
+          />
+        </div>
+
+        {/* Phone */}
+        <div>
+          <label htmlFor="phone" className="block mb-1.5 text-[10px] font-bold uppercase tracking-[0.14em] text-slate-700/85">
+            Phone Number
+          </label>
+          <input
+            id="phone"
+            type="tel"
+            placeholder="e.g. 07958 795361"
+            value={phone}
+            onChange={(e) => setPhone(e.target.value)}
             disabled={status === 'submitting'}
             className="w-full rounded-lg border border-slate-200 bg-white px-3.5 h-[44px] text-[13px] text-primary placeholder:text-slate-400 focus:border-[#C03838] focus:shadow-[0_0_0_3px_rgba(192,56,56,0.12)] focus:outline-none transition-all duration-300"
             required
@@ -158,12 +220,35 @@ export function QuickQuoteForm() {
           </div>
         </div>
 
+        {/* Security Check (Math Captcha) */}
+        <div className="space-y-2 pt-2 border-t border-slate-100">
+          <label htmlFor="captcha" className="block text-[10px] font-bold uppercase tracking-[0.14em] text-slate-700/85">
+            Security Check
+          </label>
+          <div className="flex items-center gap-3">
+            <div className="bg-slate-100 border border-slate-200 px-4 py-2.5 rounded-lg text-xs font-bold text-slate-700 select-none">
+              What is {captcha.num1} + {captcha.num2}?
+            </div>
+            <input
+              id="captcha"
+              type="text"
+              name="captcha"
+              required
+              value={userCaptcha}
+              onChange={(e) => setUserCaptcha(e.target.value)}
+              placeholder="Answer"
+              disabled={status === 'submitting'}
+              className="w-24 rounded-lg border border-slate-200 bg-white px-3 h-[40px] text-sm text-primary text-center font-bold placeholder:text-slate-400 focus:border-[#C03838] focus:shadow-[0_0_0_3px_rgba(192,56,56,0.12)] focus:outline-none transition-all duration-300"
+            />
+          </div>
+        </div>
+
         {/* Submit Button */}
         <div className="pt-2">
           <button
             type="submit"
             disabled={status === 'submitting'}
-            className="w-full h-[46px] rounded-full text-[12px] font-bold uppercase tracking-[0.1em] text-white bg-[#C03838] hover:bg-[#a8221c] transition-all duration-300 shadow-md active:scale-95 flex items-center justify-center cursor-pointer"
+            className="w-full h-[46px] rounded-full text-[12px] font-bold uppercase tracking-[0.1em] text-white bg-[#C03838] hover:bg-[#a8221c] transition-all duration-300 shadow-md active:scale-95 flex items-center justify-center cursor-pointer disabled:bg-slate-300 disabled:cursor-not-allowed"
           >
             {status === 'submitting' ? 'Sending...' : 'Get My Quote →'}
           </button>
@@ -172,7 +257,10 @@ export function QuickQuoteForm() {
 
       {/* Error Message */}
       {status === 'error' && (
-        <p className="text-center text-xs font-semibold text-red-600 mt-3">{message}</p>
+        <div className="flex items-center gap-2 mt-4 text-xs font-semibold text-red-600 bg-red-50/50 border border-red-100 rounded-lg p-3">
+          <ShieldAlert className="h-4.5 w-4.5 flex-shrink-0" />
+          <span>{message}</span>
+        </div>
       )}
 
       {/* Bottom Trust Context */}

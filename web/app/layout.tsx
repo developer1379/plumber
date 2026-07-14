@@ -9,7 +9,7 @@
  */
 
 import type { Metadata } from 'next'
-import { Cormorant_Garamond, Roboto } from 'next/font/google'
+import { Roboto } from 'next/font/google'
 import { siteConfig } from '@/lib/site-config'
 import { robotsMetadata } from '@/lib/seo/canonical'
 import {
@@ -19,15 +19,8 @@ import {
   type PersonInput,
 } from '@/lib/schema/jsonld'
 import { getOwnerPerson } from '@/lib/sanity/queries'
+import { FloatingQuote } from '@/components/chrome/FloatingQuote'
 import './globals.css'
-
-// Official Google Fonts optimized loaders
-const cormorant = Cormorant_Garamond({
-  subsets: ['latin'],
-  weight: ['300', '400', '500', '600', '700'],
-  variable: '--font-serif',
-  display: 'swap',
-})
 
 const roboto = Roboto({
   subsets: ['latin'],
@@ -54,7 +47,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   return (
     <html 
       lang={siteConfig.locale} 
-      className={`${cormorant.variable} ${roboto.variable}`}
+      className={roboto.variable}
       suppressHydrationWarning
     >
       <body suppressHydrationWarning>
@@ -62,6 +55,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         {websiteSchema()}
         {owner ? personSchema(owner) : null}
         {children}
+        <FloatingQuote />
       </body>
     </html>
   )

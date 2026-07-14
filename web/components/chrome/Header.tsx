@@ -83,12 +83,12 @@ export function Header() {
       <div className="mx-auto max-w-[1400px] px-6 md:px-12 py-3 md:py-4 flex items-center justify-between">
         {/* Left: Brand Logo / Identity */}
         <Link href="/" className="group flex flex-col items-start focus:outline-none">
-          <span className={`font-serif text-[18px] md:text-xl font-medium uppercase leading-none tracking-[0.05em] transition-colors duration-300 group-hover:text-secondary ${
+          <span className={`font-sans text-[20px] md:text-[22px] font-black uppercase leading-none tracking-tight transition-colors duration-300 group-hover:text-secondary ${
             isLight ? 'text-primary' : 'text-white'
           }`}>
             BMV Plumbing
           </span>
-          <span className={`block text-[8px] md:text-[9px] font-bold uppercase tracking-[0.08em] transition-colors duration-300 mt-1 ${
+          <span className={`block text-[9px] md:text-[10px] font-bold uppercase tracking-[0.08em] transition-colors duration-300 mt-1.5 ${
             isLight ? 'text-[#C03838]' : 'text-[#ff6b6b]'
           }`}>
             Plumbing &amp; Heating &middot; Gillingham
@@ -96,7 +96,7 @@ export function Header() {
         </Link>
 
         {/* Center: Desktop Navigation Bar */}
-        <nav className="hidden lg:flex items-center gap-x-6 text-[12px] font-bold uppercase tracking-[0.06em]">
+        <nav className="hidden lg:flex items-center gap-x-7 text-[11px] font-bold uppercase tracking-[0.1em]">
           <Link href="/" className="nav-link">
             Home
           </Link>
@@ -200,13 +200,13 @@ export function Header() {
             <span>{siteConfig.contact.primaryPhone}</span>
           </a>
 
-          <Link
-            href="/contact"
-            className="group/btn rounded-full bg-[#C03838] text-white px-5 py-2.5 font-bold uppercase tracking-[0.05em] text-[11px] hover:bg-[#a8221c] transition-all shadow-md hover:shadow-lg active:scale-95 flex items-center gap-1.5"
+          <button
+            onClick={() => window.dispatchEvent(new CustomEvent('open-quote-modal'))}
+            className="group/btn rounded-full bg-[#C03838] text-white px-5 py-2.5 font-bold uppercase tracking-[0.05em] text-[11px] hover:bg-[#a8221c] transition-all shadow-md hover:shadow-lg active:scale-95 flex items-center gap-1.5 cursor-pointer"
           >
             <span>Get a Quote</span>
             <ArrowRight className="h-3.5 w-3.5 transition-transform duration-200 group-hover/btn:translate-x-1" />
-          </Link>
+          </button>
         </div>
 
         {/* Mobile View Elements: Phone Callout & Menu Drawer Toggle */}
@@ -316,14 +316,16 @@ export function Header() {
           </Link>
 
           <div className="pt-4 border-t border-slate-100 mt-2">
-            <Link
-              href="/contact"
-              onClick={() => setIsOpen(false)}
-              className="group/btn flex w-full justify-center items-center rounded-full bg-[#C03838] text-white py-3 text-xs font-bold uppercase tracking-wider hover:bg-[#a8221c] transition-colors gap-1.5"
+            <button
+              onClick={() => {
+                setIsOpen(false)
+                window.dispatchEvent(new CustomEvent('open-quote-modal'))
+              }}
+              className="group/btn flex w-full justify-center items-center rounded-full bg-[#C03838] text-white py-3 text-xs font-bold uppercase tracking-wider hover:bg-[#a8221c] transition-colors gap-1.5 cursor-pointer"
             >
               <span>Get a Quote</span>
               <ArrowRight className="h-3.5 w-3.5 transition-transform duration-200 group-hover/btn:translate-x-1" />
-            </Link>
+            </button>
           </div>
         </div>
       )}

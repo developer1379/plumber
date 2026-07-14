@@ -51,11 +51,11 @@ export function TypingHeading() {
   }, [])
 
   return (
-    <h1 className="font-serif text-[42px] leading-[1.08] tracking-tight text-white md:text-5xl lg:text-[58px] font-normal min-h-[90px] md:min-h-[110px] lg:min-h-[130px]">
+    <h1 className="font-sans text-[44px] leading-[1.12] tracking-tight text-white md:text-5xl lg:text-[62px] font-black min-h-[100px] md:min-h-[120px] lg:min-h-[148px]">
       {!mounted ? (
         <>
           <span className="block pb-1">Dorset plumbing and</span>
-          <span className="block pb-1">gas heating, <span className="text-[#ff6b6b] font-medium">done properly.</span></span>
+          <span className="block pb-1">gas heating, <span className="text-[#ff6b6b] font-black">done properly.</span></span>
         </>
       ) : (
         <>
@@ -67,7 +67,7 @@ export function TypingHeading() {
           </span>
           <span className="block pb-1">
             {text2}
-            <span className="text-[#ff6b6b] font-medium">{text3}</span>
+            <span className="text-[#ff6b6b] font-black">{text3}</span>
             {text1.length === 'Dorset plumbing and'.length && text3.length < 'done properly.'.length && (
               <span className="inline-block w-[3px] h-[34px] md:h-[40px] lg:h-[48px] bg-[#ff6b6b] ml-1.5 animate-pulse align-middle" />
             )}

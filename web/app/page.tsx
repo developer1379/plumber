@@ -2,10 +2,10 @@ import Link from 'next/link'
 import { Header } from '@/components/chrome/Header'
 import { Footer } from '@/components/chrome/Footer'
 import { RelatedAreas, RelatedServices, RelatedPosts } from '@/components/sections/RelatedBlocks'
-import { QuickQuoteForm } from '@/components/sections/QuickQuoteForm'
 import { TypingHeading } from '@/components/sections/TypingHeading'
+import { TiltCard } from '@/components/sections/TiltCard'
 import { siteConfig } from '@/lib/site-config'
-import { CheckCircle, Shield, Award, Clock, ArrowRight, ShieldCheck, HardHat, Star, Users, MessageCircle } from 'lucide-react'
+import { CheckCircle, Shield, Award, ArrowRight, HardHat, MessageCircle, Clock, ShieldCheck } from 'lucide-react'
 
 export default function Home() {
   const USPs = [
@@ -80,12 +80,11 @@ export default function Home() {
             <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/65 to-black/25" />
             <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-[#121212]/90" />
           </div>
-
           <div className="relative z-10 mx-auto max-w-7xl px-6 md:px-12 w-full">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
               
               {/* Left Column: Heading Copy, Accreditations & Key USPs */}
-              <div className="lg:col-span-7 space-y-6">
+              <div className="lg:col-span-8 space-y-6">
                 
                 {/* Subtitle tag */}
                 <p className="text-[11px] font-bold uppercase tracking-[0.1em] text-[#ff6b6b] animate-fade-in-up">
@@ -103,13 +102,13 @@ export default function Home() {
                 {/* Gas Safe & Call actions */}
                 <div className="pt-2 flex flex-wrap gap-4 items-center animate-fade-in-up delay-300">
                   {/* Official looking Gas Safe Badge */}
-                  <div className="inline-flex items-center gap-3 rounded-xl bg-amber-500/10 border border-amber-500/20 px-4 py-2.5 backdrop-blur-sm">
+                  <div className="inline-flex items-center gap-3 rounded-xl bg-white/[0.04] border border-white/10 px-4 py-2.5 backdrop-blur-sm">
                     <div className="flex h-7 w-7 flex-shrink-0 items-center justify-center rounded bg-[#ff6b00] text-white font-extrabold text-[9px] shadow-[0_2px_8px_rgba(255,107,0,0.4)]">
                       GAS
                     </div>
                     <div className="text-left leading-none">
                       <span className="text-[11px] font-extrabold uppercase tracking-wider text-white">Gas Safe Registered</span>
-                      <span className="block text-[8px] font-bold uppercase tracking-widest text-amber-300 mt-0.5">Rob Holton &bull; Ref TBC</span>
+                      <span className="block text-[8px] font-bold uppercase tracking-widest text-slate-300 mt-0.5">Rob Holton &bull; Ref TBC</span>
                     </div>
                   </div>
 
@@ -118,67 +117,30 @@ export default function Home() {
                     href={`https://wa.me/${siteConfig.contact.primaryPhone.replace(/\s+/g, '')}`}
                     target="_blank" 
                     rel="noopener noreferrer" 
-                    className="inline-flex items-center gap-2 rounded-full px-5 py-2.5 bg-[#075E54] text-white hover:bg-[#054640] transition-colors shadow-md text-[12px] font-bold uppercase tracking-wider active:scale-95"
+                    className="inline-flex items-center gap-2.5 rounded-xl border border-white/10 bg-white/[0.04] backdrop-blur-md px-5 py-2.5 text-white hover:border-[#25D366]/40 hover:bg-[#25D366]/10 hover:text-white transition-all duration-300 shadow-md text-[12px] font-bold uppercase tracking-wider active:scale-95 group/wa"
                   >
-                    <MessageCircle className="h-4.5 w-4.5 flex-shrink-0" />
+                    <MessageCircle className="h-4.5 w-4.5 flex-shrink-0 text-emerald-400 group-hover/wa:scale-110 transition-transform" />
                     <span>WhatsApp Rob</span>
                   </a>
                 </div>
 
-                {/* 2x2 Grid of Key USPs */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 max-w-xl pt-6 border-t border-white/10 animate-fade-in-up delay-400">
-                  {/* USP 1 */}
-                  <div className="group flex items-center gap-3.5 rounded-xl border border-white/10 bg-white/[0.03] backdrop-blur-md p-4 shadow-[0_8px_32px_rgba(0,0,0,0.15)] hover:border-white/20 hover:bg-white/[0.07] hover:-translate-y-0.5 transition-all duration-300 ease-out">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#ff6b6b]/10 border border-[#ff6b6b]/20 text-[#ff6b6b] transition-all duration-300 group-hover:scale-110 group-hover:rotate-3">
-                      <Clock className="h-5.5 w-5.5" />
-                    </div>
-                    <div>
-                      <p className="text-[13px] font-bold text-white/95 leading-tight">Fixed quotes in the hour</p>
-                      <p className="text-[10.5px] text-white/50 mt-1">Transparent rates, no pressure</p>
-                    </div>
-                  </div>
-
-                  {/* USP 2 */}
-                  <div className="group flex items-center gap-3.5 rounded-xl border border-white/10 bg-white/[0.03] backdrop-blur-md p-4 shadow-[0_8px_32px_rgba(0,0,0,0.15)] hover:border-white/20 hover:bg-white/[0.07] hover:-translate-y-0.5 transition-all duration-300 ease-out">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-amber-400/10 border border-amber-400/20 text-amber-400 transition-all duration-300 group-hover:scale-110 group-hover:rotate-3">
-                      <Star className="h-5.5 w-5.5 fill-amber-400/10" />
-                    </div>
-                    <div>
-                      <p className="text-[13px] font-bold text-white/95 leading-tight">5.0 Google rating</p>
-                      <p className="text-[10.5px] text-white/50 mt-1">100% satisfaction rating</p>
-                    </div>
-                  </div>
-
-                  {/* USP 3 */}
-                  <div className="group flex items-center gap-3.5 rounded-xl border border-white/10 bg-white/[0.03] backdrop-blur-md p-4 shadow-[0_8px_32px_rgba(0,0,0,0.15)] hover:border-white/20 hover:bg-white/[0.07] hover:-translate-y-0.5 transition-all duration-300 ease-out">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#ff6b6b]/10 border border-[#ff6b6b]/20 text-[#ff6b6b] transition-all duration-300 group-hover:scale-110 group-hover:rotate-3">
-                      <ShieldCheck className="h-5.5 w-5.5" />
-                    </div>
-                    <div>
-                      <p className="text-[13px] font-bold text-white/95 leading-tight">Insured to &pound;2.5M</p>
-                      <p className="text-[10.5px] text-white/50 mt-1">Comprehensive trade cover</p>
-                    </div>
-                  </div>
-
-                  {/* USP 4 */}
-                  <div className="group flex items-center gap-3.5 rounded-xl border border-white/10 bg-white/[0.03] backdrop-blur-md p-4 shadow-[0_8px_32px_rgba(0,0,0,0.15)] hover:border-white/20 hover:bg-white/[0.07] hover:-translate-y-0.5 transition-all duration-300 ease-out">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-white/10 border border-white/15 text-white/80 transition-all duration-300 group-hover:scale-110 group-hover:rotate-3">
-                      <Users className="h-5.5 w-5.5" />
-                    </div>
-                    <div>
-                      <p className="text-[13px] font-bold text-white/95 leading-tight">Owner-operator only</p>
-                      <p className="text-[10.5px] text-white/50 mt-1">No agency or sales overheads</p>
-                    </div>
-                  </div>
+                {/* Emergency Callout Line */}
+                <div className="pt-6 border-t border-white/10 animate-fade-in-up delay-400 flex items-center gap-3">
+                  <span className="relative flex h-2.5 w-2.5 flex-shrink-0">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                    <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+                  </span>
+                  <p className="text-[15px] sm:text-[17px] font-bold text-white tracking-wide font-sans">
+                    Need a Plumber Fast? <span className="text-[#ff6b6b]">We're Here 24/7!</span>
+                  </p>
                 </div>
 
               </div>
 
-              {/* Right Column: Integrated Form Card */}
-              <div className="lg:col-span-5 flex justify-center lg:justify-end animate-fade-in-up delay-200 w-full">
-                <QuickQuoteForm />
+              {/* Right Column: 3D Tilt Assurance Card */}
+              <div className="lg:col-span-4 hidden lg:flex justify-end animate-float">
+                <TiltCard className="w-full max-w-[360px]" />
               </div>
-
             </div>
           </div>
         </section>
