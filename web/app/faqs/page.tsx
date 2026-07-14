@@ -2,7 +2,7 @@ import { Header } from '@/components/chrome/Header'
 import { Footer } from '@/components/chrome/Footer'
 import { Breadcrumbs } from '@/components/layout/Breadcrumbs'
 import { faqPageSchema } from '@/lib/schema/jsonld'
-import { ChevronRight } from 'lucide-react'
+import { ChevronDown, Wrench, Phone } from 'lucide-react'
 import { siteConfig } from '@/lib/site-config'
 
 export const metadata = {
@@ -122,7 +122,7 @@ export default function FaqsPage() {
       {faqPageSchema(allFaqs)}
 
       <Header />
-      <div aria-hidden="true" className="h-[140px] md:h-[148px] lg:h-[176px] block" />
+      <div aria-hidden="true" className="h-[92px] md:h-[100px] lg:h-[112px] block" />
 
       <main className="flex-1 py-12 md:py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -136,8 +136,8 @@ export default function FaqsPage() {
             {/* Main Content */}
             <div className="lg:col-span-2 space-y-12">
               <div>
-                <span className="text-xs font-bold uppercase tracking-wider text-secondary">Common Questions</span>
-                <h1 className="mt-3 text-4xl font-extrabold tracking-tight text-primary sm:text-5xl">
+                <span className="text-[13px] font-bold uppercase tracking-[0.08em] pl-[0.08em] text-secondary">Common Questions</span>
+                <h1 className="mt-3 text-4xl font-extrabold tracking-tight text-primary sm:text-5xl font-serif">
                   Frequently Asked Questions
                 </h1>
                 <p className="mt-6 text-lg text-muted leading-relaxed">
@@ -148,20 +148,20 @@ export default function FaqsPage() {
               {/* Categorized FAQs */}
               <div className="space-y-10">
                 {FAQS_DATABASE.map((cat, idx) => (
-                  <div key={idx} className="space-y-4">
-                    <h2 className="text-2xl font-bold text-primary border-b border-border pb-2">
+                  <div key={idx} className="space-y-6">
+                    <h2 className="text-2xl font-bold text-primary font-serif border-b border-border pb-3">
                       {cat.category}
                     </h2>
                     <div className="space-y-4">
                       {cat.items.map((item, itemIdx) => (
-                        <details key={itemIdx} className="group border-b border-border/50 pb-4">
-                          <summary className="flex cursor-pointer items-center justify-between font-bold text-primary list-none">
+                        <details key={itemIdx} className="group border border-border/80 rounded-xl bg-card p-5 transition-all duration-300 hover:border-slate-350 hover:shadow-sm">
+                          <summary className="flex cursor-pointer items-center justify-between font-bold text-primary font-serif text-[15px] sm:text-[17px] select-none list-none outline-none">
                             <span>{item.question}</span>
-                            <span className="transition-transform group-open:rotate-180">
-                              <ChevronRight className="h-5 w-5 text-secondary" />
+                            <span className="transition-transform duration-300 group-open:rotate-180 flex-shrink-0 ml-4">
+                              <ChevronDown className="h-5 w-5 text-secondary" />
                             </span>
                           </summary>
-                          <p className="mt-3 text-sm text-muted leading-relaxed">
+                          <p className="mt-4 text-[14px] leading-relaxed text-slate-600 pt-3 border-t border-slate-100/50">
                             {item.answer}
                           </p>
                         </details>
@@ -174,16 +174,20 @@ export default function FaqsPage() {
 
             {/* Sidebar */}
             <div className="space-y-6">
-              <div className="rounded-2xl border border-border bg-card p-6 shadow-sm">
-                <h3 className="text-lg font-bold text-primary">Need More Help?</h3>
-                <p className="mt-2 text-sm text-muted leading-relaxed">
+              <div className="group/sidebar rounded-2xl border border-border bg-white p-8 border-t-4 border-t-secondary shadow-sm hover:shadow-[0_20px_40px_rgba(0,0,0,0.05)] hover:border-slate-300/80 transition-all duration-300 ease-out">
+                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-secondary/5 text-secondary transition-all duration-300 group-hover/sidebar:bg-secondary/10 group-hover/sidebar:scale-105">
+                  <Wrench className="h-6 w-6 transition-transform duration-300 group-hover/sidebar:rotate-12" />
+                </div>
+                <h3 className="mt-6 text-xl font-bold text-primary font-serif">Need More Help?</h3>
+                <p className="mt-3 text-sm text-muted leading-relaxed">
                   If your question isn&apos;t answered here, contact Rob Holton directly.
                 </p>
                 <a
                   href={siteConfig.contact.primaryPhoneHref}
-                  className="mt-6 flex w-full items-center justify-center gap-2 rounded-full bg-secondary py-3 text-sm font-semibold text-white hover:bg-secondary-hover transition-colors shadow-sm"
+                  className="mt-6 flex w-full items-center justify-center gap-2 rounded-full bg-primary py-3.5 text-xs font-bold uppercase tracking-wider text-white hover:bg-secondary active:scale-95 transition-all duration-300 shadow-md hover:shadow-lg"
                 >
-                  Contact Rob
+                  <Phone className="h-4 w-4" />
+                  <span>Contact Rob</span>
                 </a>
               </div>
             </div>

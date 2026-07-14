@@ -2,10 +2,14 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import { siteConfig } from '@/lib/site-config'
-import { ChevronDown, MessageCircle, Mail, Menu, X, Flame, ShieldCheck, Wrench, AlertTriangle } from 'lucide-react'
+import { ChevronDown, MessageCircle, Mail, Menu, X, Flame, ShieldCheck, Wrench, AlertTriangle, Phone, ArrowRight } from 'lucide-react'
 
 export function Header() {
+  const pathname = usePathname()
+  const isHome = pathname === '/'
+
   const [isOpen, setIsOpen] = useState(false)
   const [servicesOpen, setServicesOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
@@ -19,7 +23,9 @@ export function Header() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  const isLight = isScrolled || isHovered
+  // On home page, the header starts transparent and turns white on scroll/hover.
+  // On all other pages, it is always in the white/light theme.
+  const isLight = !isHome || isScrolled || isHovered
 
   const services = [
     {
@@ -59,219 +65,190 @@ export function Header() {
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-out border-b ${
         isLight 
           ? 'bg-white text-primary border-slate-150 shadow-[0_2px_12px_rgba(0,0,0,0.06)]' 
-          : 'bg-[#121212]/95 backdrop-blur-md text-white border-white/5'
+          : 'bg-transparent text-white border-transparent'
       }`}
     >
       {/* Top USP Bar */}
-      <div className={`w-full py-2 text-center text-[10px] md:text-[11px] font-semibold uppercase tracking-[0.18em] transition-colors duration-300 ${
-        isLight ? 'bg-[#0a0a0a] text-gray-300' : 'bg-[#000000]/60 text-gray-400'
+      <div className={`w-full py-1.5 text-center text-[10px] md:text-[11px] font-semibold uppercase tracking-[0.08em] transition-colors duration-300 ${
+        isLight ? 'bg-[#0a0a0a] text-gray-300' : 'bg-black/40 text-gray-400 border-b border-white/5'
       }`}>
         <span className="opacity-90">Written Fixed Quotes Within The Hour</span>
         <span className="mx-3 opacity-40">&middot;</span>
         <span className="opacity-90">Gas Safe Registered</span>
         <span className="mx-3 opacity-40">&middot;</span>
-        <span className="opacity-90">No Obligation, No Sales Pressure</span>
+        <span className="opacity-90">No Obligation</span>
       </div>
 
       {/* Main Logo & Action Bar */}
-      <div className="mx-auto max-w-[1400px] px-6 md:px-12 py-3 md:py-4">
-        <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between relative">
-          
-          {/* Left: Phone */}
-          <div className="flex items-center gap-2 md:absolute md:left-0 md:top-1/2 md:-translate-y-1/2">
-            <a
-              href={siteConfig.contact.primaryPhoneHref}
-              className={`text-[24px] md:text-[28px] lg:text-[30px] font-medium tracking-tight transition-colors duration-300 font-sans ${
-                isLight ? 'text-primary hover:text-secondary' : 'text-white hover:text-secondary'
-              }`}
-            >
-              {siteConfig.contact.primaryPhone}
-            </a>
-          </div>
-
-          {/* Center: Logo/Brand */}
-          <div className="text-center mx-auto">
-            <Link href="/" className="group block">
-              <span className={`font-serif text-xl md:text-2xl font-normal uppercase leading-none tracking-[0.32em] pl-[0.32em] transition-colors duration-300 group-hover:text-secondary inline-block ${
-                isLight ? 'text-primary' : 'text-white'
-              }`}>
-                BMV Plumbing
-              </span>
-              <span className={`block text-[9px] md:text-[10px] font-semibold uppercase opacity-75 tracking-[0.28em] transition-colors duration-300 mt-1.5 ${
-                isLight ? 'text-slate-500' : 'text-gray-300'
-              }`}>
-                Plumbing &amp; Heating &middot; Gillingham, SP8
-              </span>
-            </Link>
-          </div>
-
-          {/* Right: WhatsApp / Email */}
-          <div className={`flex items-center gap-6 text-xs font-semibold uppercase tracking-wider md:absolute md:right-0 md:top-1/2 md:-translate-y-1/2 transition-colors duration-300 ${
-            isLight ? 'text-slate-600' : 'text-gray-300'
+      <div className="mx-auto max-w-[1400px] px-6 md:px-12 py-3 md:py-4 flex items-center justify-between">
+        {/* Left: Brand Logo / Identity */}
+        <Link href="/" className="group flex flex-col items-start focus:outline-none">
+          <span className={`font-serif text-[18px] md:text-xl font-medium uppercase leading-none tracking-[0.05em] transition-colors duration-300 group-hover:text-secondary ${
+            isLight ? 'text-primary' : 'text-white'
           }`}>
-            <a
-              href={`https://wa.me/${siteConfig.contact.primaryPhone.replace(/\s+/g, '')}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-1.5 hover:text-secondary transition-colors"
+            BMV Plumbing
+          </span>
+          <span className={`block text-[8px] md:text-[9px] font-bold uppercase tracking-[0.08em] transition-colors duration-300 mt-1 ${
+            isLight ? 'text-[#C03838]' : 'text-[#ff6b6b]'
+          }`}>
+            Plumbing &amp; Heating &middot; Gillingham
+          </span>
+        </Link>
+
+        {/* Center: Desktop Navigation Bar */}
+        <nav className="hidden lg:flex items-center gap-x-6 text-[12px] font-bold uppercase tracking-[0.06em]">
+          <Link href="/" className="nav-link">
+            Home
+          </Link>
+          
+          {/* Services Dropdown */}
+          <div 
+            className="relative"
+            onMouseEnter={() => setServicesOpen(true)}
+            onMouseLeave={() => setServicesOpen(false)}
+          >
+            <button
+              onClick={() => setServicesOpen(!servicesOpen)}
+              className="flex items-center gap-1 nav-link focus:outline-none py-1 uppercase cursor-pointer"
             >
-              <MessageCircle className="h-4 w-4 text-emerald-500" />
-              <span>WhatsApp</span>
-            </a>
-            <span className={isLight ? 'text-slate-200' : 'text-white/20'}>|</span>
-            <Link href="/contact" className="flex items-center gap-1.5 hover:text-secondary transition-colors">
-              <Mail className="h-4 w-4 text-slate-400" />
-              <span>Email us</span>
-            </Link>
-          </div>
-        </div>
+              Services <ChevronDown className={`h-3.5 w-3.5 transition-transform duration-200 ${servicesOpen ? 'rotate-180' : ''}`} />
+            </button>
 
-        {/* Desktop Centered Navigation Bar */}
-        <div className={`mt-5 border-t pt-3 hidden lg:block transition-colors duration-300 ${
-          isLight ? 'border-slate-100' : 'border-white/10'
-        }`}>
-          <nav className="flex items-center justify-center gap-x-5 text-[12px] font-semibold uppercase tracking-[0.14em]">
-            <Link href="/" className="nav-link">
-              Home
-            </Link>
-            
-            <span aria-hidden="true" className={`opacity-30 text-[10px] transition-colors duration-300 ${
-              isLight ? 'text-slate-300' : 'text-white/20'
-            }`}>&middot;</span>
-            
-            {/* Services Dropdown */}
-            <div className="relative">
-              <button
-                onClick={() => setServicesOpen(!servicesOpen)}
-                onMouseEnter={() => setServicesOpen(true)}
-                className="flex items-center gap-1.5 nav-link focus:outline-none py-1 uppercase"
+            {servicesOpen && (
+              <div
+                className={`absolute left-1/2 -translate-x-1/2 mt-2 w-[420px] rounded-2xl border p-5 shadow-[0_24px_64px_rgba(0,0,0,0.12)] z-50 transition-all duration-300 normal-case ${
+                  isLight 
+                    ? 'border-slate-100 bg-white/95 backdrop-blur-md text-[#1a1a1a] shadow-slate-200/60' 
+                    : 'border-white/10 bg-black/95 backdrop-blur-md text-white shadow-black/80'
+                }`}
               >
-                Services <ChevronDown className="h-3.5 w-6" />
-              </button>
-
-              {servicesOpen && (
-                <div
-                  onMouseLeave={() => setServicesOpen(false)}
-                  className={`absolute left-1/2 -translate-x-1/2 mt-2 w-[420px] rounded-xl border p-4 shadow-[0_20px_50px_rgba(0,0,0,0.15)] z-50 transition-all duration-200 normal-case ${
-                    isLight 
-                      ? 'border-slate-150 bg-white shadow-slate-200/50' 
-                      : 'border-white/10 bg-[#121212] shadow-black/80'
-                  }`}
-                >
-                  <div className="grid gap-2">
-                    {services.map((s) => {
-                      const Icon = s.icon
-                      return (
-                        <Link
-                          key={s.href}
-                          href={s.href}
-                          onClick={() => setServicesOpen(false)}
-                          className={`flex items-start gap-4 rounded-lg p-3 transition-all duration-200 group/item ${
+                <div className="grid gap-2.5">
+                  {services.map((s) => {
+                    const Icon = s.icon
+                    return (
+                      <Link
+                        key={s.href}
+                        href={s.href}
+                        onClick={() => setServicesOpen(false)}
+                        className={`flex items-start gap-4 rounded-xl p-3.5 transition-all duration-300 group/item ${
+                          isLight 
+                            ? 'hover:bg-slate-50/80 hover:shadow-[0_4px_16px_rgba(0,0,0,0.02)]' 
+                            : 'hover:bg-white/5 hover:shadow-[0_4px_16px_rgba(255,255,255,0.02)]'
+                        }`}
+                      >
+                        <div className={`mt-0.5 rounded-xl p-2.5 transition-all duration-300 flex-shrink-0 ${
+                          isLight 
+                            ? 'bg-slate-50 text-slate-600 group-hover/item:bg-secondary/10 group-hover/item:text-secondary group-hover/item:scale-110' 
+                            : 'bg-white/5 text-gray-300 group-hover/item:bg-[#ff6b6b]/10 group-hover/item:text-[#ff6b6b] group-hover/item:scale-110'
+                        }`}>
+                          <Icon className="h-5 w-5 transition-transform duration-300 group-hover/item:rotate-6" />
+                        </div>
+                        <div>
+                          <h4 className={`text-[12px] font-bold uppercase tracking-[0.06em] pl-[0.06em] transition-colors duration-300 ${
                             isLight 
-                              ? 'hover:bg-slate-50' 
-                              : 'hover:bg-white/5'
-                          }`}
-                        >
-                          <div className={`mt-0.5 rounded-lg p-2 transition-colors ${
-                            isLight 
-                              ? 'bg-slate-100 text-slate-600 group-hover/item:bg-secondary/10 group-hover/item:text-secondary' 
-                              : 'bg-white/5 text-gray-400 group-hover/item:bg-secondary/20 group-hover/item:text-secondary'
+                              ? 'text-primary group-hover/item:text-secondary' 
+                              : 'text-white group-hover/item:text-[#ff6b6b]'
                           }`}>
-                            <Icon className="h-5 w-5" />
-                          </div>
-                          <div>
-                            <h4 className={`text-xs font-bold uppercase tracking-wider transition-colors ${
-                              isLight 
-                                ? 'text-primary group-hover/item:text-secondary' 
-                                : 'text-white group-hover/item:text-secondary'
-                            }`}>
-                              {s.title}
-                            </h4>
-                            <p className="mt-1.5 text-[11px] text-muted leading-relaxed font-medium">
-                              {s.description}
-                            </p>
-                          </div>
-                        </Link>
-                      )
-                    })}
-                  </div>
+                            {s.title}
+                          </h4>
+                          <p className={`mt-1 text-[11px] leading-relaxed transition-colors duration-300 ${
+                            isLight 
+                              ? 'text-slate-500 group-hover/item:text-slate-700' 
+                              : 'text-gray-400 group-hover/item:text-gray-200'
+                          }`}>
+                            {s.description}
+                          </p>
+                        </div>
+                      </Link>
+                    )
+                  })}
                 </div>
-              )}
-            </div>
+              </div>
+            )}
+          </div>
 
-            <span aria-hidden="true" className={`opacity-30 text-[10px] transition-colors duration-300 ${
-              isLight ? 'text-slate-300' : 'text-white/20'
-            }`}>&middot;</span>
+          <Link href="/about" className="nav-link">
+            About
+          </Link>
 
-            <Link href="/about" className="nav-link">
-              About
-            </Link>
+          <Link href="/insights" className="nav-link">
+            Insights
+          </Link>
 
-            <span aria-hidden="true" className={`opacity-30 text-[10px] transition-colors duration-300 ${
-              isLight ? 'text-slate-300' : 'text-white/20'
-            }`}>&middot;</span>
+          <Link href="/guides" className="nav-link">
+            Guides
+          </Link>
 
-            <Link href="/insights" className="nav-link">
-              Insights
-            </Link>
+          <Link href="/faqs" className="nav-link">
+            FAQs
+          </Link>
 
-            <span aria-hidden="true" className={`opacity-30 text-[10px] transition-colors duration-300 ${
-              isLight ? 'text-slate-300' : 'text-white/20'
-            }`}>&middot;</span>
+          <Link href="/contact" className="nav-link">
+            Contact
+          </Link>
+        </nav>
 
-            <Link href="/guides" className="nav-link">
-              Guides
-            </Link>
+        {/* Right: Contact Info & CTA Button */}
+        <div className="hidden lg:flex items-center gap-6">
+          <a
+            href={siteConfig.contact.primaryPhoneHref}
+            className={`flex items-center gap-2 text-sm font-bold tracking-tight transition-colors duration-300 ${
+              isLight ? 'text-primary hover:text-secondary' : 'text-white hover:text-secondary'
+            }`}
+          >
+            <Phone className="h-4 w-4 text-[#C03838]" />
+            <span>{siteConfig.contact.primaryPhone}</span>
+          </a>
 
-            <span aria-hidden="true" className={`opacity-30 text-[10px] transition-colors duration-300 ${
-              isLight ? 'text-slate-300' : 'text-white/20'
-            }`}>&middot;</span>
-
-            <Link href="/faqs" className="nav-link">
-              FAQs
-            </Link>
-
-            <span aria-hidden="true" className={`opacity-30 text-[10px] transition-colors duration-300 ${
-              isLight ? 'text-slate-300' : 'text-white/20'
-            }`}>&middot;</span>
-
-            <Link href="/contact" className="nav-link">
-              Contact
-            </Link>
-          </nav>
+          <Link
+            href="/contact"
+            className="group/btn rounded-full bg-[#C03838] text-white px-5 py-2.5 font-bold uppercase tracking-[0.05em] text-[11px] hover:bg-[#a8221c] transition-all shadow-md hover:shadow-lg active:scale-95 flex items-center gap-1.5"
+          >
+            <span>Get a Quote</span>
+            <ArrowRight className="h-3.5 w-3.5 transition-transform duration-200 group-hover/btn:translate-x-1" />
+          </Link>
         </div>
 
-        {/* Mobile menu toggle */}
-        <div className={`mt-4 flex items-center justify-between border-t pt-4 lg:hidden transition-colors duration-300 ${
-          isLight ? 'border-slate-100' : 'border-white/10'
-        }`}>
-          <span className="text-xs font-bold uppercase tracking-wider text-slate-400">Navigation</span>
+        {/* Mobile View Elements: Phone Callout & Menu Drawer Toggle */}
+        <div className="flex lg:hidden items-center gap-4">
+          <a
+            href={siteConfig.contact.primaryPhoneHref}
+            className={`p-2 transition-colors ${
+              isLight ? 'text-primary hover:text-secondary' : 'text-white hover:text-secondary'
+            }`}
+            title="Call BMV Plumbing"
+          >
+            <Phone className="h-5 w-5" />
+          </a>
           <button
             onClick={() => setIsOpen(!isOpen)}
             className={`rounded-md p-1.5 focus:outline-none transition-colors duration-300 ${
               isLight ? 'text-slate-600 hover:bg-slate-50' : 'text-gray-300 hover:bg-white/5'
             }`}
+            aria-label="Toggle Navigation Menu"
           >
             {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
         </div>
       </div>
 
-      {/* Mobile Drawer */}
+      {/* Mobile Drawer Navigation Menu */}
       {isOpen && (
-        <div className={`lg:hidden border-t px-4 py-4 space-y-2 shadow-2xl ${
-          isLight ? 'border-slate-100 bg-[#f8fafc]' : 'border-white/10 bg-[#0f0f0f]'
+        <div className={`lg:hidden border-t px-4 py-4 space-y-2 shadow-2xl transition-all duration-300 ${
+          isLight ? 'border-slate-100 bg-white' : 'border-white/10 bg-[#0f0f0f]'
         }`}>
           <Link
             href="/"
             onClick={() => setIsOpen(false)}
-            className="block rounded-md px-3 py-2 text-sm font-bold uppercase tracking-wider hover:bg-slate-100"
+            className={`block rounded-md px-3 py-2 text-sm font-bold uppercase tracking-wider ${
+              isLight ? 'hover:bg-slate-50 text-primary' : 'hover:bg-white/5 text-white'
+            }`}
           >
             Home
           </Link>
           
           <div className="space-y-1">
-            <span className="block px-3 py-2 text-[10px] font-bold uppercase tracking-widest text-slate-400">
+            <span className="block px-3 py-1.5 text-[10px] font-bold uppercase tracking-wider text-slate-400">
               Services
             </span>
             {services.map((s) => (
@@ -279,7 +256,9 @@ export function Header() {
                 key={s.href}
                 href={s.href}
                 onClick={() => setIsOpen(false)}
-                className="block rounded-md pl-6 pr-3 py-2 text-xs font-medium hover:bg-slate-100"
+                className={`block rounded-md pl-6 pr-3 py-2 text-xs font-medium ${
+                  isLight ? 'hover:bg-slate-50 text-slate-700' : 'hover:bg-white/5 text-gray-300'
+                }`}
               >
                 {s.label}
               </Link>
@@ -289,7 +268,9 @@ export function Header() {
           <Link
             href="/about"
             onClick={() => setIsOpen(false)}
-            className="block rounded-md px-3 py-2 text-sm font-bold uppercase tracking-wider hover:bg-slate-100"
+            className={`block rounded-md px-3 py-2 text-sm font-bold uppercase tracking-wider ${
+              isLight ? 'hover:bg-slate-50 text-primary' : 'hover:bg-white/5 text-white'
+            }`}
           >
             About
           </Link>
@@ -297,7 +278,9 @@ export function Header() {
           <Link
             href="/insights"
             onClick={() => setIsOpen(false)}
-            className="block rounded-md px-3 py-2 text-sm font-bold uppercase tracking-wider hover:bg-slate-100"
+            className={`block rounded-md px-3 py-2 text-sm font-bold uppercase tracking-wider ${
+              isLight ? 'hover:bg-slate-50 text-primary' : 'hover:bg-white/5 text-white'
+            }`}
           >
             Insights
           </Link>
@@ -305,7 +288,9 @@ export function Header() {
           <Link
             href="/guides"
             onClick={() => setIsOpen(false)}
-            className="block rounded-md px-3 py-2 text-sm font-bold uppercase tracking-wider hover:bg-slate-100"
+            className={`block rounded-md px-3 py-2 text-sm font-bold uppercase tracking-wider ${
+              isLight ? 'hover:bg-slate-50 text-primary' : 'hover:bg-white/5 text-white'
+            }`}
           >
             Guides
           </Link>
@@ -313,7 +298,9 @@ export function Header() {
           <Link
             href="/faqs"
             onClick={() => setIsOpen(false)}
-            className="block rounded-md px-3 py-2 text-sm font-bold uppercase tracking-wider hover:bg-slate-100"
+            className={`block rounded-md px-3 py-2 text-sm font-bold uppercase tracking-wider ${
+              isLight ? 'hover:bg-slate-50 text-primary' : 'hover:bg-white/5 text-white'
+            }`}
           >
             FAQs
           </Link>
@@ -321,10 +308,23 @@ export function Header() {
           <Link
             href="/contact"
             onClick={() => setIsOpen(false)}
-            className="block rounded-md px-3 py-2 text-sm font-bold uppercase tracking-wider hover:bg-slate-100"
+            className={`block rounded-md px-3 py-2 text-sm font-bold uppercase tracking-wider ${
+              isLight ? 'hover:bg-slate-50 text-primary' : 'hover:bg-white/5 text-white'
+            }`}
           >
             Contact
           </Link>
+
+          <div className="pt-4 border-t border-slate-100 mt-2">
+            <Link
+              href="/contact"
+              onClick={() => setIsOpen(false)}
+              className="group/btn flex w-full justify-center items-center rounded-full bg-[#C03838] text-white py-3 text-xs font-bold uppercase tracking-wider hover:bg-[#a8221c] transition-colors gap-1.5"
+            >
+              <span>Get a Quote</span>
+              <ArrowRight className="h-3.5 w-3.5 transition-transform duration-200 group-hover/btn:translate-x-1" />
+            </Link>
+          </div>
         </div>
       )}
     </header>

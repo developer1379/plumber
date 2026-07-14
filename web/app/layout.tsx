@@ -9,7 +9,7 @@
  */
 
 import type { Metadata } from 'next'
-import { Cormorant_Garamond, Montserrat } from 'next/font/google'
+import { Cormorant_Garamond, Roboto } from 'next/font/google'
 import { siteConfig } from '@/lib/site-config'
 import { robotsMetadata } from '@/lib/seo/canonical'
 import {
@@ -29,9 +29,9 @@ const cormorant = Cormorant_Garamond({
   display: 'swap',
 })
 
-const montserrat = Montserrat({
+const roboto = Roboto({
   subsets: ['latin'],
-  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
+  weight: ['100', '300', '400', '500', '700', '900'],
   variable: '--font-sans',
   display: 'swap',
 })
@@ -54,7 +54,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   return (
     <html 
       lang={siteConfig.locale} 
-      className={`${cormorant.variable} ${montserrat.variable}`}
+      className={`${cormorant.variable} ${roboto.variable}`}
       suppressHydrationWarning
     >
       <body suppressHydrationWarning>

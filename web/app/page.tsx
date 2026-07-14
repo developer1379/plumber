@@ -3,6 +3,7 @@ import { Header } from '@/components/chrome/Header'
 import { Footer } from '@/components/chrome/Footer'
 import { RelatedAreas, RelatedServices, RelatedPosts } from '@/components/sections/RelatedBlocks'
 import { QuickQuoteForm } from '@/components/sections/QuickQuoteForm'
+import { TypingHeading } from '@/components/sections/TypingHeading'
 import { siteConfig } from '@/lib/site-config'
 import { CheckCircle, Shield, Award, Clock, ArrowRight, ShieldCheck, HardHat, Star, Users, MessageCircle } from 'lucide-react'
 
@@ -67,131 +68,139 @@ export default function Home() {
 
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="relative min-h-[640px] md:min-h-[700px] lg:min-h-[780px] flex items-center pt-[148px] md:pt-[155px] lg:pt-[170px] pb-12 md:pb-24 lg:pb-32 text-white overflow-hidden border-b border-white/5">
+        <section className="relative min-h-[640px] md:min-h-[700px] lg:min-h-[780px] flex items-center pt-[120px] md:pt-[130px] lg:pt-[150px] pb-16 md:pb-24 lg:pb-32 text-white overflow-hidden border-b border-white/5">
           {/* Background Image */}
           <div className="absolute inset-0 z-0">
             <img 
-              src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1920&q=80" 
+              src="/hero-bg.png" 
               alt="Professional Plumbing & Heating Pipework" 
               className="w-full h-full object-cover animate-slow-zoom"
             />
             {/* Dark overlay gradients to ensure content is readable */}
-            <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-black/10" />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#121212]/50 via-transparent to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/45 to-black/20" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#121212]/60 via-transparent to-transparent" />
           </div>
 
-          <div className="relative z-10 mx-auto max-w-7xl px-6 md:px-12 w-full pt-2 md:pt-6">
-            <div className="max-w-3xl space-y-6">
+          <div className="relative z-10 mx-auto max-w-7xl px-6 md:px-12 w-full">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
               
-              {/* Subtitle tag */}
-              <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#C03838] animate-fade-in-up">
-                Trusted across Dorset, Somerset &amp; Wiltshire
-              </p>
-
-              {/* Title heading */}
-              <h1 className="font-serif mt-4 text-[40px] leading-[1.08] tracking-tight text-white md:text-5xl lg:text-[56px] font-normal">
-                <span className="block overflow-hidden pb-1">
-                  <span className="block animate-reveal-text">
-                    Dorset plumbing and gas heating,
-                  </span>
-                </span>
-                <span className="block overflow-hidden pb-1">
-                  <span className="block animate-reveal-text delay-100">
-                    done properly.
-                  </span>
-                </span>
-              </h1>
-
-              {/* Description */}
-              <p className="mt-5 max-w-xl text-[16px] leading-relaxed text-white/85 animate-fade-in-up delay-200">
-                Boiler servicing, installations, gas cooker fittings, and landlord CP12 certificates. Clear, fixed quotes and reliable service from Rob Holton, based in Gillingham.
-              </p>
-              
-              {/* Trust badges strip, exactly like Marley Moves */}
-              <div className="mt-7 flex flex-wrap gap-2 pt-2 animate-fade-in-up delay-300">
+              {/* Left Column: Heading Copy, Accreditations & Key USPs */}
+              <div className="lg:col-span-7 space-y-6">
                 
-                {/* 1. Hour Quote Badge */}
-                <div className="inline-flex items-center gap-2 rounded-full px-4 py-2 bg-black/40 backdrop-blur-sm text-white/90 transition-colors hover:text-white">
-                  <Clock className="h-4 w-4 flex-shrink-0 text-[#C03838]" />
-                  <span className="text-[13px] font-semibold">Fixed quotes within the hour</span>
-                </div>
+                {/* Subtitle tag */}
+                <p className="text-[11px] font-bold uppercase tracking-[0.1em] text-[#ff6b6b] animate-fade-in-up">
+                  Trusted across Dorset, Somerset &amp; Wiltshire
+                </p>
 
-                {/* 2. Rating Badge */}
-                <div className="inline-flex items-center gap-2 rounded-full px-4 py-2 bg-black/40 backdrop-blur-sm text-white/90 transition-colors hover:text-white">
-                  <Star className="h-4 w-4 flex-shrink-0 text-amber-400 fill-amber-400" />
-                  <span className="text-[13px] font-semibold">5.0 Google rating</span>
-                </div>
+                {/* Title heading */}
+                <TypingHeading />
 
-                {/* 3. Insurance Badge */}
-                <div className="inline-flex items-center gap-2 rounded-full px-4 py-2 bg-black/40 backdrop-blur-sm text-white/90 transition-colors hover:text-white">
-                  <ShieldCheck className="h-4 w-4 flex-shrink-0 text-[#C03838]" />
-                  <span className="text-[13px] font-semibold">Insured to &pound;2.5M</span>
-                </div>
-
-                {/* 4. Local trade Badge */}
-                <div className="inline-flex items-center gap-2 rounded-full px-4 py-2 bg-black/40 backdrop-blur-sm text-white/90 transition-colors hover:text-white">
-                  <Users className="h-4 w-4 flex-shrink-0 text-[#C03838]" />
-                  <span className="text-[13px] font-semibold">Owner-operator only</span>
-                </div>
-
-                {/* 5. WhatsApp button */}
-                <a 
-                  href={`https://wa.me/${siteConfig.contact.primaryPhone.replace(/\s+/g, '')}`}
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  className="inline-flex items-center gap-2 rounded-full px-4 py-2 bg-[#075E54] text-white hover:bg-[#054640] transition-colors"
-                >
-                  <MessageCircle className="h-4 w-4 flex-shrink-0" />
-                  <span className="text-[13px] font-semibold">WhatsApp Rob</span>
-                </a>
-
-              </div>
-
-              {/* Trust Member Badge Card (Gas Safe Triangle Badge) */}
-              <div className="mt-7 animate-fade-in-up delay-400">
-                <div className="inline-block rounded-lg bg-white p-4 shadow-md hover:shadow-lg transition-shadow max-w-[240px] border border-slate-100">
-                  <div className="flex items-center gap-3">
-                    {/* Gas Safe Styled Logo Icon */}
-                    <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded bg-[#ff6b00] text-white font-extrabold text-[10px] shadow-[0_2px_4px_rgba(255,107,0,0.3)]">
+                {/* Description */}
+                <p className="max-w-xl text-[15px] sm:text-[16px] leading-relaxed text-white/85 animate-fade-in-up delay-200">
+                  Boiler servicing, installations, gas cooker fittings, and landlord CP12 certificates. Clear, fixed quotes and reliable service from Rob Holton, based in Gillingham.
+                </p>
+                
+                {/* Gas Safe & Call actions */}
+                <div className="pt-2 flex flex-wrap gap-4 items-center animate-fade-in-up delay-300">
+                  {/* Official looking Gas Safe Badge */}
+                  <div className="inline-flex items-center gap-3 rounded-xl bg-amber-500/10 border border-amber-500/20 px-4 py-2.5 backdrop-blur-sm">
+                    <div className="flex h-7 w-7 flex-shrink-0 items-center justify-center rounded bg-[#ff6b00] text-white font-extrabold text-[9px] shadow-[0_2px_8px_rgba(255,107,0,0.4)]">
                       GAS
                     </div>
-                    <div className="text-left">
-                      <p className="text-[11px] font-extrabold uppercase tracking-wider text-slate-800 leading-none">
-                        Gas Safe
-                      </p>
-                      <p className="text-[9px] font-bold uppercase tracking-widest text-[#003366] mt-1">
-                        REGISTER &bull; TBC
-                      </p>
+                    <div className="text-left leading-none">
+                      <span className="text-[11px] font-extrabold uppercase tracking-wider text-white">Gas Safe Registered</span>
+                      <span className="block text-[8px] font-bold uppercase tracking-widest text-amber-300 mt-0.5">Rob Holton &bull; Ref TBC</span>
+                    </div>
+                  </div>
+
+                  {/* WhatsApp button */}
+                  <a 
+                    href={`https://wa.me/${siteConfig.contact.primaryPhone.replace(/\s+/g, '')}`}
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="inline-flex items-center gap-2 rounded-full px-5 py-2.5 bg-[#075E54] text-white hover:bg-[#054640] transition-colors shadow-md text-[12px] font-bold uppercase tracking-wider active:scale-95"
+                  >
+                    <MessageCircle className="h-4.5 w-4.5 flex-shrink-0" />
+                    <span>WhatsApp Rob</span>
+                  </a>
+                </div>
+
+                {/* 2x2 Grid of Key USPs */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 max-w-xl pt-6 border-t border-white/10 animate-fade-in-up delay-400">
+                  {/* USP 1 */}
+                  <div className="flex items-center gap-3 rounded-xl border border-white/5 bg-white/5 backdrop-blur-sm p-3.5 hover:bg-white/10 transition-colors duration-200">
+                    <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-[#ff6b6b]/20 text-[#ff6b6b]">
+                      <Clock className="h-5 w-5" />
+                    </div>
+                    <div>
+                      <p className="text-[12px] font-bold text-white/95 leading-tight">Fixed quotes in the hour</p>
+                      <p className="text-[10px] text-white/50 mt-0.5">Transparent rates, no pressure</p>
+                    </div>
+                  </div>
+
+                  {/* USP 2 */}
+                  <div className="flex items-center gap-3 rounded-xl border border-white/5 bg-white/5 backdrop-blur-sm p-3.5 hover:bg-white/10 transition-colors duration-200">
+                    <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-amber-400/20 text-amber-400">
+                      <Star className="h-5 w-5 fill-amber-400/10" />
+                    </div>
+                    <div>
+                      <p className="text-[12px] font-bold text-white/95 leading-tight">5.0 Google rating</p>
+                      <p className="text-[10px] text-white/50 mt-0.5">100% satisfaction rating</p>
+                    </div>
+                  </div>
+
+                  {/* USP 3 */}
+                  <div className="flex items-center gap-3 rounded-xl border border-white/5 bg-white/5 backdrop-blur-sm p-3.5 hover:bg-white/10 transition-colors duration-200">
+                    <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-[#ff6b6b]/20 text-[#ff6b6b]">
+                      <ShieldCheck className="h-5 w-5" />
+                    </div>
+                    <div>
+                      <p className="text-[12px] font-bold text-white/95 leading-tight">Insured to &pound;2.5M</p>
+                      <p className="text-[10px] text-white/50 mt-0.5">Comprehensive trade cover</p>
+                    </div>
+                  </div>
+
+                  {/* USP 4 */}
+                  <div className="flex items-center gap-3 rounded-xl border border-white/5 bg-white/5 backdrop-blur-sm p-3.5 hover:bg-white/10 transition-colors duration-200">
+                    <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-white/10 text-white/80">
+                      <Users className="h-5 w-5" />
+                    </div>
+                    <div>
+                      <p className="text-[12px] font-bold text-white/95 leading-tight">Owner-operator only</p>
+                      <p className="text-[10px] text-white/50 mt-0.5">No agency or sales overheads</p>
                     </div>
                   </div>
                 </div>
+
+              </div>
+
+              {/* Right Column: Integrated Form Card */}
+              <div className="lg:col-span-5 flex justify-center lg:justify-end animate-fade-in-up delay-200 w-full">
+                <QuickQuoteForm />
               </div>
 
             </div>
           </div>
         </section>
 
-        {/* Desktop Quick Quote Form Overlap Card */}
-        <div className="relative z-30 w-full mx-auto max-w-[1400px] px-6 md:px-12 -mt-[80px] lg:-mt-[100px] -mb-[80px] lg:-mb-[100px] hidden md:block">
-          <QuickQuoteForm />
-        </div>
-
-        {/* Mobile Quick Quote Form (inline block) */}
-        <section className="md:hidden bg-slate-50 border-y border-slate-200 py-10 px-6">
-          <QuickQuoteForm />
-        </section>
-
         {/* Guarantees / Value Grid */}
-        <section className="relative z-10 pt-28 pb-16 bg-white border-b border-border">
+        <section className="relative z-10 pt-16 pb-16 bg-white border-b border-border">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
               {USPs.map((usp, i) => (
-                <div key={i} className="flex flex-col gap-3 rounded-2xl border border-border p-6 bg-card">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-secondary/10 text-secondary">
-                    <usp.icon className="h-5 w-5" />
+                <div 
+                  key={i} 
+                  className="group flex flex-col gap-4 rounded-2xl border border-border/80 p-6 bg-card transition-all duration-300 ease-out hover:-translate-y-1.5 hover:shadow-[0_16px_32px_rgba(0,0,0,0.04)] hover:border-slate-300/80"
+                >
+                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-secondary/5 text-secondary transition-all duration-300 group-hover:bg-secondary/10 group-hover:scale-105">
+                    <usp.icon className="h-5.5 w-5.5 transition-transform duration-300 group-hover:rotate-6" />
                   </div>
-                  <h3 className="font-serif text-[20px] md:text-[22px] font-medium text-primary">{usp.title}</h3>
-                  <p className="text-[14px] text-muted leading-relaxed">{usp.text}</p>
+                  <h3 className="font-serif text-[20px] md:text-[22px] font-medium text-primary transition-colors duration-300 group-hover:text-secondary">
+                    {usp.title}
+                  </h3>
+                  <p className="text-[14px] text-muted leading-relaxed">
+                    {usp.text}
+                  </p>
                 </div>
               ))}
             </div>
@@ -204,7 +213,7 @@ export default function Home() {
             
             {/* Intro */}
             <div className="text-center max-w-3xl mx-auto space-y-4">
-              <span className="text-[13px] font-bold uppercase tracking-[0.18em] text-secondary">Expert Domestic Trades</span>
+              <span className="text-[13px] font-bold uppercase tracking-[0.08em] pl-[0.08em] text-secondary">Expert Domestic Trades</span>
               <h2 className="font-serif text-4xl md:text-5xl font-normal leading-tight tracking-tight text-primary">
                 Heating &amp; Plumbing Capabilities
               </h2>
@@ -218,14 +227,18 @@ export default function Home() {
               {coreServices.map((service) => (
                 <div
                   key={service.slug}
-                  className="flex flex-col justify-between rounded-2xl border border-border p-8 bg-card shadow-sm hover:shadow-md transition-shadow"
+                  className="group/card flex flex-col justify-between rounded-2xl border border-border/80 p-8 bg-card shadow-sm hover:shadow-[0_24px_48px_rgba(0,0,0,0.06)] hover:border-slate-300/80 hover:-translate-y-1.5 transition-all duration-300 ease-out"
                 >
                   <div className="space-y-6">
                     <div>
-                      <span className="text-[11px] font-bold uppercase tracking-[0.14em] text-secondary">
+                      <span className="text-[11px] font-bold uppercase tracking-[0.12em] text-secondary">
                         {service.subtitle}
                       </span>
-                      <h3 className="font-serif text-[22px] font-medium text-primary mt-1">
+                      {/* Underline expansion effect */}
+                      <div className="relative mt-2 h-[2px] bg-slate-100 overflow-hidden w-16">
+                        <div className="absolute left-0 top-0 h-full w-full bg-[#C03838] origin-left scale-x-0 group-hover/card:scale-x-100 transition-transform duration-500 ease-out" />
+                      </div>
+                      <h3 className="font-serif text-[22px] font-medium text-primary mt-4 transition-colors duration-300 group-hover/card:text-secondary">
                         {service.title}
                       </h3>
                     </div>
@@ -234,9 +247,9 @@ export default function Home() {
                     </p>
                     <ul className="grid gap-2 text-[13px] text-slate-700 sm:grid-cols-2">
                       {service.highlights.map((highlight, idx) => (
-                        <li key={idx} className="flex items-center gap-2">
-                          <CheckCircle className="h-4 w-4 text-secondary flex-shrink-0" />
-                          <span>{highlight}</span>
+                        <li key={idx} className="flex items-center gap-2 transition-transform duration-350 hover:translate-x-1">
+                          <CheckCircle className="h-4 w-4 text-secondary flex-shrink-0 transition-transform duration-300 group-hover/card:scale-105" />
+                          <span className="transition-colors duration-300 group-hover/card:text-slate-800">{highlight}</span>
                         </li>
                       ))}
                     </ul>
@@ -244,13 +257,14 @@ export default function Home() {
                   <div className="mt-8 pt-6 border-t border-border flex items-center justify-between">
                     <Link
                       href={`/services/${service.slug}`}
-                      className="inline-flex items-center gap-1 text-[13px] font-bold uppercase tracking-[0.12em] text-primary hover:text-secondary transition-colors"
+                      className="inline-flex items-center gap-1.5 text-[13px] font-bold uppercase tracking-[0.06em] pl-[0.06em] text-primary hover:text-secondary transition-colors"
                     >
-                      Read full service brief <ArrowRight className="h-4 w-4" />
+                      <span>Read full service brief</span>
+                      <ArrowRight className="h-4 w-4 transition-transform duration-300 ease-out group-hover/card:translate-x-1.5" />
                     </Link>
                     <Link
                       href="/contact"
-                      className="rounded-full bg-primary px-5 py-2.5 text-xs font-bold uppercase tracking-wider text-white hover:bg-primary-hover transition-colors"
+                      className="rounded-full bg-primary px-5 py-2.5 text-xs font-bold uppercase tracking-wider text-white hover:bg-secondary active:scale-95 transition-all duration-300 shadow-sm hover:shadow-md"
                     >
                       Book
                     </Link>
@@ -270,7 +284,7 @@ export default function Home() {
               {/* Story - Left Column (occupies 7 cols on desktop) */}
               <div className="lg:col-span-7 flex flex-col justify-between space-y-8">
                 <div className="space-y-6">
-                  <span className="text-[13px] font-bold uppercase tracking-[0.18em] text-secondary">Owner &amp; Lead Engineer</span>
+                  <span className="text-[13px] font-bold uppercase tracking-[0.08em] pl-[0.08em] text-secondary">Owner &amp; Lead Engineer</span>
                   <h2 className="font-serif text-4xl md:text-5xl font-normal leading-tight tracking-tight text-primary">
                     Hi, I&apos;m Rob Holton
                   </h2>

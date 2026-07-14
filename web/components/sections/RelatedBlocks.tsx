@@ -193,7 +193,7 @@ export async function RelatedPosts({ excludeSlug }: { excludeSlug?: string } = {
         </h2>
         <Link 
           href="/insights" 
-          className="text-[13px] font-semibold uppercase tracking-[0.14em] text-primary hover:text-[#b91c1c] transition-colors border-b border-primary hover:border-[#b91c1c] pb-1 whitespace-nowrap self-start md:self-auto"
+          className="text-[13px] font-semibold uppercase tracking-[0.06em] pl-[0.06em] text-primary hover:text-[#b91c1c] transition-colors border-b border-primary hover:border-[#b91c1c] pb-1 whitespace-nowrap self-start md:self-auto"
         >
           All Articles &rarr;
         </Link>
@@ -221,7 +221,7 @@ export async function RelatedPosts({ excludeSlug }: { excludeSlug?: string } = {
               <div>
                 {/* Published Date */}
                 {p.publishedAt && (
-                  <time dateTime={p.publishedAt} className="text-[10px] font-bold uppercase tracking-[0.18em] text-[#a16207]">
+                  <time dateTime={p.publishedAt} className="text-[10px] font-bold uppercase tracking-[0.08em] pl-[0.08em] text-[#a16207]">
                     {new Date(p.publishedAt).toLocaleDateString('en-GB', {
                       day: 'numeric',
                       month: 'short',

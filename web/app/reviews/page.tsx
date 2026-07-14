@@ -47,7 +47,7 @@ export default function ReviewsPage() {
       ))}
 
       <Header />
-      <div aria-hidden="true" className="h-[140px] md:h-[148px] lg:h-[176px] block" />
+      <div aria-hidden="true" className="h-[92px] md:h-[100px] lg:h-[112px] block" />
 
       <main className="flex-1 py-12 md:py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">

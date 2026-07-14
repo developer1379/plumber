@@ -6,7 +6,7 @@ import { Breadcrumbs } from '@/components/layout/Breadcrumbs'
 import { RelatedAreas, RelatedServices, RelatedPosts } from '@/components/sections/RelatedBlocks'
 import { siteConfig } from '@/lib/site-config'
 import { areaServiceSchema, faqPageSchema } from '@/lib/schema/jsonld'
-import { Phone, ChevronRight, Shield, Clock } from 'lucide-react'
+import { Phone, ChevronDown, Shield, Clock, Wrench } from 'lucide-react'
 
 type AreaPageData = {
   title: string
@@ -163,7 +163,7 @@ export default async function AreaPage({ params }: { params: Promise<{ slug: str
       {faqPageSchema(data.faqs)}
 
       <Header />
-      <div aria-hidden="true" className="h-[140px] md:h-[148px] lg:h-[176px] block" />
+      <div aria-hidden="true" className="h-[92px] md:h-[100px] lg:h-[112px] block" />
 
       <main className="flex-1 py-8 md:py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -176,18 +176,18 @@ export default async function AreaPage({ params }: { params: Promise<{ slug: str
             {/* Main Content Column */}
             <div className="lg:col-span-2 space-y-12">
               <div>
-                <h1 className="text-3xl font-extrabold tracking-tight text-primary sm:text-4xl md:text-5xl">
+                <h1 className="text-3xl font-extrabold tracking-tight text-primary sm:text-4xl md:text-5xl font-serif">
                   {data.h1}
                 </h1>
-                <p className="mt-4 text-muted max-w-xl">
+                <p className="mt-4 text-slate-600 max-w-xl text-sm leading-relaxed">
                   Registered gas and heating services across {data.title}, {data.postcode} (~{data.distance} miles from Gillingham base).
                 </p>
               </div>
 
               {/* Intro section */}
               <div className="space-y-4">
-                <h2 className="text-2xl font-bold text-primary">Local Service in {data.title}</h2>
-                <p className="text-muted leading-relaxed text-slate-700">
+                <h2 className="text-2xl font-bold text-primary font-serif">Local Service in {data.title}</h2>
+                <p className="leading-relaxed text-slate-700 text-sm">
                   {data.introProse}
                 </p>
               </div>
@@ -196,18 +196,18 @@ export default async function AreaPage({ params }: { params: Promise<{ slug: str
               <div className="space-y-6 pt-6 border-t border-border">
                 <div className="grid gap-6 sm:grid-cols-2">
                   <div className="space-y-2">
-                    <h3 className="flex items-center gap-2 text-lg font-bold text-primary">
+                    <h3 className="flex items-center gap-2 text-lg font-bold text-primary font-serif">
                       <Shield className="h-5 w-5 text-secondary" /> Property Types We Work On
                     </h3>
-                    <p className="text-sm text-muted leading-relaxed">
+                    <p className="text-sm text-slate-600 leading-relaxed">
                       {data.propertyTypes}
                     </p>
                   </div>
                   <div className="space-y-2">
-                    <h3 className="flex items-center gap-2 text-lg font-bold text-primary">
-                      <Clock className="h-5 w-5 text-secondary" /> Access & Parking Realities
+                    <h3 className="flex items-center gap-2 text-lg font-bold text-primary font-serif">
+                      <Clock className="h-5 w-5 text-secondary" /> Access &amp; Parking Realities
                     </h3>
-                    <p className="text-sm text-muted leading-relaxed">
+                    <p className="text-sm text-slate-600 leading-relaxed">
                       {data.accessNote}
                     </p>
                   </div>
@@ -216,11 +216,11 @@ export default async function AreaPage({ params }: { params: Promise<{ slug: str
 
               {/* Sourced streets & landmarks */}
               <div className="space-y-6 pt-6 border-t border-border">
-                <h2 className="text-2xl font-bold text-primary">Sourced Streets & Landmarks</h2>
+                <h2 className="text-2xl font-bold text-primary font-serif">Sourced Streets &amp; Landmarks</h2>
                 <div className="grid gap-6 sm:grid-cols-2">
                   <div>
-                    <h3 className="text-sm font-bold uppercase tracking-wider text-muted mb-3">Verified Streets Served</h3>
-                    <ul className="grid grid-cols-2 gap-2 text-sm text-slate-700">
+                    <h3 className="text-xs font-bold uppercase tracking-[0.08em] pl-[0.08em] text-muted mb-4">Verified Streets Served</h3>
+                    <ul className="grid grid-cols-2 gap-3 text-sm text-slate-700">
                       {data.streets.map((s, idx) => (
                         <li key={idx} className="flex items-center gap-2">
                           <span className="h-1.5 w-1.5 rounded-full bg-secondary flex-shrink-0" />
@@ -230,8 +230,8 @@ export default async function AreaPage({ params }: { params: Promise<{ slug: str
                     </ul>
                   </div>
                   <div>
-                    <h3 className="text-sm font-bold uppercase tracking-wider text-muted mb-3">Key Landmarks Covered</h3>
-                    <ul className="grid grid-cols-2 gap-2 text-sm text-slate-700">
+                    <h3 className="text-xs font-bold uppercase tracking-[0.08em] pl-[0.08em] text-muted mb-4">Key Landmarks Covered</h3>
+                    <ul className="grid grid-cols-2 gap-3 text-sm text-slate-700">
                       {data.landmarks.map((l, idx) => (
                         <li key={idx} className="flex items-center gap-2">
                           <span className="h-1.5 w-1.5 rounded-full bg-secondary flex-shrink-0" />
@@ -245,17 +245,17 @@ export default async function AreaPage({ params }: { params: Promise<{ slug: str
 
               {/* Location FAQs */}
               <div className="space-y-6 pt-6 border-t border-border">
-                <h2 className="text-2xl font-bold text-primary">Local Questions in {data.title}</h2>
+                <h2 className="text-2xl font-bold text-primary font-serif">Local Questions in {data.title}</h2>
                 <div className="space-y-4">
                   {data.faqs.map((faq, i) => (
-                    <details key={i} className="group border-b border-border pb-4">
-                      <summary className="flex cursor-pointer items-center justify-between font-bold text-primary list-none">
+                    <details key={i} className="group border border-border/80 rounded-xl bg-card p-5 transition-all duration-300 hover:border-slate-355 hover:shadow-sm">
+                      <summary className="flex cursor-pointer items-center justify-between font-bold text-primary font-serif text-[15px] sm:text-[17px] select-none list-none outline-none">
                         <span>{faq.question}</span>
-                        <span className="transition-transform group-open:rotate-180">
-                          <ChevronRight className="h-5 w-5 text-secondary" />
+                        <span className="transition-transform duration-300 group-open:rotate-180 flex-shrink-0 ml-4">
+                          <ChevronDown className="h-5 w-5 text-secondary" />
                         </span>
                       </summary>
-                      <p className="mt-3 text-sm text-muted leading-relaxed">
+                      <p className="mt-4 text-[14px] leading-relaxed text-slate-600 pt-3 border-t border-slate-100/50">
                         {faq.answer}
                       </p>
                     </details>
@@ -266,30 +266,39 @@ export default async function AreaPage({ params }: { params: Promise<{ slug: str
 
             {/* Sidebar CTA Column */}
             <div className="space-y-6">
-              <div className="rounded-2xl border border-border bg-card p-6 shadow-sm">
-                <h3 className="text-lg font-bold text-primary">Need an Engineer?</h3>
-                <p className="mt-2 text-sm text-muted leading-relaxed">
+              
+              {/* Primary Call Card */}
+              <div className="group/sidebar rounded-2xl border border-border bg-white p-8 border-t-4 border-t-secondary shadow-sm hover:shadow-[0_20px_40px_rgba(0,0,0,0.05)] hover:border-slate-300/80 transition-all duration-300 ease-out">
+                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-secondary/5 text-secondary transition-all duration-300 group-hover/sidebar:bg-secondary/10 group-hover/sidebar:scale-105">
+                  <Wrench className="h-6 w-6 transition-transform duration-300 group-hover/sidebar:rotate-12" />
+                </div>
+                <h3 className="mt-6 text-xl font-bold text-primary font-serif">Need an Engineer?</h3>
+                <p className="mt-3 text-sm text-muted leading-relaxed">
                   Call Rob Holton for direct support in {data.title} and the surrounding area.
                 </p>
                 <a
                   href={siteConfig.contact.primaryPhoneHref}
-                  className="mt-6 flex w-full items-center justify-center gap-2 rounded-full bg-secondary py-3 text-sm font-semibold text-white hover:bg-secondary-hover transition-colors shadow-sm"
+                  className="mt-6 flex w-full items-center justify-center gap-2 rounded-full bg-primary py-3.5 text-xs font-bold uppercase tracking-wider text-white hover:bg-secondary active:scale-95 transition-all duration-300 shadow-md hover:shadow-lg"
                 >
                   <Phone className="h-4 w-4" />
-                  {siteConfig.contact.primaryPhone}
+                  <span>{siteConfig.contact.primaryPhone}</span>
                 </a>
                 <Link
                   href="/contact"
-                  className="mt-3 flex w-full items-center justify-center rounded-full border border-primary py-3 text-sm font-semibold text-primary hover:bg-primary/5 transition-colors"
+                  className="mt-3 flex w-full items-center justify-center rounded-full border border-primary py-3.5 text-xs font-bold uppercase tracking-wider text-primary hover:bg-primary/5 active:scale-95 transition-all duration-300"
                 >
                   Book a Safety Check
                 </Link>
               </div>
 
-              <div className="rounded-2xl border border-border p-6 bg-white space-y-4 text-xs text-muted">
-                <div className="font-bold text-primary uppercase tracking-wider">Quick Response Area</div>
-                <p className="leading-relaxed">
-                  Being situated only ~{data.distance} miles away from our HQ means we can rapidly dispatch for heating failures and plumbing leaks.
+              {/* Response notice Card */}
+              <div className="rounded-2xl border border-slate-200 bg-slate-50/60 p-6 space-y-4 shadow-sm">
+                <div className="flex items-center gap-2.5 text-slate-800 font-bold uppercase tracking-wider text-[11px] pl-[0.08em]">
+                  <Clock className="h-4.5 w-4.5 text-secondary flex-shrink-0" />
+                  <span>Quick Response Area</span>
+                </div>
+                <p className="text-slate-600 text-xs leading-relaxed">
+                  Being situated only ~{data.distance} miles away from our Gillingham base means we can rapidly dispatch for heating failures and plumbing leaks across {data.title}.
                 </p>
               </div>
             </div>

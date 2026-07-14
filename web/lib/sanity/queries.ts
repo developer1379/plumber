@@ -27,7 +27,7 @@ export const getOwnerPerson = async (): Promise<PersonInput | null> => {
 
 export type AreaSummary = { title: string; slug: string; summary: string }
 export type ServiceSummary = { title: string; slug: string; summary: string }
-export type InsightsSummary = { _id: string; title: string; slug: string; summary: string; publishedAt?: string }
+export type InsightsSummary = { _id: string; title: string; slug: string; summary: string; publishedAt?: string; imageUrl?: string }
 
 export const getAllAreas = async (): Promise<AreaSummary[]> =>
   sanityClient.fetch(/* groq */ `
@@ -54,7 +54,8 @@ export const getAllInsightsSummaries = async (): Promise<InsightsSummary[]> =>
       title,
       "slug": slug.current,
       "summary": coalesce(seo.description, excerpt),
-      publishedAt
+      publishedAt,
+      "imageUrl": mainImage.asset->url
     }
   `)
 

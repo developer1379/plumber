@@ -25,6 +25,9 @@ type Body = {
   message?: string
   /** Honeypot — must be empty. */
   website?: string
+  captchaNum1?: number
+  captchaNum2?: number
+  captchaAnswer?: string
 }
 
 export async function POST(request: Request) {
@@ -37,6 +40,20 @@ export async function POST(request: Request) {
 
   if (body.website && body.website.length > 0) {
     return NextResponse.json({ ok: true })
+  }
+
+  // Captcha Validation
+  if (
+    body.captchaNum1 === undefined ||
+    body.captchaNum2 === undefined ||
+    !body.captchaAnswer
+  ) {
+    return NextResponse.json({ ok: false, error: 'Security check failed. Please answer the math question.' }, { status: 400 })
+  }
+
+  const expectedAnswer = Number(body.captchaNum1) + Number(body.captchaNum2)
+  if (Number(body.captchaAnswer.trim()) !== expectedAnswer) {
+    return NextResponse.json({ ok: false, error: 'Incorrect security check answer. Please try again.' }, { status: 400 })
   }
 
   const required = ['name', 'phone', 'email', 'message'] as const
