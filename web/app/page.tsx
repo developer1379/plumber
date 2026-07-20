@@ -273,18 +273,15 @@ export default function Home() {
         
         {/* HERO SECTION */}
         <section className="relative bg-white pt-6 pb-8 lg:pt-8 lg:pb-10 overflow-hidden">
-          {/* Family Plumber Background Image (100% Uncovered & Fully Visible with object-contain object-top) */}
-          <div className="absolute right-[16%] xl:right-[20%] top-2 bottom-0 w-[48%] xl:w-[44%] h-[95%] z-0 lg:block hidden overflow-hidden pointer-events-none">
+          {/* Family Plumber Background Image with Alpha Mask Edge Feathering (Zero Hard Borders) */}
+          <div className="absolute left-[35%] xl:left-[38%] right-[10%] xl:right-[14%] top-0 bottom-0 h-full z-0 lg:block hidden overflow-hidden pointer-events-none">
             <div className="relative w-full h-full">
               <img 
                 src="/family-hero.png" 
                 alt="RH Plumbing &amp; Heating family" 
-                className="w-full h-full object-contain object-top"
+                className="w-full h-full object-cover object-top [mask-image:linear-gradient(to_right,transparent_0%,black_15%,black_85%,transparent_100%)]"
               />
-              {/* Soft subtle side feather blurs */}
-              <div className="absolute inset-y-0 left-0 w-20 sm:w-28 bg-gradient-to-r from-white to-transparent z-10" />
-              <div className="absolute inset-y-0 right-0 w-20 sm:w-28 bg-gradient-to-l from-white to-transparent z-10" />
-              <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-white via-white/80 to-transparent z-10" />
+              <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-white via-white/90 to-transparent z-10" />
             </div>
           </div>
 
