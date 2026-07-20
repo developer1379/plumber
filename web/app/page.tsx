@@ -647,8 +647,8 @@ export default function Home() {
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
               
               <div className="lg:col-span-7 relative rounded-3xl overflow-hidden bg-white shadow-xl border border-slate-200/80 flex flex-col justify-between p-6 sm:p-9 min-h-[380px]">
-                {/* Background Layer with Van Photo & Slanted Mask with Motion Blur Edge */}
-                <div className="absolute inset-0 z-0">
+                {/* Background Layer with Van Photo & Slanted Mask with Motion Blur Edge (Hidden on Mobile) */}
+                <div className="absolute inset-0 z-0 hidden sm:block">
                   <img 
                     src="/van-hero.png" 
                     alt="RH Plumbing &amp; Heating Service Van" 
