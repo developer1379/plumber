@@ -423,7 +423,7 @@ export default function Home() {
 
 
               {/* RIGHT COLUMN: Free Quote Form Card & Dark Blue Callout Box */}
-              <div className="lg:col-span-5 flex flex-col items-end justify-start space-y-3 relative z-10 w-full" id="quote-form">
+              <div className="lg:col-span-5 flex flex-col items-center lg:items-end justify-start space-y-3 relative z-10 w-full" id="quote-form">
                 
                 {/* Mobile Family Image Card */}
                 <div className="lg:hidden flex justify-center w-full">
@@ -452,7 +452,7 @@ export default function Home() {
 
                 {/* Quote Form Card */}
                 {heroStatus === 'success' ? (
-                  <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-2xl text-center space-y-4 w-full max-w-[350px]">
+                  <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-2xl text-center space-y-4 w-full max-w-[440px]">
                     <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-emerald-50 text-emerald-500 border border-emerald-100">
                       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" className="w-5 h-5">
                         <polyline points="20 6 9 17 4 12" />
@@ -470,7 +470,7 @@ export default function Home() {
                     </button>
                   </div>
                 ) : (
-                  <div className="bg-white border border-slate-200/80 rounded-3xl p-4 sm:p-5 shadow-xl space-y-3 w-full max-w-[350px]">
+                  <div className="bg-white border border-slate-200/80 rounded-3xl p-4 sm:p-5 shadow-xl space-y-3 w-full max-w-[440px]">
                     <div className="text-center">
                       <h3 className="text-lg font-extrabold text-[#104d96] tracking-tight">Get Your Free Quote</h3>
                       <p className="text-[11px] text-slate-500 font-medium mt-0.5">Fast, friendly &amp; no obligation</p>
@@ -590,7 +590,7 @@ export default function Home() {
                 {/* Need Help Now Dark Blue Callout Box */}
                 <a 
                   href={siteConfig.contact.primaryPhoneHref}
-                  className="w-full max-w-[350px] bg-[#0c4c92] hover:bg-[#093c75] text-white rounded-2xl p-3.5 px-5 shadow-lg transition-all cursor-pointer group flex items-center justify-between gap-4"
+                  className="w-full max-w-[440px] bg-[#0c4c92] hover:bg-[#093c75] text-white rounded-2xl p-3.5 px-5 shadow-lg transition-all cursor-pointer group flex items-center justify-between gap-4"
                 >
                   <div className="space-y-0.5">
                     <p className="text-xs font-black text-white uppercase tracking-wider">Need Help Now?</p>
