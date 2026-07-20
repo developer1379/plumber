@@ -431,7 +431,7 @@ export default function Home() {
                     <img 
                       src="/family-hero.png" 
                       alt="RH Plumbing &amp; Heating family" 
-                      className="w-full h-full object-cover object-center"
+                      className="w-full h-full object-cover object-top"
                     />
                     {/* Google rating overlay for mobile */}
                     <div className="absolute bottom-3 left-3 bg-white/95 backdrop-blur-xs border border-slate-100 rounded-xl p-2 px-3 shadow-md">
