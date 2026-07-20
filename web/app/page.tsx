@@ -646,7 +646,6 @@ export default function Home() {
           <div className="mx-auto max-w-[1600px] px-6 md:px-12 lg:px-16">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
               
-              {/* LEFT CARD: Emergency Plumbing & Boiler Repairs Banner (Real Live HTML/React Component) */}
               <div className="lg:col-span-7 relative rounded-3xl overflow-hidden bg-white shadow-xl border border-slate-200/80 flex flex-col justify-between p-6 sm:p-9 min-h-[380px]">
                 {/* Background Layer with Van Photo & Slanted Mask with Motion Blur Edge */}
                 <div className="absolute inset-0 z-0">
@@ -656,10 +655,10 @@ export default function Home() {
                     className="w-full h-full object-cover object-right"
                   />
                   {/* White Left Background Mask with Angled Slanted Cut */}
-                  <div className="absolute inset-y-0 left-0 w-full sm:w-[68%] lg:w-[62%] bg-white z-10 [clip-path:polygon(0_0,100%_0,74%_100%,0_100%)]" />
+                  <div className="absolute inset-y-0 left-0 w-[78%] sm:w-[68%] lg:w-[62%] bg-white z-10 [clip-path:polygon(0_0,100%_0,84%_100%,0_100%)] sm:[clip-path:polygon(0_0,100%_0,74%_100%,0_100%)]" />
                   
                   {/* Soft Motion Blur Overlay Transition along the Diagonal Cut */}
-                  <div className="absolute inset-y-0 left-0 w-full sm:w-[74%] lg:w-[68%] bg-gradient-to-r from-transparent via-white/80 to-transparent z-10 blur-[10px] [clip-path:polygon(66%_0,100%_0,78%_100%,44%_100%)] pointer-events-none" />
+                  <div className="absolute inset-y-0 left-0 w-[84%] sm:w-[74%] lg:w-[68%] bg-gradient-to-r from-transparent via-white/80 to-transparent z-10 blur-[10px] [clip-path:polygon(78%_0,100%_0,86%_100%,50%_100%)] sm:[clip-path:polygon(66%_0,100%_0,78%_100%,44%_100%)] pointer-events-none" />
                 </div>
 
                 {/* Live Card Content (Headline, Subtitle & Checklist) */}
