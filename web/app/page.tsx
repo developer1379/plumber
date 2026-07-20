@@ -294,10 +294,32 @@ export default function Home() {
               {/* LEFT COLUMN: Header, Copy, Buttons & Trust Bar */}
               <div className="lg:col-span-7 space-y-5 pt-1">
                 
-                {/* Orange Tagline */}
-                <p className="text-xs sm:text-base font-black uppercase tracking-wider text-[#ff5500]">
-                  YOUR LOCAL PLUMBING &amp; HEATING EXPERTS
-                </p>
+                {/* Tagline & Google Review Badge Row */}
+                <div className="flex flex-wrap items-center gap-3">
+                  <p className="text-xs sm:text-base font-black uppercase tracking-wider text-[#ff5500]">
+                    YOUR LOCAL PLUMBING &amp; HEATING EXPERTS
+                  </p>
+
+                  <div className="inline-flex items-center gap-2 rounded-full border border-slate-200/80 bg-white px-3.5 py-1 shadow-xs">
+                    <span className="flex items-center gap-0.5 text-xs font-black">
+                      <span className="text-[#4285F4]">G</span>
+                      <span className="text-[#EA4335]">o</span>
+                      <span className="text-[#FBBC05]">o</span>
+                      <span className="text-[#4285F4]">g</span>
+                      <span className="text-[#34A853]">l</span>
+                      <span className="text-[#EA4335]">e</span>
+                    </span>
+                    <div className="flex text-amber-400 gap-0.5">
+                      <Star className="h-3 w-3 fill-current text-amber-400 stroke-none" />
+                      <Star className="h-3 w-3 fill-current text-amber-400 stroke-none" />
+                      <Star className="h-3 w-3 fill-current text-amber-400 stroke-none" />
+                      <Star className="h-3 w-3 fill-current text-amber-400 stroke-none" />
+                      <Star className="h-3 w-3 fill-current text-amber-400 stroke-none" />
+                    </div>
+                    <span className="text-xs font-black text-slate-800">5.0</span>
+                    <span className="text-[11px] text-slate-500 font-semibold">(120+ Reviews)</span>
+                  </div>
+                </div>
 
                 {/* Main Headline */}
                 <h1 className="text-3xl sm:text-4xl lg:text-[54px] font-black leading-[1.08] text-slate-900 tracking-tight">
@@ -396,33 +418,7 @@ export default function Home() {
 
               </div>
 
-              {/* FLOATING GOOGLE RATING SPEECH BUBBLE CARD (Matching Concept PDF & Screenshot) */}
-              <div className="absolute bottom-2 left-[46%] xl:left-[48%] hidden xl:block z-20">
-                <div className="relative bg-white rounded-2xl p-3.5 px-5 shadow-2xl border border-slate-100 text-center min-w-[150px] transform hover:scale-105 transition-transform">
-                  {/* Left speech bubble pointer caret */}
-                  <div className="absolute -left-2 top-7 w-0 h-0 border-t-[7px] border-t-transparent border-r-[9px] border-r-white border-b-[7px] border-b-transparent drop-shadow-xs" />
-                  
-                  <div className="flex items-center justify-center gap-0.5 text-slate-900 font-extrabold text-base">
-                    <span className="text-[#4285F4]">G</span>
-                    <span className="text-[#EA4335]">o</span>
-                    <span className="text-[#FBBC05]">o</span>
-                    <span className="text-[#4285F4]">g</span>
-                    <span className="text-[#34A853]">l</span>
-                    <span className="text-[#EA4335]">e</span>
-                  </div>
-                  <div className="flex items-center justify-center gap-1.5 mt-1">
-                    <span className="text-lg font-black text-slate-900 leading-none">5.0</span>
-                    <div className="flex text-amber-400 gap-0.5">
-                      <Star className="h-3.5 w-3.5 fill-current text-amber-400 stroke-none" />
-                      <Star className="h-3.5 w-3.5 fill-current text-amber-400 stroke-none" />
-                      <Star className="h-3.5 w-3.5 fill-current text-amber-400 stroke-none" />
-                      <Star className="h-3.5 w-3.5 fill-current text-amber-400 stroke-none" />
-                      <Star className="h-3.5 w-3.5 fill-current text-amber-400 stroke-none" />
-                    </div>
-                  </div>
-                  <span className="text-[10px] text-slate-500 font-semibold block mt-1">From 120+ reviews</span>
-                </div>
-              </div>
+
 
               {/* RIGHT COLUMN: Free Quote Form Card & Dark Blue Callout Box */}
               <div className="lg:col-span-5 flex flex-col items-end justify-start space-y-3 relative z-10 w-full" id="quote-form">
