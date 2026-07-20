@@ -1,6 +1,5 @@
 import Link from 'next/link'
 import { siteConfig } from '@/lib/site-config'
-import { RHLogo } from '@/components/chrome/RHLogo'
 import { Phone, Clock, MapPin, MessageSquare, Mail, ArrowRight } from 'lucide-react'
 
 export function Footer() {
@@ -191,8 +190,12 @@ export function Footer() {
             
             {/* Col 1: Bio */}
             <div className="space-y-4">
-              <Link href="/" className="inline-block text-white hover:opacity-90 focus:outline-none group">
-                <RHLogo theme="dark" className="transition-transform duration-300 group-hover:scale-105" />
+              <Link href="/" className="inline-block focus:outline-none group">
+                <img
+                  src="/logos/footer_logo.png"
+                  alt="RH Plumbing & Heating"
+                  className="h-14 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+                />
               </Link>
               <p className="text-[13px] leading-relaxed text-gray-500">
                 Family-run plumbing and gas heating across Gillingham, Shaftesbury, Wincanton, and Sturminster Newton. Fixed written quotes and local response.
