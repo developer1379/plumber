@@ -794,36 +794,6 @@ export default function Home() {
           </div>
         </section>
 
-        {/* DEDICATED ACCREDITATION TRUST BANNER (Matching Leading UK Brands Styling Exactly) */}
-        <section className="py-12 md:py-16 bg-slate-50/60 border-y border-slate-100/80 relative z-10">
-          <div className="mx-auto max-w-[1600px] px-6 md:px-12 lg:px-16 text-center space-y-8">
-            <div>
-              <p className="text-[11.5px] font-extrabold uppercase tracking-[0.2em] text-slate-400">
-                Accredited &amp; Trusted By Leading UK Trade Bodies
-              </p>
-            </div>
-
-            {/* 5 Clean Partner Trade Body Logos Grid */}
-            <div className="flex flex-wrap items-center justify-center gap-10 md:gap-16 lg:gap-20">
-              <div className="transition-all duration-300 hover:scale-105 cursor-pointer">
-                <GasSafeLogo className="h-10 md:h-14 w-auto object-contain" />
-              </div>
-              <div className="transition-all duration-300 hover:scale-105 cursor-pointer">
-                <WorcesterLogo className="h-10 md:h-14 w-auto object-contain" />
-              </div>
-              <div className="transition-all duration-300 hover:scale-105 cursor-pointer">
-                <WhichLogo className="h-10 md:h-14 w-auto object-contain" />
-              </div>
-              <div className="transition-all duration-300 hover:scale-105 cursor-pointer">
-                <CheckatradeLogo className="h-10 md:h-14 w-auto object-contain" />
-              </div>
-              <div className="transition-all duration-300 hover:scale-105 cursor-pointer">
-                <TrustpilotLogo className="h-10 md:h-14 w-auto object-contain" />
-              </div>
-            </div>
-          </div>
-        </section>
-
         {/* SERVICES SECTION */}
         <section className="py-20 bg-white">
           <div className="mx-auto max-w-7xl px-6 md:px-12">
@@ -878,6 +848,36 @@ export default function Home() {
               })}
             </div>
 
+          </div>
+        </section>
+
+        {/* DEDICATED ACCREDITATION TRUST BANNER (Directly Under OUR SERVICES Section) */}
+        <section className="py-12 md:py-16 bg-slate-50/60 border-y border-slate-100/80 relative z-10">
+          <div className="mx-auto max-w-[1600px] px-6 md:px-12 lg:px-16 text-center space-y-8">
+            <div>
+              <p className="text-[11.5px] font-extrabold uppercase tracking-[0.2em] text-slate-400">
+                Accredited &amp; Trusted By Leading UK Trade Bodies
+              </p>
+            </div>
+
+            {/* 5 Clean Partner Trade Body Logos Grid */}
+            <div className="flex flex-wrap items-center justify-center gap-10 md:gap-16 lg:gap-20">
+              <div className="transition-all duration-300 hover:scale-105 cursor-pointer">
+                <GasSafeLogo className="h-10 md:h-14 w-auto object-contain" />
+              </div>
+              <div className="transition-all duration-300 hover:scale-105 cursor-pointer">
+                <WorcesterLogo className="h-10 md:h-14 w-auto object-contain" />
+              </div>
+              <div className="transition-all duration-300 hover:scale-105 cursor-pointer">
+                <WhichLogo className="h-10 md:h-14 w-auto object-contain" />
+              </div>
+              <div className="transition-all duration-300 hover:scale-105 cursor-pointer">
+                <CheckatradeLogo className="h-10 md:h-14 w-auto object-contain" />
+              </div>
+              <div className="transition-all duration-300 hover:scale-105 cursor-pointer">
+                <TrustpilotLogo className="h-10 md:h-14 w-auto object-contain" />
+              </div>
+            </div>
           </div>
         </section>
 
