@@ -794,28 +794,31 @@ export default function Home() {
           </div>
         </section>
 
-        {/* SLEEK PROFESSIONAL ACCREDITATION TRUST BANNER */}
-        <section className="bg-slate-50/60 border-y border-slate-100/80 py-7 md:py-9 relative z-10">
-          <div className="mx-auto max-w-6xl px-6 md:px-12">
-            <p className="text-[11px] font-extrabold uppercase tracking-[0.2em] text-slate-400 text-center mb-5">
-              Accredited &amp; Trusted By Leading UK Trade Bodies
-            </p>
-            {/* 5 Perfectly Scaled & Centered Vector Logos on a Single Sleek Row */}
-            <div className="flex flex-wrap sm:flex-nowrap items-center justify-center sm:justify-between gap-6 sm:gap-8 md:gap-10">
-              <div className="hover:scale-105 transition-all duration-300 cursor-pointer flex justify-center">
-                <GasSafeLogo className="h-8 sm:h-9 md:h-10 w-auto object-contain" />
+        {/* DEDICATED ACCREDITATION TRUST BANNER (Matching Leading UK Brands Styling Exactly) */}
+        <section className="py-12 md:py-16 bg-slate-50/60 border-y border-slate-100/80 relative z-10">
+          <div className="mx-auto max-w-[1600px] px-6 md:px-12 lg:px-16 text-center space-y-8">
+            <div>
+              <p className="text-[11.5px] font-extrabold uppercase tracking-[0.2em] text-slate-400">
+                Accredited &amp; Trusted By Leading UK Trade Bodies
+              </p>
+            </div>
+
+            {/* 5 Clean Partner Trade Body Logos Grid */}
+            <div className="flex flex-wrap items-center justify-center gap-10 md:gap-16 lg:gap-20">
+              <div className="transition-all duration-300 hover:scale-105 cursor-pointer">
+                <GasSafeLogo className="h-10 md:h-14 w-auto object-contain" />
               </div>
-              <div className="hover:scale-105 transition-all duration-300 cursor-pointer flex justify-center">
-                <WorcesterLogo className="h-7 sm:h-8 md:h-9 w-auto object-contain" />
+              <div className="transition-all duration-300 hover:scale-105 cursor-pointer">
+                <WorcesterLogo className="h-10 md:h-14 w-auto object-contain" />
               </div>
-              <div className="hover:scale-105 transition-all duration-300 cursor-pointer flex justify-center">
-                <WhichLogo className="h-7 sm:h-8 md:h-9 w-auto object-contain" />
+              <div className="transition-all duration-300 hover:scale-105 cursor-pointer">
+                <WhichLogo className="h-10 md:h-14 w-auto object-contain" />
               </div>
-              <div className="hover:scale-105 transition-all duration-300 cursor-pointer flex justify-center">
-                <CheckatradeLogo className="h-7 sm:h-8 md:h-9 w-auto object-contain" />
+              <div className="transition-all duration-300 hover:scale-105 cursor-pointer">
+                <CheckatradeLogo className="h-10 md:h-14 w-auto object-contain" />
               </div>
-              <div className="hover:scale-105 transition-all duration-300 cursor-pointer flex justify-center">
-                <TrustpilotLogo className="h-7 sm:h-8 md:h-9 w-auto object-contain" />
+              <div className="transition-all duration-300 hover:scale-105 cursor-pointer">
+                <TrustpilotLogo className="h-10 md:h-14 w-auto object-contain" />
               </div>
             </div>
           </div>
