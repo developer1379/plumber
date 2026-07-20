@@ -7,11 +7,11 @@ import { Phone, BookOpen, ArrowRight } from 'lucide-react'
 import { siteConfig } from '@/lib/site-config'
 
 export const metadata = {
-  title: 'Heating & Plumbing Insights',
+  title: 'Heating & Plumbing Blog',
   description: 'Expert advice and helpful guides on boiler maintenance, gas safety, and plumbing from Rob Holton.',
 }
 
-export default async function InsightsPage() {
+export default async function BlogPage() {
   let posts = await getAllInsightsSummaries().catch(() => [])
 
   if (!posts || posts.length === 0) {
@@ -56,7 +56,7 @@ export default async function InsightsPage() {
           
           {/* Breadcrumbs */}
           <div className="mb-6">
-            <Breadcrumbs trail={[{ label: 'Insights' }]} />
+            <Breadcrumbs trail={[{ label: 'Blog' }]} />
           </div>
 
           <div className="grid grid-cols-1 gap-12 lg:grid-cols-3">
@@ -65,7 +65,7 @@ export default async function InsightsPage() {
               <div>
                 <span className="text-[13px] font-bold uppercase tracking-[0.08em] pl-[0.08em] text-secondary">Expert Resources</span>
                 <h1 className="mt-3 text-4xl font-extrabold tracking-tight text-primary sm:text-5xl font-serif">
-                  Heating &amp; Plumbing Insights
+                  Heating &amp; Plumbing Blog
                 </h1>
                 <p className="mt-6 text-lg text-muted leading-relaxed">
                   Browse my collection of articles, tips, and safety guides to keep your home warm and your plumbing operating efficiently.
@@ -87,7 +87,7 @@ export default async function InsightsPage() {
                   {posts.map((p, idx) => (
                     <Link
                       key={p._id}
-                      href={`/insights/${p.slug}`}
+                      href={`/blog/${p.slug}`}
                       className="group flex flex-col justify-between rounded-2xl border border-border/80 p-0 bg-card overflow-hidden hover:border-slate-300 hover:shadow-[0_16px_32px_rgba(0,0,0,0.04)] hover:-translate-y-1.5 transition-all duration-300 ease-out"
                     >
                       <div>

@@ -1,7 +1,7 @@
 /**
  * /llms-full.txt — full text corpus for LLMs.
  *
- * Includes service pages, area pages, insights, FAQs in plain text.
+ * Includes service pages, area pages, blog articles, FAQs in plain text.
  * Updated on every revalidation. ~50–500KB depending on site size.
  */
 
@@ -80,7 +80,7 @@ export async function GET() {
   }
 
   if (insights.length) {
-    push('## Insights')
+    push('## Blog')
     push()
     for (const p of insights) {
       push(`### ${p.title}`)

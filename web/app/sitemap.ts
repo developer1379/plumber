@@ -13,7 +13,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/terms-conditions',
     '/reviews',
     '/services',
-    '/insights',
+    '/blog',
     '/guides',
   ].map((route) => ({
     url: `${baseUrl}${route}`,
@@ -61,7 +61,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     'landlord-gas-safety-rules-explained',
     'what-to-do-if-you-smell-gas',
   ].map((slug) => ({
-    url: `${baseUrl}/insights/${slug}`,
+    url: `${baseUrl}/blog/${slug}`,
     lastModified: new Date(),
     changeFrequency: 'monthly' as const,
     priority: 0.7,

@@ -250,7 +250,7 @@ export function RelatedPosts({ excludeSlug }: { excludeSlug?: string } = {}) {
           Practical <span className="text-[#ff6b00]">heating &amp; plumbing advice.</span>
         </h2>
         <Link 
-          href="/insights" 
+          href="/blog" 
           className="text-[13px] font-semibold uppercase tracking-[0.06em] text-slate-900 hover:text-[#ff6b00] transition-colors border-b border-slate-900 hover:border-[#ff6b00] pb-1 whitespace-nowrap self-start md:self-auto"
         >
           All Articles &rarr;
@@ -261,7 +261,7 @@ export function RelatedPosts({ excludeSlug }: { excludeSlug?: string } = {}) {
         {filteredItems.map((p, idx) => (
           <Link
             key={p._id}
-            href={`/insights/${p.slug}`}
+            href={`/blog/${p.slug}`}
             className="group flex flex-col border border-slate-200 bg-white rounded-xl hover:border-slate-800 transition-colors duration-300 overflow-hidden shadow-[0_2px_8px_rgba(0,0,0,0.03)]"
           >
             <div className="aspect-[4/3] w-full overflow-hidden relative bg-slate-100 border-b border-slate-100">

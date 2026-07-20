@@ -54,10 +54,10 @@ export async function GET() {
   }
 
   if (insights.length) {
-    push('## Insights')
+    push('## Blog')
     push()
     for (const p of insights.slice(0, 30)) {
-      push(`- [${p.title}](${siteConfig.url.production}/insights/${p.slug}): ${p.summary}`)
+      push(`- [${p.title}](${siteConfig.url.production}/blog/${p.slug}): ${p.summary}`)
     }
     push()
   }

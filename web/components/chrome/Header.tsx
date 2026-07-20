@@ -134,7 +134,7 @@ export function Header() {
             Reviews
           </Link>
 
-          <Link href="/insights" className="nav-link relative py-1 hover:text-[#104d96] transition-colors">
+          <Link href="/blog" className="nav-link relative py-1 hover:text-[#104d96] transition-colors">
             Blog
           </Link>
 
@@ -259,7 +259,7 @@ export function Header() {
               </Link>
 
               <Link
-                href="/insights"
+                href="/blog"
                 onClick={() => setIsOpen(false)}
                 className="block py-1.5 text-[13px] font-bold uppercase tracking-[0.08em] pl-[0.08em] text-slate-700 hover:text-secondary transition-colors"
               >

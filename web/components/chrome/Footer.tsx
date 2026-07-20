@@ -6,7 +6,7 @@ export function Footer() {
   const quickLinks = [
     { label: 'About Us', href: '/about' },
     { label: 'Reviews', href: '/reviews' },
-    { label: 'Insights', href: '/insights' },
+    { label: 'Blog', href: '/blog' },
     { label: 'Guides', href: '/guides' },
     { label: 'FAQs', href: '/faqs' },
     { label: 'Areas we cover', href: '/#areas' },

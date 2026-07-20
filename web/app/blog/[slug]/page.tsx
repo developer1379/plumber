@@ -144,12 +144,12 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     title: post.title,
     description: post.summary,
     alternates: {
-      canonical: `/insights/${slug}`,
+      canonical: `/blog/${slug}`,
     },
   }
 }
 
-export default async function InsightPage({ params }: { params: Promise<{ slug: string }> }) {
+export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params
   let post = await getInsightBySlug(slug).catch(() => null)
   if (!post && MOCK_POSTS[slug]) {
@@ -161,7 +161,7 @@ export default async function InsightPage({ params }: { params: Promise<{ slug: 
   }
 
   const breadcrumbsTrail = [
-    { label: 'Insights', href: '/insights' },
+    { label: 'Blog', href: '/blog' },
     { label: post.title },
   ]
 
@@ -169,7 +169,7 @@ export default async function InsightPage({ params }: { params: Promise<{ slug: 
     <div className="flex min-h-screen flex-col bg-background">
       {/* Schema */}
       {blogPostingSchema({
-        url: `${siteConfig.url.production}/insights/${slug}`,
+        url: `${siteConfig.url.production}/blog/${slug}`,
         headline: post.title,
         description: post.summary || '',
         datePublished: post.publishedAt || '',
@@ -190,10 +190,10 @@ export default async function InsightPage({ params }: { params: Promise<{ slug: 
             <div className="lg:col-span-2 space-y-8">
               <div>
                 <Link
-                  href="/insights"
+                  href="/blog"
                   className="inline-flex items-center gap-1 text-xs font-bold uppercase tracking-wider text-secondary hover:underline"
                 >
-                  <ChevronLeft className="h-4 w-4" /> Back to Insights
+                  <ChevronLeft className="h-4 w-4" /> Back to Blog
                 </Link>
                 <h1 className="mt-4 text-3xl font-extrabold tracking-tight text-primary sm:text-4xl md:text-5xl leading-tight">
                   {post.title}
