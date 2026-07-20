@@ -273,18 +273,18 @@ export default function Home() {
         
         {/* HERO SECTION */}
         <section className="relative bg-white pt-6 pb-8 lg:pt-8 lg:pb-10 overflow-hidden">
-          {/* Family Plumber Background Image (Perfectly Framed & Centered for All Screen Sizes) */}
-          <div className="absolute left-[34%] xl:left-[36%] right-0 top-0 bottom-0 h-full z-0 lg:block hidden overflow-hidden pointer-events-none">
-            <div className="relative w-full h-full max-w-[920px]">
+          {/* Family Plumber Background Image (Heads & Faces 100% Intact & Fully Visible with object-top) */}
+          <div className="absolute right-[8%] xl:right-[12%] top-0 bottom-0 w-[55%] xl:w-[50%] h-full z-0 lg:block hidden overflow-hidden pointer-events-none">
+            <div className="relative w-full h-full">
               <img 
                 src="/family-hero.png" 
                 alt="RH Plumbing &amp; Heating family" 
-                className="w-full h-full object-cover object-center"
+                className="w-full h-full object-cover object-top"
               />
-              {/* Seamless feather-soft gradient fade overlays blending with background */}
-              <div className="absolute inset-y-0 left-0 w-36 sm:w-52 lg:w-64 bg-gradient-to-r from-white via-white/85 to-transparent z-10" />
-              <div className="absolute inset-y-0 right-0 w-36 sm:w-52 lg:w-64 bg-gradient-to-l from-white via-white/85 to-transparent z-10" />
-              <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-white via-white/90 to-transparent z-10" />
+              {/* Soft, feather-light gradient edge blurs */}
+              <div className="absolute inset-y-0 left-0 w-32 sm:w-44 lg:w-56 bg-gradient-to-r from-white via-white/80 to-transparent z-10" />
+              <div className="absolute inset-y-0 right-0 w-32 sm:w-44 lg:w-56 bg-gradient-to-l from-white via-white/80 to-transparent z-10" />
+              <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-white via-white/80 to-transparent z-10" />
             </div>
           </div>
 
