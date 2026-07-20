@@ -609,13 +609,23 @@ export default function Home() {
         {/* DEDICATED ACCREDITATION LOGOS STRIP SECTION (Centered & Professional 5 Partner Logos) */}
         <section className="bg-white border-t border-slate-100 py-10 md:py-14 relative z-10">
           <div className="mx-auto max-w-[1600px] px-6 md:px-12 lg:px-16">
-            {/* 5 Perfectly Centered Partner Logos Strip */}
+            {/* 5 Perfectly Centered Vector SVG Partner Logos Strip */}
             <div className="flex flex-wrap items-center justify-center gap-10 sm:gap-14 md:gap-16 lg:gap-20">
-              <img src="/logos/gassafe-exact.png" alt="Gas Safe Register" className="h-16 sm:h-20 md:h-24 w-auto object-contain hover:scale-105 transition-all duration-300 cursor-pointer" />
-              <img src="/logos/worcester-exact.png" alt="Worcester Bosch Accredited Installer" className="h-14 sm:h-16 md:h-20 w-auto object-contain hover:scale-105 transition-all duration-300 cursor-pointer" />
-              <img src="/logos/which-exact.png" alt="Which? Trusted Trader" className="h-14 sm:h-16 md:h-20 w-auto object-contain hover:scale-105 transition-all duration-300 cursor-pointer" />
-              <img src="/logos/checkatrade-exact.png" alt="Checkatrade" className="h-14 sm:h-16 md:h-20 w-auto object-contain hover:scale-105 transition-all duration-300 cursor-pointer" />
-              <img src="/logos/trustpilot-exact.png" alt="Trustpilot 5 Stars" className="h-14 sm:h-16 md:h-20 w-auto object-contain hover:scale-105 transition-all duration-300 cursor-pointer" />
+              <div className="hover:scale-105 transition-all duration-300 cursor-pointer">
+                <GasSafeLogo className="h-16 sm:h-20 md:h-24 w-auto object-contain" />
+              </div>
+              <div className="hover:scale-105 transition-all duration-300 cursor-pointer">
+                <WorcesterLogo className="h-14 sm:h-16 md:h-20 w-auto object-contain" />
+              </div>
+              <div className="hover:scale-105 transition-all duration-300 cursor-pointer">
+                <WhichLogo className="h-14 sm:h-16 md:h-20 w-auto object-contain" />
+              </div>
+              <div className="hover:scale-105 transition-all duration-300 cursor-pointer">
+                <CheckatradeLogo className="h-14 sm:h-16 md:h-20 w-auto object-contain" />
+              </div>
+              <div className="hover:scale-105 transition-all duration-300 cursor-pointer">
+                <TrustpilotLogo className="h-14 sm:h-16 md:h-20 w-auto object-contain" />
+              </div>
             </div>
           </div>
         </section>
