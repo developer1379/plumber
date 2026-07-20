@@ -620,194 +620,6 @@ export default function Home() {
           </div>
         </section>
 
-        {/* EMERGENCY REPAIRS & 6-GRID VALUE PROPS 2-CARD SPLIT BANNER SECTION */}
-        <section className="py-12 md:py-16 bg-white border-t border-slate-100">
-          <div className="mx-auto max-w-[1600px] px-6 md:px-12 lg:px-16">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
-              
-              {/* LEFT CARD: Emergency Plumbing & Boiler Repairs Banner (Real Live HTML/React Component) */}
-              <div className="lg:col-span-7 relative rounded-3xl overflow-hidden bg-white shadow-xl border border-slate-200/80 flex flex-col justify-between p-6 sm:p-9 min-h-[380px]">
-                {/* Background Layer with Van Photo & Slanted Mask with Motion Blur Edge */}
-                <div className="absolute inset-0 z-0">
-                  <img 
-                    src="/van-hero.png" 
-                    alt="RH Plumbing &amp; Heating Service Van" 
-                    className="w-full h-full object-cover object-right"
-                  />
-                  {/* White Left Background Mask with Angled Slanted Cut */}
-                  <div className="absolute inset-y-0 left-0 w-full sm:w-[68%] lg:w-[62%] bg-white z-10 [clip-path:polygon(0_0,100%_0,74%_100%,0_100%)]" />
-                  
-                  {/* Soft Motion Blur Overlay Transition along the Diagonal Cut */}
-                  <div className="absolute inset-y-0 left-0 w-full sm:w-[74%] lg:w-[68%] bg-gradient-to-r from-transparent via-white/80 to-transparent z-10 blur-[10px] [clip-path:polygon(66%_0,100%_0,78%_100%,44%_100%)] pointer-events-none" />
-                </div>
-
-                {/* Live Card Content (Headline, Subtitle & Checklist) */}
-                <div className="relative z-20 max-w-md space-y-3.5">
-                  <h3 className="text-2xl sm:text-[32px] font-black text-slate-900 leading-[1.12] tracking-tight">
-                    Emergency Plumbing<br />&amp; Boiler Repairs
-                  </h3>
-                  <p className="text-xs sm:text-[13.5px] font-semibold text-slate-600 leading-relaxed">
-                    Fast response. Expert solutions.<br />
-                    We&apos;re available 24/7.
-                  </p>
-
-                  {/* Live Checklist */}
-                  <ul className="space-y-2.5 pt-1.5">
-                    {[
-                      'Rapid response – we aim to be with you fast',
-                      'Boiler breakdowns & no heating issues',
-                      'Burst pipes, leaks & blockages',
-                      'Gas safe engineers you can trust'
-                    ].map((item, idx) => (
-                      <li key={idx} className="flex items-center gap-2.5 text-xs sm:text-[13px] font-bold text-slate-800">
-                        <div className="w-5 h-5 rounded-full bg-[#104d96] text-white flex items-center justify-center flex-shrink-0 shadow-2xs">
-                          <Check className="w-3.5 h-3.5 stroke-[3]" />
-                        </div>
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                {/* Live Interactive Red Callout Button */}
-                <div className="relative z-20 pt-6 flex justify-start sm:justify-end">
-                  <a 
-                    href={siteConfig.contact.primaryPhoneHref}
-                    className="inline-flex items-center gap-3.5 bg-gradient-to-r from-[#e53935] to-[#d32f2f] hover:from-[#c62828] hover:to-[#b71c1c] text-white px-5 sm:px-6 py-3 sm:py-3.5 rounded-2xl shadow-xl shadow-red-500/25 active:scale-95 transition-all cursor-pointer group"
-                  >
-                    <div className="w-9 h-9 rounded-full bg-white text-[#d32f2f] flex items-center justify-center flex-shrink-0 shadow-xs group-hover:scale-110 transition-transform">
-                      <Phone className="w-5 h-5 fill-current" />
-                    </div>
-                    <div className="text-left">
-                      <div className="text-base sm:text-lg font-black leading-tight tracking-tight">
-                        {siteConfig.contact.primaryPhone}
-                      </div>
-                      <div className="text-[10px] sm:text-[10.5px] font-bold text-red-100 uppercase tracking-wider leading-none mt-0.5">
-                        Call Now – 24/7
-                      </div>
-                    </div>
-                  </a>
-                </div>
-              </div>
-
-              {/* RIGHT CARD: 6 Grid Value Props Card (5 Cols) */}
-              <div className="lg:col-span-5 bg-white border border-slate-200/80 rounded-3xl p-6 sm:p-8 shadow-xl flex flex-col justify-center">
-                <div className="grid grid-cols-3 gap-y-8 gap-x-4 divide-x divide-slate-100 text-center">
-                  
-                  {/* Row 1, Col 1 */}
-                  <div className="px-2 space-y-2 flex flex-col items-center">
-                    <div className="text-[#104d96] flex justify-center">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" className="h-7 w-7">
-                        <circle cx="12" cy="7" r="4" />
-                        <path d="M5.5 21a8.5 8.5 0 0 1 13 0" />
-                        <path d="M12 2v2M4.9 4.9l1.4 1.4M19.1 4.9l-1.4 1.4" />
-                      </svg>
-                    </div>
-                    <h4 className="font-black text-xs sm:text-[13px] text-slate-900 leading-tight">Local &amp; Reliable</h4>
-                    <p className="text-[10px] sm:text-[11px] text-slate-500 font-medium leading-tight">Proudly serving our local community</p>
-                  </div>
-
-                  {/* Row 1, Col 2 */}
-                  <div className="px-2 space-y-2 flex flex-col items-center">
-                    <div className="text-[#104d96] flex justify-center">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" className="h-7 w-7">
-                        <rect x="3" y="6" width="18" height="12" rx="2" />
-                        <circle cx="12" cy="12" r="2" />
-                        <path d="M6 12h.01M18 12h.01" />
-                      </svg>
-                    </div>
-                    <h4 className="font-black text-xs sm:text-[13px] text-slate-900 leading-tight">Transparent Pricing</h4>
-                    <p className="text-[10px] sm:text-[11px] text-slate-500 font-medium leading-tight">No hidden costs, just honest quotes</p>
-                  </div>
-
-                  {/* Row 1, Col 3 */}
-                  <div className="px-2 space-y-2 flex flex-col items-center">
-                    <div className="text-[#104d96] flex justify-center">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" className="h-7 w-7">
-                        <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
-                      </svg>
-                    </div>
-                    <h4 className="font-black text-xs sm:text-[13px] text-slate-900 leading-tight">Experienced Engineers</h4>
-                    <p className="text-[10px] sm:text-[11px] text-slate-500 font-medium leading-tight">Highly trained &amp; Gas Safe registered</p>
-                  </div>
-
-                  {/* Row 2, Col 1 */}
-                  <div className="px-2 pt-6 space-y-2 flex flex-col items-center">
-                    <div className="text-[#104d96] flex justify-center">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" className="h-7 w-7">
-                        <path d="m15 12-3-3 3-3" />
-                        <path d="M9 18l3-3-3-3" />
-                        <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
-                      </svg>
-                    </div>
-                    <h4 className="font-black text-xs sm:text-[13px] text-slate-900 leading-tight">Quality Workmanship</h4>
-                    <p className="text-[10px] sm:text-[11px] text-slate-500 font-medium leading-tight">Standards you can trust, every time</p>
-                  </div>
-
-                  {/* Row 2, Col 2 */}
-                  <div className="px-2 pt-6 space-y-2 flex flex-col items-center">
-                    <div className="text-[#104d96] flex justify-center">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" className="h-7 w-7">
-                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-                        <path d="m9 11 2 2 4-4" />
-                      </svg>
-                    </div>
-                    <h4 className="font-black text-xs sm:text-[13px] text-slate-900 leading-tight">Fully Insured</h4>
-                    <p className="text-[10px] sm:text-[11px] text-slate-500 font-medium leading-tight">Complete peace of mind for your home</p>
-                  </div>
-
-                  {/* Row 2, Col 3 */}
-                  <div className="px-2 pt-6 space-y-2 flex flex-col items-center">
-                    <div className="text-[#104d96] flex justify-center">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" className="h-7 w-7">
-                        <circle cx="12" cy="12" r="10" />
-                        <path d="m9 12 2 2 4-4" />
-                      </svg>
-                    </div>
-                    <h4 className="font-black text-xs sm:text-[13px] text-slate-900 leading-tight">Satisfaction Guaranteed</h4>
-                    <p className="text-[10px] sm:text-[11px] text-slate-500 font-medium leading-tight">We won&apos;t leave until you&apos;re happy</p>
-                  </div>
-
-                </div>
-              </div>
-
-            </div>
-          </div>
-        </section>
-
-        {/* LEADING BOILER BRANDS SECTION */}
-        <section className="py-12 md:py-16 bg-slate-50/60 border-y border-slate-100/80">
-          <div className="mx-auto max-w-[1600px] px-6 md:px-12 lg:px-16 text-center space-y-8">
-            <div>
-              <p className="text-[11.5px] font-extrabold uppercase tracking-[0.2em] text-slate-400">
-                Authorized &amp; Certified Installers For Leading UK Brands
-              </p>
-            </div>
-
-            {/* 6 Clean Partner Brand Logos Grid */}
-            <div className="flex flex-wrap items-center justify-center gap-10 md:gap-16 lg:gap-20">
-              <div className="transition-all duration-300 hover:scale-105 cursor-pointer">
-                <WorcesterLogo className="h-10 md:h-14 w-auto object-contain" />
-              </div>
-              <div className="transition-all duration-300 hover:scale-105 cursor-pointer">
-                <VaillantLogo className="h-10 md:h-14 w-auto object-contain" />
-              </div>
-              <div className="transition-all duration-300 hover:scale-105 cursor-pointer">
-                <IdealLogo className="h-10 md:h-14 w-auto object-contain" />
-              </div>
-              <div className="transition-all duration-300 hover:scale-105 cursor-pointer">
-                <BaxiLogo className="h-10 md:h-14 w-auto object-contain" />
-              </div>
-              <div className="transition-all duration-300 hover:scale-105 cursor-pointer">
-                <GlowwormLogo className="h-10 md:h-14 w-auto object-contain" />
-              </div>
-              <div className="transition-all duration-300 hover:scale-105 cursor-pointer">
-                <GasSafeLogo className="h-10 md:h-14 w-auto object-contain" />
-              </div>
-            </div>
-          </div>
-        </section>
-
         {/* SERVICES SECTION */}
         <section className="py-20 bg-white">
           <div className="mx-auto max-w-7xl px-6 md:px-12">
@@ -1214,7 +1026,193 @@ export default function Home() {
           </div>
         </section>
 
+        {/* LEADING BOILER BRANDS SECTION */}
+        <section className="py-12 md:py-16 bg-slate-50/60 border-y border-slate-100/80">
+          <div className="mx-auto max-w-[1600px] px-6 md:px-12 lg:px-16 text-center space-y-8">
+            <div>
+              <p className="text-[11.5px] font-extrabold uppercase tracking-[0.2em] text-slate-400">
+                Authorized &amp; Certified Installers For Leading UK Brands
+              </p>
+            </div>
 
+            {/* 6 Clean Partner Brand Logos Grid */}
+            <div className="flex flex-wrap items-center justify-center gap-10 md:gap-16 lg:gap-20">
+              <div className="transition-all duration-300 hover:scale-105 cursor-pointer">
+                <WorcesterLogo className="h-10 md:h-14 w-auto object-contain" />
+              </div>
+              <div className="transition-all duration-300 hover:scale-105 cursor-pointer">
+                <VaillantLogo className="h-10 md:h-14 w-auto object-contain" />
+              </div>
+              <div className="transition-all duration-300 hover:scale-105 cursor-pointer">
+                <IdealLogo className="h-10 md:h-14 w-auto object-contain" />
+              </div>
+              <div className="transition-all duration-300 hover:scale-105 cursor-pointer">
+                <BaxiLogo className="h-10 md:h-14 w-auto object-contain" />
+              </div>
+              <div className="transition-all duration-300 hover:scale-105 cursor-pointer">
+                <GlowwormLogo className="h-10 md:h-14 w-auto object-contain" />
+              </div>
+              <div className="transition-all duration-300 hover:scale-105 cursor-pointer">
+                <GasSafeLogo className="h-10 md:h-14 w-auto object-contain" />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* EMERGENCY REPAIRS & 6-GRID VALUE PROPS 2-CARD SPLIT BANNER SECTION */}
+        <section className="py-12 md:py-16 bg-white border-t border-slate-100">
+          <div className="mx-auto max-w-[1600px] px-6 md:px-12 lg:px-16">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+              
+              {/* LEFT CARD: Emergency Plumbing & Boiler Repairs Banner (Real Live HTML/React Component) */}
+              <div className="lg:col-span-7 relative rounded-3xl overflow-hidden bg-white shadow-xl border border-slate-200/80 flex flex-col justify-between p-6 sm:p-9 min-h-[380px]">
+                {/* Background Layer with Van Photo & Slanted Mask with Motion Blur Edge */}
+                <div className="absolute inset-0 z-0">
+                  <img 
+                    src="/van-hero.png" 
+                    alt="RH Plumbing &amp; Heating Service Van" 
+                    className="w-full h-full object-cover object-right"
+                  />
+                  {/* White Left Background Mask with Angled Slanted Cut */}
+                  <div className="absolute inset-y-0 left-0 w-full sm:w-[68%] lg:w-[62%] bg-white z-10 [clip-path:polygon(0_0,100%_0,74%_100%,0_100%)]" />
+                  
+                  {/* Soft Motion Blur Overlay Transition along the Diagonal Cut */}
+                  <div className="absolute inset-y-0 left-0 w-full sm:w-[74%] lg:w-[68%] bg-gradient-to-r from-transparent via-white/80 to-transparent z-10 blur-[10px] [clip-path:polygon(66%_0,100%_0,78%_100%,44%_100%)] pointer-events-none" />
+                </div>
+
+                {/* Live Card Content (Headline, Subtitle & Checklist) */}
+                <div className="relative z-20 max-w-md space-y-3.5">
+                  <h3 className="text-2xl sm:text-[32px] font-black text-slate-900 leading-[1.12] tracking-tight">
+                    Emergency Plumbing<br />&amp; Boiler Repairs
+                  </h3>
+                  <p className="text-xs sm:text-[13.5px] font-semibold text-slate-600 leading-relaxed">
+                    Fast response. Expert solutions.<br />
+                    We&apos;re available 24/7.
+                  </p>
+
+                  {/* Live Checklist */}
+                  <ul className="space-y-2.5 pt-1.5">
+                    {[
+                      'Rapid response – we aim to be with you fast',
+                      'Boiler breakdowns & no heating issues',
+                      'Burst pipes, leaks & blockages',
+                      'Gas safe engineers you can trust'
+                    ].map((item, idx) => (
+                      <li key={idx} className="flex items-center gap-2.5 text-xs sm:text-[13px] font-bold text-slate-800">
+                        <div className="w-5 h-5 rounded-full bg-[#104d96] text-white flex items-center justify-center flex-shrink-0 shadow-2xs">
+                          <Check className="w-3.5 h-3.5 stroke-[3]" />
+                        </div>
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                {/* Live Interactive Red Callout Button */}
+                <div className="relative z-20 pt-6 flex justify-start sm:justify-end">
+                  <a 
+                    href={siteConfig.contact.primaryPhoneHref}
+                    className="inline-flex items-center gap-3.5 bg-gradient-to-r from-[#e53935] to-[#d32f2f] hover:from-[#c62828] hover:to-[#b71c1c] text-white px-5 sm:px-6 py-3 sm:py-3.5 rounded-2xl shadow-xl shadow-red-500/25 active:scale-95 transition-all cursor-pointer group"
+                  >
+                    <div className="w-9 h-9 rounded-full bg-white text-[#d32f2f] flex items-center justify-center flex-shrink-0 shadow-xs group-hover:scale-110 transition-transform">
+                      <Phone className="w-5 h-5 fill-current" />
+                    </div>
+                    <div className="text-left">
+                      <div className="text-base sm:text-lg font-black leading-tight tracking-tight">
+                        {siteConfig.contact.primaryPhone}
+                      </div>
+                      <div className="text-[10px] sm:text-[10.5px] font-bold text-red-100 uppercase tracking-wider leading-none mt-0.5">
+                        Call Now – 24/7
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+
+              {/* RIGHT CARD: 6 Grid Value Props Card (5 Cols) */}
+              <div className="lg:col-span-5 bg-white border border-slate-200/80 rounded-3xl p-6 sm:p-8 shadow-xl flex flex-col justify-center">
+                <div className="grid grid-cols-3 gap-y-8 gap-x-4 divide-x divide-slate-100 text-center">
+                  
+                  {/* Row 1, Col 1 */}
+                  <div className="px-2 space-y-2 flex flex-col items-center">
+                    <div className="text-[#104d96] flex justify-center">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" className="h-7 w-7">
+                        <circle cx="12" cy="7" r="4" />
+                        <path d="M5.5 21a8.5 8.5 0 0 1 13 0" />
+                        <path d="M12 2v2M4.9 4.9l1.4 1.4M19.1 4.9l-1.4 1.4" />
+                      </svg>
+                    </div>
+                    <h4 className="font-black text-xs sm:text-[13px] text-slate-900 leading-tight">Local &amp; Reliable</h4>
+                    <p className="text-[10px] sm:text-[11px] text-slate-500 font-medium leading-tight">Proudly serving our local community</p>
+                  </div>
+
+                  {/* Row 1, Col 2 */}
+                  <div className="px-2 space-y-2 flex flex-col items-center">
+                    <div className="text-[#104d96] flex justify-center">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" className="h-7 w-7">
+                        <rect x="3" y="6" width="18" height="12" rx="2" />
+                        <circle cx="12" cy="12" r="2" />
+                        <path d="M6 12h.01M18 12h.01" />
+                      </svg>
+                    </div>
+                    <h4 className="font-black text-xs sm:text-[13px] text-slate-900 leading-tight">Transparent Pricing</h4>
+                    <p className="text-[10px] sm:text-[11px] text-slate-500 font-medium leading-tight">No hidden costs, just honest quotes</p>
+                  </div>
+
+                  {/* Row 1, Col 3 */}
+                  <div className="px-2 space-y-2 flex flex-col items-center">
+                    <div className="text-[#104d96] flex justify-center">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" className="h-7 w-7">
+                        <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
+                      </svg>
+                    </div>
+                    <h4 className="font-black text-xs sm:text-[13px] text-slate-900 leading-tight">Experienced Engineers</h4>
+                    <p className="text-[10px] sm:text-[11px] text-slate-500 font-medium leading-tight">Highly trained &amp; Gas Safe registered</p>
+                  </div>
+
+                  {/* Row 2, Col 1 */}
+                  <div className="px-2 pt-6 space-y-2 flex flex-col items-center">
+                    <div className="text-[#104d96] flex justify-center">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" className="h-7 w-7">
+                        <path d="m15 12-3-3 3-3" />
+                        <path d="M9 18l3-3-3-3" />
+                        <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
+                      </svg>
+                    </div>
+                    <h4 className="font-black text-xs sm:text-[13px] text-slate-900 leading-tight">Quality Workmanship</h4>
+                    <p className="text-[10px] sm:text-[11px] text-slate-500 font-medium leading-tight">Standards you can trust, every time</p>
+                  </div>
+
+                  {/* Row 2, Col 2 */}
+                  <div className="px-2 pt-6 space-y-2 flex flex-col items-center">
+                    <div className="text-[#104d96] flex justify-center">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" className="h-7 w-7">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                        <path d="m9 11 2 2 4-4" />
+                      </svg>
+                    </div>
+                    <h4 className="font-black text-xs sm:text-[13px] text-slate-900 leading-tight">Fully Insured</h4>
+                    <p className="text-[10px] sm:text-[11px] text-slate-500 font-medium leading-tight">Complete peace of mind for your home</p>
+                  </div>
+
+                  {/* Row 2, Col 3 */}
+                  <div className="px-2 pt-6 space-y-2 flex flex-col items-center">
+                    <div className="text-[#104d96] flex justify-center">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" className="h-7 w-7">
+                        <circle cx="12" cy="12" r="10" />
+                        <path d="m9 12 2 2 4-4" />
+                      </svg>
+                    </div>
+                    <h4 className="font-black text-xs sm:text-[13px] text-slate-900 leading-tight">Satisfaction Guaranteed</h4>
+                    <p className="text-[10px] sm:text-[11px] text-slate-500 font-medium leading-tight">We won&apos;t leave until you&apos;re happy</p>
+                  </div>
+
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </section>
 
         {/* Linking Blocks */}
         <div className="mx-auto max-w-7xl px-6 md:px-12 pb-16 pt-8 border-t border-slate-50">
