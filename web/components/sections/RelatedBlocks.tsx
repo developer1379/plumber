@@ -131,20 +131,37 @@ export function RelatedServices({ excludeSlug }: { excludeSlug?: string } = {}) 
           <Link
             key={s._id}
             href={`/services/${s.slug}`}
-            className="group flex flex-col justify-between rounded-xl border border-slate-200 p-6 hover:border-slate-800 hover:shadow-lg transition-all duration-200 bg-white"
+            className="group flex flex-col justify-between rounded-2xl border border-slate-100 p-6 hover:-translate-y-1 hover:shadow-xl hover:border-slate-200 transition-all duration-300 bg-white min-h-[290px] shadow-xs"
           >
-            <div>
-              <h3 className="text-lg font-bold text-slate-900 group-hover:text-[#ff6b00] transition-colors">
-                {s.title}
-              </h3>
-              {s.summary && (
-                <p className="mt-3 text-xs text-slate-500 leading-relaxed line-clamp-3">
-                  {s.summary}
-                </p>
-              )}
+            <div className="space-y-4">
+              {/* Clean Icon */}
+              <div className="w-12 h-12 flex items-center justify-center transition-transform duration-300 group-hover:scale-105">
+                <img 
+                  src={
+                    s.slug === 'boiler-servicing-installation-repairs' ? '/icons/boiler.png' :
+                    s.slug === 'landlord-safety-checks' ? '/icons/usp_gassafe.png' :
+                    s.slug === 'gas-installations' ? '/icons/installations.png' :
+                    s.slug === 'emergency-callouts' ? '/icons/emergency.png' : '/icons/plumbing.png'
+                  } 
+                  alt={s.title} 
+                  className="w-10 h-10 object-contain"
+                />
+              </div>
+
+              <div className="space-y-2">
+                <h3 className="text-[17px] font-black text-slate-850 group-hover:text-blue-600 transition-colors leading-snug tracking-tight">
+                  {s.title}
+                </h3>
+                {s.summary && (
+                  <p className="text-[12.5px] text-slate-450 font-semibold leading-relaxed line-clamp-3">
+                    {s.summary}
+                  </p>
+                )}
+              </div>
             </div>
-            <span className="mt-6 flex items-center gap-1 text-xs font-semibold text-slate-900 group-hover:text-[#ff6b00]">
-              View service details <ArrowRight className="h-3.5 w-3.5" />
+
+            <span className="inline-flex items-center gap-1 text-[13px] font-bold text-blue-600 group-hover:text-blue-800 transition-colors mt-4">
+              <span>View details &rarr;</span>
             </span>
           </Link>
         ))}
