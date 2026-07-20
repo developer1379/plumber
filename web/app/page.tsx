@@ -273,15 +273,20 @@ export default function Home() {
         
         {/* HERO SECTION */}
         <section className="relative bg-white pt-6 pb-8 lg:pt-8 lg:pb-10 overflow-hidden">
-          {/* Family Plumber Background Image with Alpha Mask Edge Feathering (Zero Hard Borders) */}
-          <div className="absolute left-[35%] xl:left-[38%] right-[10%] xl:right-[14%] top-0 bottom-0 h-full z-0 lg:block hidden overflow-hidden pointer-events-none">
+          {/* Family Plumber Background Image (Exact Match to Reference Screenshot) */}
+          <div className="absolute right-[8%] xl:right-[12%] top-0 bottom-0 w-[56%] xl:w-[52%] h-full z-0 lg:block hidden overflow-hidden pointer-events-none">
             <div className="relative w-full h-full">
               <img 
                 src="/family-hero.png" 
                 alt="RH Plumbing &amp; Heating family" 
-                className="w-full h-full object-cover object-top [mask-image:linear-gradient(to_right,transparent_0%,black_15%,black_85%,transparent_100%)]"
+                className="w-full h-full object-cover object-top"
               />
-              <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-white via-white/90 to-transparent z-10" />
+              {/* Left smooth gradient overlay fading kitchen background behind text */}
+              <div className="absolute inset-y-0 left-0 w-48 sm:w-60 lg:w-72 bg-gradient-to-r from-white via-white/95 via-white/70 to-transparent z-10" />
+              {/* Right subtle gradient overlay fading background into quote card */}
+              <div className="absolute inset-y-0 right-0 w-32 sm:w-44 lg:w-56 bg-gradient-to-l from-white via-white/80 to-transparent z-10" />
+              {/* Bottom fade into white background */}
+              <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-white via-white/90 to-transparent z-10" />
             </div>
           </div>
 
