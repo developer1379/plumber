@@ -274,7 +274,7 @@ export default function Home() {
         {/* HERO SECTION */}
         <section className="relative bg-white pt-6 pb-8 lg:pt-8 lg:pb-10 overflow-hidden">
           {/* Family Plumber Background Image (Exact Match to Reference Screenshot) */}
-          <div className="absolute right-[8%] xl:right-[12%] top-0 bottom-0 w-[56%] xl:w-[52%] h-full z-0 lg:block hidden overflow-hidden pointer-events-none">
+          <div className="absolute right-[4%] lg:right-[4%] xl:right-[10%] 2xl:right-[12%] top-0 bottom-0 w-[56%] lg:w-[52%] xl:w-[52%] h-full z-0 lg:block hidden overflow-hidden pointer-events-none">
             <div className="relative w-full h-full">
               <img 
                 src="/family-hero.png" 
@@ -290,55 +290,33 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="mx-auto max-w-[1600px] px-6 md:px-12 lg:px-16 relative z-10">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          <div className="mx-auto max-w-[1600px] px-6 md:px-12 lg:px-8 xl:px-16 relative z-10">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-4 xl:gap-8 items-start">
               
               {/* LEFT COLUMN: Header, Copy, Buttons & Trust Bar */}
               <div className="lg:col-span-7 space-y-5 pt-1">
-                
-                {/* Tagline & Google Review Badge Row */}
-                <div className="flex flex-wrap items-center gap-3">
-                  <p className="text-xs sm:text-base font-black uppercase tracking-wider text-[#ff5500]">
+                                {/* Tagline Row */}
+                <div className="flex items-center">
+                  <p className="text-xs sm:text-xs xl:text-sm 2xl:text-base font-black uppercase tracking-wider text-[#ff5500]">
                     YOUR LOCAL PLUMBING &amp; HEATING EXPERTS
                   </p>
-
-                  <div className="inline-flex items-center gap-2 rounded-full border border-slate-200/80 bg-white px-3.5 py-1 shadow-xs">
-                    <span className="flex items-center gap-0.5 text-xs font-black">
-                      <span className="text-[#4285F4]">G</span>
-                      <span className="text-[#EA4335]">o</span>
-                      <span className="text-[#FBBC05]">o</span>
-                      <span className="text-[#4285F4]">g</span>
-                      <span className="text-[#34A853]">l</span>
-                      <span className="text-[#EA4335]">e</span>
-                    </span>
-                    <div className="flex text-amber-400 gap-0.5">
-                      <Star className="h-3 w-3 fill-current text-amber-400 stroke-none" />
-                      <Star className="h-3 w-3 fill-current text-amber-400 stroke-none" />
-                      <Star className="h-3 w-3 fill-current text-amber-400 stroke-none" />
-                      <Star className="h-3 w-3 fill-current text-amber-400 stroke-none" />
-                      <Star className="h-3 w-3 fill-current text-amber-400 stroke-none" />
-                    </div>
-                    <span className="text-xs font-black text-slate-800">5.0</span>
-                    <span className="text-[11px] text-slate-500 font-semibold">(120+ Reviews)</span>
-                  </div>
-                </div>
+                </div> 
 
                 {/* Main Headline */}
-                <h1 className="text-3xl sm:text-4xl lg:text-[54px] font-black leading-[1.08] text-slate-900 tracking-tight">
+                <h1 className="text-3xl sm:text-4xl lg:text-[28px] xl:text-[32px] 2xl:text-[44px] font-black leading-[1.08] text-slate-900 tracking-tight">
                   Trusted by Families.<br />
                   Recommended by Locals.
                 </h1>
 
                 {/* Paragraph */}
-                <p className="max-w-xl text-base sm:text-lg leading-relaxed text-slate-600 font-medium">
+                <p className="max-w-xl text-base lg:text-xs xl:text-sm 2xl:text-base leading-relaxed text-slate-600 font-medium">
                   RH Plumbing &amp; Heating is a family-run business delivering honest advice, quality workmanship and reliable service across our local community.
                 </p>
-
                 {/* Hero Action Buttons */}
                 <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 items-stretch sm:items-center pt-1">
                   <button 
                     onClick={() => window.dispatchEvent(new CustomEvent('open-quote-modal'))}
-                    className="inline-flex items-center justify-center gap-2.5 rounded-xl bg-gradient-to-r from-[#ff6b00] to-[#ff5500] hover:from-[#e56000] hover:to-[#e54b00] px-6 py-3.5 text-white font-black text-xs sm:text-sm uppercase tracking-wider shadow-md shadow-orange-500/20 active:scale-95 transition-all cursor-pointer text-center"
+                    className="inline-flex items-center justify-center gap-2.5 rounded-xl bg-gradient-to-r from-[#ff6b00] to-[#ff5500] hover:from-[#e56000] hover:to-[#e54b00] px-6 py-3.5 lg:px-4 lg:py-3 xl:px-6 xl:py-3.5 text-white font-black text-xs sm:text-sm lg:text-xs xl:text-sm uppercase tracking-wider shadow-md shadow-orange-500/20 active:scale-95 transition-all cursor-pointer text-center"
                   >
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="h-4.5 w-4.5">
                       <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
@@ -348,70 +326,100 @@ export default function Home() {
                     </svg>
                     <span>Get My Quote</span>
                   </button>
-
+ 
                   <a 
                     href={siteConfig.contact.primaryPhoneHref} 
-                    className="inline-flex items-center justify-center gap-2.5 rounded-xl border-2 border-[#104d96] bg-white hover:bg-slate-50 px-6 py-3.5 text-[#104d96] font-black text-xs sm:text-sm uppercase tracking-wider shadow-xs active:scale-95 transition-all cursor-pointer text-center"
+                    className="inline-flex items-center justify-center gap-2.5 rounded-xl border-2 border-[#104d96] bg-white hover:bg-slate-50 px-6 py-3.5 lg:px-4 lg:py-3 xl:px-6 xl:py-3.5 text-[#104d96] font-black text-xs sm:text-sm lg:text-xs xl:text-sm uppercase tracking-wider shadow-xs active:scale-95 transition-all cursor-pointer text-center"
                   >
                     <Phone className="h-4.5 w-4.5 text-[#104d96] fill-[#104d96]" />
                     <span>Speak to an Expert</span>
                   </a>
+
+                  {/* Google Card Speech Bubble */}
+                  <div className="hidden sm:flex relative bg-white border border-slate-100/80 rounded-2xl px-4 py-3.5 w-[155px] h-[92px] shadow-lg flex-col items-center justify-center text-center select-none ml-2 -rotate-3 hover:-rotate-1 hover:scale-105 hover:shadow-xl transition-all duration-300 cursor-pointer">
+                    {/* Speech bubble arrow pointing left */}
+                    <div className="absolute top-1/2 -left-1.5 -translate-y-1/2 w-3 h-3 bg-white rotate-45 border-l border-b border-slate-100" />
+                    
+                    <div className="relative z-10">
+                      <span className="text-[17px] font-black tracking-tight font-sans block leading-none">
+                        <span className="text-[#4285F4]">G</span>
+                        <span className="text-[#EA4335]">o</span>
+                        <span className="text-[#FBBC05]">o</span>
+                        <span className="text-[#4285F4]">g</span>
+                        <span className="text-[#34A853]">l</span>
+                        <span className="text-[#EA4335]">e</span>
+                      </span>
+                      
+                      <div className="flex items-center gap-1 justify-center mt-1.5">
+                        <span className="text-xs font-black text-slate-800 leading-none">5.0</span>
+                        <div className="flex text-amber-400 gap-0.5">
+                          <Star className="h-3 w-3 fill-current text-amber-400 stroke-none" />
+                          <Star className="h-3 w-3 fill-current text-amber-400 stroke-none" />
+                          <Star className="h-3 w-3 fill-current text-amber-400 stroke-none" />
+                          <Star className="h-3 w-3 fill-current text-amber-400 stroke-none" />
+                          <Star className="h-3 w-3 fill-current text-amber-400 stroke-none" />
+                        </div>
+                      </div>
+                      
+                      <span className="text-[10px] text-slate-400 font-bold block mt-1.5 leading-none">From 120+ reviews</span>
+                    </div>
+                  </div>
                 </div>
 
                 {/* Horizontal Trust Bar (Super Responsive: 2x2 on Mobile, 1x4 on Desktop) */}
-                <div className="pt-5 max-w-[640px] w-full">
-                  <div className="bg-white border border-slate-200/80 rounded-xl p-3.5 sm:p-5 shadow-lg shadow-slate-200/50">
+                <div className="pt-5 lg:pt-2 xl:pt-3 2xl:pt-5 max-w-[640px] w-full">
+                  <div className="bg-white border border-slate-200/80 rounded-xl p-3.5 sm:p-5 lg:p-3 xl:p-4 2xl:p-5 shadow-lg shadow-slate-200/50">
                     <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-2 divide-y sm:divide-y-0 sm:divide-x divide-slate-100 text-center">
                       
                       {/* Item 1 */}
-                      <div className="px-2 pt-2 sm:pt-0 space-y-1.5 flex flex-col items-center">
+                      <div className="px-2 pt-2 sm:pt-0 space-y-1.5 lg:space-y-1 xl:space-y-1 flex flex-col items-center">
                         <div className="text-[#104d96] flex justify-center">
-                          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" className="h-6 w-6">
+                          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" className="h-6 w-6 lg:h-5 lg:w-5 xl:h-5.5 xl:w-5.5 2xl:h-6 2xl:w-6">
                             <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
                             <circle cx="9" cy="7" r="4" />
                             <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
                             <path d="M16 3.13a4 4 0 0 1 0 7.75" />
                           </svg>
                         </div>
-                        <h4 className="font-black text-xs sm:text-[14px] text-slate-900 leading-tight">Local &amp; Family Run</h4>
-                        <p className="text-[11px] sm:text-[12px] text-slate-500 font-semibold leading-tight">Proudly serving our community</p>
+                        <h4 className="font-black text-xs sm:text-[14px] lg:text-[11px] xl:text-[12px] 2xl:text-[14px] text-slate-900 leading-tight">Local &amp; Family Run</h4>
+                        <p className="text-[11px] sm:text-[12px] lg:text-[10px] xl:text-[10.5px] 2xl:text-[12px] text-slate-500 font-semibold leading-tight">Proudly serving our community</p>
                       </div>
-
+ 
                       {/* Item 2 */}
-                      <div className="px-2 pt-2 sm:pt-0 space-y-1.5 flex flex-col items-center">
+                      <div className="px-2 pt-2 sm:pt-0 space-y-1.5 lg:space-y-1 xl:space-y-1 flex flex-col items-center">
                         <div className="text-[#104d96] flex justify-center">
-                          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" className="h-6 w-6">
+                          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" className="h-6 w-6 lg:h-5 lg:w-5 xl:h-5.5 xl:w-5.5 2xl:h-6 2xl:w-6">
                             <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
                             <path d="m9 11 2 2 4-4" />
                           </svg>
                         </div>
-                        <h4 className="font-black text-xs sm:text-[14px] text-slate-900 leading-tight">Trusted &amp; Rated</h4>
-                        <p className="text-[11px] sm:text-[12px] text-slate-500 font-semibold leading-tight">5★ reviews from happy customers</p>
+                        <h4 className="font-black text-xs sm:text-[14px] lg:text-[11px] xl:text-[12px] 2xl:text-[14px] text-slate-900 leading-tight">Trusted &amp; Rated</h4>
+                        <p className="text-[11px] sm:text-[12px] lg:text-[10px] xl:text-[10.5px] 2xl:text-[12px] text-slate-500 font-semibold leading-tight">5★ reviews from happy customers</p>
                       </div>
-
+ 
                       {/* Item 3 */}
-                      <div className="px-2 pt-3 sm:pt-0 space-y-1.5 flex flex-col items-center">
+                      <div className="px-2 pt-3 sm:pt-0 space-y-1.5 lg:space-y-1 xl:space-y-1 flex flex-col items-center">
                         <div className="text-[#104d96] flex justify-center">
-                          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" className="h-6 w-6">
+                          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" className="h-6 w-6 lg:h-5 lg:w-5 xl:h-5.5 xl:w-5.5 2xl:h-6 2xl:w-6">
                             <circle cx="9" cy="12" r="3" />
                             <path d="M15 9l6-6M9 21v-6" />
                             <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
                           </svg>
                         </div>
-                        <h4 className="font-black text-xs sm:text-[14px] text-slate-900 leading-tight">Upfront Pricing</h4>
-                        <p className="text-[11px] sm:text-[12px] text-slate-500 font-semibold leading-tight">No surprises, just honest prices</p>
+                        <h4 className="font-black text-xs sm:text-[14px] lg:text-[11px] xl:text-[12px] 2xl:text-[14px] text-slate-900 leading-tight">Upfront Pricing</h4>
+                        <p className="text-[11px] sm:text-[12px] lg:text-[10px] xl:text-[10.5px] 2xl:text-[12px] text-slate-500 font-semibold leading-tight">No surprises, just honest prices</p>
                       </div>
-
+ 
                       {/* Item 4 */}
-                      <div className="px-2 pt-3 sm:pt-0 space-y-1.5 flex flex-col items-center">
+                      <div className="px-2 pt-3 sm:pt-0 space-y-1.5 lg:space-y-1 xl:space-y-1 flex flex-col items-center">
                         <div className="text-[#104d96] flex justify-center">
-                          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" className="h-6 w-6">
+                          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" className="h-6 w-6 lg:h-5 lg:w-5 xl:h-5.5 xl:w-5.5 2xl:h-6 2xl:w-6">
                             <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
                             <polyline points="9 22 9 12 15 12 15 22" />
                           </svg>
                         </div>
-                        <h4 className="font-black text-xs sm:text-[14px] text-slate-900 leading-tight">Reliable &amp; Tidy</h4>
-                        <p className="text-[11px] sm:text-[12px] text-slate-500 font-semibold leading-tight">Respect for your home</p>
+                        <h4 className="font-black text-xs sm:text-[14px] lg:text-[11px] xl:text-[12px] 2xl:text-[14px] text-slate-900 leading-tight">Reliable &amp; Tidy</h4>
+                        <p className="text-[11px] sm:text-[12px] lg:text-[10px] xl:text-[10.5px] 2xl:text-[12px] text-slate-500 font-semibold leading-tight">Respect for your home</p>
                       </div>
 
                     </div>
@@ -452,7 +460,7 @@ export default function Home() {
 
                 {/* Quote Form Card */}
                 {heroStatus === 'success' ? (
-                  <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-2xl text-center space-y-4 w-full max-w-[440px] lg:max-w-[350px]">
+                  <div className="rounded-3xl border border-slate-200 bg-white p-6 lg:p-4 xl:p-4 2xl:p-6 shadow-2xl text-center space-y-4 lg:space-y-3 xl:space-y-3 2xl:space-y-4 w-full max-w-[380px] lg:max-w-[285px] xl:max-w-[285px] 2xl:max-w-[380px]">
                     <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-emerald-50 text-emerald-500 border border-emerald-100">
                       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" className="w-5 h-5">
                         <polyline points="20 6 9 17 4 12" />
@@ -470,13 +478,13 @@ export default function Home() {
                     </button>
                   </div>
                 ) : (
-                  <div className="bg-white border border-slate-200/80 rounded-3xl p-4 sm:p-5 shadow-xl space-y-3 w-full max-w-[440px] lg:max-w-[350px]">
+                  <div className="bg-white border border-slate-200/80 rounded-3xl p-4 sm:p-5 lg:p-3.5 xl:p-3.5 2xl:p-5 shadow-xl space-y-3 lg:space-y-2 xl:space-y-2 2xl:space-y-3 w-full max-w-[380px] lg:max-w-[285px] xl:max-w-[285px] 2xl:max-w-[380px]">
                     <div className="text-center">
                       <h3 className="text-lg font-extrabold text-[#104d96] tracking-tight">Get Your Free Quote</h3>
                       <p className="text-[11px] text-slate-500 font-medium mt-0.5">Fast, friendly &amp; no obligation</p>
                     </div>
 
-                    <form onSubmit={handleHeroFormSubmit} className="space-y-2.5">
+                    <form onSubmit={handleHeroFormSubmit} className="space-y-2.5 lg:space-y-2 xl:space-y-2 2xl:space-y-2.5">
                       {/* Inputs */}
                       <div className="relative">
                         <span className="absolute inset-y-0 left-0 flex items-center pl-3.5 pointer-events-none">
@@ -491,7 +499,7 @@ export default function Home() {
                           value={name}
                           onChange={(e) => setName(e.target.value)}
                           placeholder="Your Name"
-                          className="w-full rounded-xl border border-slate-200 bg-white pl-9 pr-3 py-2 text-xs sm:text-sm text-slate-800 placeholder-slate-400 focus:border-[#ff6b00] focus:ring-2 focus:ring-[#ff6b00]/20 focus:outline-none transition-all shadow-2xs"
+                          className="w-full rounded-xl border border-slate-200 bg-white pl-9 pr-3 py-2 lg:py-1.5 xl:py-1.5 2xl:py-2 text-xs sm:text-sm lg:text-xs xl:text-xs 2xl:text-sm text-slate-800 placeholder-slate-400 focus:border-[#ff6b00] focus:ring-2 focus:ring-[#ff6b00]/20 focus:outline-none transition-all shadow-2xs"
                         />
                       </div>
 
@@ -505,7 +513,7 @@ export default function Home() {
                           value={phone}
                           onChange={(e) => setPhone(e.target.value)}
                           placeholder="Phone Number"
-                          className="w-full rounded-xl border border-slate-200 bg-white pl-9 pr-3 py-2 text-xs sm:text-sm text-slate-800 placeholder-slate-400 focus:border-[#ff6b00] focus:ring-2 focus:ring-[#ff6b00]/20 focus:outline-none transition-all shadow-2xs"
+                          className="w-full rounded-xl border border-slate-200 bg-white pl-9 pr-3 py-2 lg:py-1.5 xl:py-1.5 2xl:py-2 text-xs sm:text-sm lg:text-xs xl:text-xs 2xl:text-sm text-slate-800 placeholder-slate-400 focus:border-[#ff6b00] focus:ring-2 focus:ring-[#ff6b00]/20 focus:outline-none transition-all shadow-2xs"
                         />
                       </div>
 
@@ -519,7 +527,7 @@ export default function Home() {
                           value={email}
                           onChange={(e) => setEmail(e.target.value)}
                           placeholder="Email Address"
-                          className="w-full rounded-xl border border-slate-200 bg-white pl-9 pr-3 py-2 text-xs sm:text-sm text-slate-800 placeholder-slate-400 focus:border-[#ff6b00] focus:ring-2 focus:ring-[#ff6b00]/20 focus:outline-none transition-all shadow-2xs"
+                          className="w-full rounded-xl border border-slate-200 bg-white pl-9 pr-3 py-2 lg:py-1.5 xl:py-1.5 2xl:py-2 text-xs sm:text-sm lg:text-xs xl:text-xs 2xl:text-sm text-slate-800 placeholder-slate-400 focus:border-[#ff6b00] focus:ring-2 focus:ring-[#ff6b00]/20 focus:outline-none transition-all shadow-2xs"
                         />
                       </div>
 
@@ -528,7 +536,7 @@ export default function Home() {
                           required
                           value={heroService}
                           onChange={(e) => setHeroService(e.target.value)}
-                          className={`w-full rounded-xl border border-slate-200 bg-white px-3 py-2 text-xs sm:text-sm focus:border-[#ff6b00] focus:ring-2 focus:ring-[#ff6b00]/20 focus:outline-none transition-all appearance-none shadow-2xs ${heroService ? 'text-slate-800 font-medium' : 'text-slate-400 font-medium'}`}
+                          className={`w-full rounded-xl border border-slate-200 bg-white px-3 py-2 text-xs sm:text-sm lg:text-xs xl:text-xs 2xl:text-sm focus:border-[#ff6b00] focus:ring-2 focus:ring-[#ff6b00]/20 focus:outline-none transition-all appearance-none shadow-2xs ${heroService ? 'text-slate-800 font-medium' : 'text-slate-400 font-medium'}`}
                         >
                           <option value="" disabled>What do you need help with?</option>
                           <option value="Plumbing Repairs">Plumbing Repairs</option>
@@ -550,7 +558,7 @@ export default function Home() {
                           value={heroDetails}
                           onChange={(e) => setHeroDetails(e.target.value)}
                           placeholder="Tell us a few details..."
-                          className="w-full rounded-xl border border-slate-200 bg-white px-3 py-2 text-xs sm:text-sm text-slate-800 placeholder-slate-400 focus:border-[#ff6b00] focus:ring-2 focus:ring-[#ff6b00]/20 focus:outline-none transition-all resize-none shadow-2xs"
+                          className="w-full rounded-xl border border-slate-200 bg-white px-3 py-2 lg:py-1.5 xl:py-1.5 2xl:py-2 text-xs sm:text-sm lg:text-xs xl:text-xs 2xl:text-sm text-slate-800 placeholder-slate-400 focus:border-[#ff6b00] focus:ring-2 focus:ring-[#ff6b00]/20 focus:outline-none transition-all resize-none shadow-2xs"
                         />
                       </div>
 
@@ -563,7 +571,7 @@ export default function Home() {
                       <button
                         type="submit"
                         disabled={heroStatus === 'submitting'}
-                        className="w-full flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-[#ff6b00] to-[#ff5500] hover:from-[#e56000] hover:to-[#e54b00] text-white py-3 text-xs sm:text-sm font-black tracking-wider transition-all duration-300 shadow-md shadow-orange-500/20 active:scale-98 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
+                        className="w-full flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-[#ff6b00] to-[#ff5500] hover:from-[#e56000] hover:to-[#e54b00] text-white py-3 lg:py-2.5 xl:py-2.5 2xl:py-3 text-xs sm:text-sm lg:text-xs xl:text-xs 2xl:text-sm font-black tracking-wider transition-all duration-300 shadow-md shadow-orange-500/20 active:scale-98 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
                       >
                         {heroStatus === 'submitting' ? (
                           <span>Submitting...</span>
@@ -590,15 +598,18 @@ export default function Home() {
                 {/* Need Help Now Dark Blue Callout Box */}
                 <a 
                   href={siteConfig.contact.primaryPhoneHref}
-                  className="w-full max-w-[440px] lg:max-w-[350px] bg-[#0c4c92] hover:bg-[#093c75] text-white rounded-2xl p-3.5 px-5 shadow-lg transition-all cursor-pointer group flex items-center justify-between gap-4"
+                  className="w-full max-w-[380px] lg:max-w-[285px] xl:max-w-[285px] 2xl:max-w-[380px] bg-[#0c4c92] hover:bg-[#093c75] text-white rounded-2xl p-3.5 px-5 lg:p-2.5 lg:px-4 xl:p-2.5 xl:px-4 2xl:p-3.5 2xl:px-5 shadow-lg transition-all cursor-pointer group flex items-center justify-between gap-4"
                 >
                   <div className="space-y-0.5">
-                    <p className="text-xs font-black text-white uppercase tracking-wider">Need Help Now?</p>
-                    <p className="text-[10.5px] text-blue-200 font-medium">We offer same-day callouts</p>
-                    <p className="text-lg sm:text-xl font-black text-white tracking-tight flex items-center gap-2 pt-0.5">
+                    <p className="text-xs lg:text-[11px] xl:text-[11px] 2xl:text-xs font-black text-white uppercase tracking-wider">Need Help Now?</p>
+                    <p className="text-[10.5px] lg:text-[9.5px] xl:text-[9.5px] 2xl:text-[10.5px] text-blue-200 font-medium">We offer same-day callouts</p>
+                    <p className="text-lg sm:text-xl lg:text-[15px] xl:text-[15px] 2xl:text-xl font-black text-white tracking-tight flex items-center gap-2 pt-0.5">
                       <Phone className="h-4.5 w-4.5 text-white fill-white" />
                       <span>{siteConfig.contact.primaryPhone}</span>
                     </p>
+                  </div>
+                  <div className="h-10 w-10 rounded-full bg-[#104d96] border border-blue-400/20 flex items-center justify-center text-white shadow-inner group-hover:scale-105 transition-all">
+                    <ArrowRight className="h-5 w-5 stroke-[2.5]" />
                   </div>
                 </a>
 

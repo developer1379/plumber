@@ -41,9 +41,9 @@ export default async function BlogPage() {
   }
 
   const fallbacks = [
-    'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&w=600&q=80',
-    '/hero-bg.png',
-    'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=600&q=80'
+    '/boiler-advice.png',
+    'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=600&q=80',
+    '/plumber-hero.png'
   ]
 
   return (
