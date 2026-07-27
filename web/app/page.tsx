@@ -468,7 +468,7 @@ export default function Home() {
                     </div>
                     <h3 className="text-lg font-extrabold text-slate-800">Quote Request Received!</h3>
                     <p className="text-xs text-slate-500 font-medium leading-relaxed">
-                      Thanks, we will get back to you with a free, no-obligation quote within 1 hour.
+                      Thanks, we will get back to you with a free, no-obligation quote as soon as possible.
                     </p>
                     <button 
                       onClick={() => setHeroStatus('idle')}
@@ -584,13 +584,7 @@ export default function Home() {
                       </button>
                     </form>
 
-                    <div className="flex items-center justify-center gap-1.5 text-[10px] text-slate-400 font-medium pt-0.5">
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" className="h-3 w-3 text-slate-400">
-                        <circle cx="12" cy="12" r="10" />
-                        <polyline points="12 6 12 12 16 14" />
-                      </svg>
-                      <span>We aim to respond within 1 hour</span>
-                    </div>
+
 
                   </div>
                 )}
@@ -1108,7 +1102,6 @@ export default function Home() {
                         <a href={`mailto:${siteConfig.contact.email}`} className="font-extrabold text-[15px] text-slate-850 hover:text-[#ff6b00] transition-colors block leading-tight">
                           {siteConfig.contact.email}
                         </a>
-                        <span className="text-[11px] text-slate-400 font-medium mt-1 block">We aim to reply within 1 hour</span>
                       </div>
                     </div>
 
