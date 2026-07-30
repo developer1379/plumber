@@ -81,15 +81,37 @@ export default function ServicesPage() {
       <main className="flex-1 py-12 md:py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           
-          {/* Header */}
-          <div className="max-w-3xl">
-            <span className="text-xs font-bold uppercase tracking-wider text-secondary">Our Capabilities</span>
-            <h1 className="mt-3 text-4xl font-extrabold tracking-tight text-primary sm:text-5xl font-serif">
-              Plumbing & Heating Services in Gillingham
-            </h1>
-            <p className="mt-6 text-lg text-muted leading-relaxed">
-              We provide professional gas heating and plumbing services across {siteConfig.address.display} and the surrounding 10-mile radius. Explore our primary core services below.
-            </p>
+          {/* Professional Hero Section */}
+          <div className="relative rounded-3xl bg-slate-900 overflow-hidden text-white p-8 md:p-12 lg:p-16 mb-16 shadow-xl">
+            {/* Background Image with Overlay */}
+            <div className="absolute inset-0 z-0 opacity-40">
+              <img 
+                src="/plumber-hero.png" 
+                alt="BMV Plumbing Services"
+                className="w-full h-full object-cover filter brightness-75"
+              />
+              <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-900 to-transparent" />
+            </div>
+            
+            <div className="relative z-10 max-w-3xl space-y-6">
+              <span className="inline-flex items-center gap-1.5 rounded-full bg-secondary/20 px-3 py-1 text-xs font-semibold text-secondary border border-secondary/30">
+                <span className="h-1.5 w-1.5 rounded-full bg-secondary animate-pulse" />
+                Our Full Capabilities
+              </span>
+              <h1 className="text-4xl font-extrabold tracking-tight sm:text-5xl font-serif leading-tight">
+                Professional Plumbing & Gas Services in Gillingham
+              </h1>
+              <p className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-2xl font-medium">
+                BMV Plumbing delivers expert boiler repairs, Gas Safe installations, and 24/7 emergency response across Gillingham, Shaftesbury, and the surrounding 10-mile radius.
+              </p>
+              
+              {/* Trust Indicators */}
+              <div className="pt-6 flex flex-wrap gap-x-6 gap-y-3 text-xs sm:text-sm font-semibold text-slate-200 border-t border-white/10">
+                <span className="flex items-center gap-2">✓ Gas Safe Registered</span>
+                <span className="flex items-center gap-2">✓ Local & Trusted Engineer</span>
+                <span className="flex items-center gap-2">✓ 10-Year Guarantee Available</span>
+              </div>
+            </div>
           </div>
 
           {/* Service Stack */}

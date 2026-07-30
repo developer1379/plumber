@@ -305,13 +305,35 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
                 />
               </div>
 
+              {/* Service Quick Info Dashboard Card */}
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 bg-slate-50 border border-slate-100/60 rounded-2xl p-5 text-center shadow-2xs">
+                <div className="space-y-1">
+                  <span className="text-[10px] font-extrabold uppercase tracking-wider text-slate-400">Response Time</span>
+                  <p className="text-sm font-black text-slate-800">
+                    {slug === 'emergency-callouts' ? 'Under 60 Mins' : 'Same / Next Day'}
+                  </p>
+                </div>
+                <div className="space-y-1 border-l border-slate-200/60">
+                  <span className="text-[10px] font-extrabold uppercase tracking-wider text-slate-400">Accreditation</span>
+                  <p className="text-sm font-black text-slate-850">Gas Safe Certified</p>
+                </div>
+                <div className="space-y-1 border-l border-slate-200/60">
+                  <span className="text-[10px] font-extrabold uppercase tracking-wider text-slate-400">Accredited Area</span>
+                  <p className="text-sm font-black text-slate-800">10-Mile Radius</p>
+                </div>
+                <div className="space-y-1 border-l border-slate-200/60">
+                  <span className="text-[10px] font-extrabold uppercase tracking-wider text-slate-400">Pricing Policy</span>
+                  <p className="text-sm font-black text-slate-850">Free Quotes</p>
+                </div>
+              </div>
+
               {/* Subsections */}
-              <div className="space-y-10">
+              <div className="space-y-12">
                 {data.subsections.map((sub, i) => (
-                  <div key={i} className="space-y-4">
-                    <h2 className="text-2xl font-bold text-primary">{sub.title}</h2>
+                  <div key={i} className="relative pl-6 border-l-2 border-slate-200 space-y-4 hover:border-secondary transition-colors duration-300">
+                    <h2 className="text-2xl font-extrabold text-primary tracking-tight">{sub.title}</h2>
                     {sub.content.map((p, pIdx) => (
-                      <p key={pIdx} className="text-muted leading-relaxed text-slate-700">
+                      <p key={pIdx} className="text-slate-650 leading-relaxed font-semibold">
                         {p}
                       </p>
                     ))}
@@ -320,18 +342,23 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
               </div>
 
               {/* FAQ Accordion */}
-              <div className="space-y-6 pt-6 border-t border-border">
-                <h2 className="text-2xl font-bold text-primary">Frequently Asked Questions</h2>
-                <div className="space-y-4">
+              <div className="space-y-6 pt-12 border-t border-border">
+                <div className="space-y-1">
+                  <span className="text-xs font-bold uppercase tracking-wider text-secondary">Frequently Asked</span>
+                  <h2 className="text-3xl font-extrabold text-primary font-serif">Questions & Answers</h2>
+                </div>
+                <div className="mt-8 space-y-4">
                   {data.faqs.map((faq, i) => (
-                    <details key={i} className="group border-b border-border pb-4">
-                      <summary className="flex cursor-pointer items-center justify-between font-bold text-primary list-none">
-                        <span>{faq.question}</span>
-                        <span className="transition-transform group-open:rotate-180">
-                          <ChevronRight className="h-5 w-5 text-secondary" />
+                    <details key={i} className="group bg-slate-50/50 border border-slate-100 rounded-2xl p-5 [&_summary::-webkit-details-marker]:hidden">
+                      <summary className="flex cursor-pointer items-center justify-between font-bold text-primary list-none outline-none">
+                        <span className="text-[15px] font-black text-slate-850">{faq.question}</span>
+                        <span className="transition-transform group-open:rotate-180 text-secondary">
+                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2.5" stroke="currentColor" className="w-4 h-4">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                          </svg>
                         </span>
                       </summary>
-                      <p className="mt-3 text-sm text-muted leading-relaxed">
+                      <p className="mt-3 text-sm text-slate-650 leading-relaxed font-medium pt-3 border-t border-slate-250/30">
                         {faq.answer}
                       </p>
                     </details>
