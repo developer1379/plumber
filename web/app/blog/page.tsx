@@ -44,9 +44,9 @@ export default async function BlogPage() {
   }
 
   const fallbacks = [
-    '/boiler-advice.png',
+    '/boiler-advice.webp',
     'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=600&q=80',
-    '/plumber-hero.png'
+    '/plumber-hero.webp'
   ]
 
   return (

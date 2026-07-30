@@ -19,7 +19,7 @@ export default function ServicesPage() {
       icon: Flame,
       title: 'Boiler Servicing, Installation & Repairs',
       slug: 'boiler-servicing-installation-repairs',
-      imageUrl: '/boiler-advice.png',
+      imageUrl: '/boiler-advice.webp',
       summary: 'Annual system servicing to maintain warranty, custom boiler installations, and diagnostics for broken boilers.',
       points: [
         'Annual boiler inspections and visual flue checks',
@@ -47,7 +47,7 @@ export default function ServicesPage() {
       icon: Wrench,
       title: 'Gas Installations',
       slug: 'gas-installations',
-      imageUrl: '/plumber-hero.png',
+      imageUrl: '/plumber-hero.webp',
       summary: 'Certified installation of new gas appliances including hobs, cookers, and heating pipework extensions.',
       points: [
         'Gas cooker, range, and hob installations',
@@ -61,7 +61,7 @@ export default function ServicesPage() {
       icon: Siren,
       title: 'Emergency Callouts',
       slug: 'emergency-callouts',
-      imageUrl: '/van-hero.png',
+      imageUrl: '/van-hero.webp',
       summary: 'Fast local response for plumbing and gas heating emergencies. No hidden callout charges.',
       points: [
         'Burst pipes, central heating leaks, and flooding',

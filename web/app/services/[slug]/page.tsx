@@ -295,10 +295,10 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
               <div className="relative aspect-[16/9] w-full overflow-hidden rounded-2xl border border-slate-100 shadow-md">
                 <img 
                   src={
-                    slug === 'boiler-servicing-installation-repairs' ? '/boiler-advice.png' :
+                    slug === 'boiler-servicing-installation-repairs' ? '/boiler-advice.webp' :
                     slug === 'landlord-safety-checks' ? 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1200&q=80' :
-                    slug === 'gas-installations' ? '/plumber-hero.png' :
-                    slug === 'emergency-callouts' ? '/van-hero.png' : '/plumber-hero.png'
+                    slug === 'gas-installations' ? '/plumber-hero.webp' :
+                    slug === 'emergency-callouts' ? '/van-hero.webp' : '/plumber-hero.webp'
                   }
                   alt={data.title}
                   className="w-full h-full object-cover"

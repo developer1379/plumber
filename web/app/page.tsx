@@ -277,7 +277,7 @@ export default function Home() {
           <div className="absolute right-[4%] lg:right-[4%] xl:right-[10%] 2xl:right-[12%] top-0 bottom-0 w-[56%] lg:w-[52%] xl:w-[52%] h-full z-0 lg:block hidden overflow-hidden pointer-events-none">
             <div className="relative w-full h-full">
               <img 
-                src="/family-hero.png" 
+                src="/family-hero.webp" 
                 alt="RH Plumbing &amp; Heating family" 
                 className="w-full h-full object-cover object-top"
               />
@@ -437,7 +437,7 @@ export default function Home() {
                 <div className="lg:hidden flex justify-center w-full">
                   <div className="relative w-full max-w-[440px] aspect-[16/10] rounded-2xl overflow-hidden shadow-md">
                     <img 
-                      src="/family-hero.png" 
+                      src="/family-hero.webp" 
                       alt="RH Plumbing &amp; Heating family" 
                       className="w-full h-full object-cover object-top"
                     />
@@ -655,7 +655,7 @@ export default function Home() {
                 {/* Background Layer with Van Photo & Slanted Mask with Motion Blur Edge (Hidden on Mobile) */}
                 <div className="absolute inset-0 z-0 hidden sm:block">
                   <img 
-                    src="/van-hero.png" 
+                    src="/van-hero.webp" 
                     alt="RH Plumbing &amp; Heating Service Van" 
                     className="w-full h-full object-cover object-right"
                   />
