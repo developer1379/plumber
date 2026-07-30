@@ -282,13 +282,27 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
           <div className="grid grid-cols-1 gap-12 lg:grid-cols-3">
             {/* Main Content Column */}
             <div className="lg:col-span-2 space-y-12">
-              <div>
-                <h1 className="text-3xl font-extrabold tracking-tight text-primary sm:text-4xl md:text-5xl">
+              <div className="space-y-4">
+                <h1 className="text-3xl font-extrabold tracking-tight text-primary sm:text-4xl md:text-5xl leading-tight">
                   {data.h1}
                 </h1>
-                <p className="mt-4 text-muted max-w-xl">
+                <p className="text-muted max-w-xl text-slate-650">
                   Providing professional, Gas Safe registered services across Gillingham and the surrounding region.
                 </p>
+              </div>
+
+              {/* Service Featured Image */}
+              <div className="relative aspect-[16/9] w-full overflow-hidden rounded-2xl border border-slate-100 shadow-md">
+                <img 
+                  src={
+                    slug === 'boiler-servicing-installation-repairs' ? '/boiler-advice.png' :
+                    slug === 'landlord-safety-checks' ? 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1200&q=80' :
+                    slug === 'gas-installations' ? '/plumber-hero.png' :
+                    slug === 'emergency-callouts' ? '/van-hero.png' : '/plumber-hero.png'
+                  }
+                  alt={data.title}
+                  className="w-full h-full object-cover"
+                />
               </div>
 
               {/* Subsections */}
