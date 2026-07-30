@@ -944,7 +944,7 @@ export default function Home() {
                 {/* Timeline block */}
                 <div className="relative pl-10 space-y-8 pt-2">
                   {/* Dotted vertical line */}
-                  <div className="absolute left-[20px] top-4 bottom-4 w-0.5 border-l-2 border-dashed border-slate-200" />
+                  <div className="absolute left-[15px] top-4 bottom-4 w-0.5 border-l-2 border-dashed border-slate-200" />
 
                   {/* Step 1 */}
                   <div className="relative">
