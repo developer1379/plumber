@@ -6,7 +6,7 @@ import { Header } from '@/components/chrome/Header'
 import { Footer } from '@/components/chrome/Footer'
 import { RelatedAreas, RelatedServices, RelatedPosts } from '@/components/sections/RelatedBlocks'
 import { siteConfig } from '@/lib/site-config'
-import { Check, Phone, Mail, Star, Quote, ArrowRight, HelpCircle } from 'lucide-react'
+import { Check, Phone, Mail, Star, Quote, ArrowRight, HelpCircle, Droplets, Flame, Thermometer, Siren, Wrench } from 'lucide-react'
 
 // INFINTELY CRISP VECTOR BRAND LOGO COMPONENTS
 const WorcesterLogo = ({ className }: { className?: string }) => (
@@ -232,35 +232,35 @@ export default function Home() {
     {
       title: 'Plumbing',
       description: 'From leaks and drips to full bathroom installations.',
-      iconUrl: '/icons/plumbing.png',
+      icon: Droplets,
       color: 'text-blue-500 bg-blue-50 border-blue-100',
       slug: 'emergency-callouts'
     },
     {
       title: 'Boiler Repairs',
       description: 'Expert diagnostics and repairs for all boiler makes.',
-      iconUrl: '/icons/boiler.png',
+      icon: Flame,
       color: 'text-orange-500 bg-orange-50 border-orange-100',
       slug: 'boiler-servicing-installation-repairs'
     },
     {
       title: 'Heating Services',
       description: 'Keep your home warm with our heating solutions.',
-      iconUrl: '/icons/heating.png',
+      icon: Thermometer,
       color: 'text-red-500 bg-red-50 border-red-100',
       slug: 'boiler-servicing-installation-repairs'
     },
     {
       title: 'Emergency Callouts',
       description: '24/7 callout for urgent plumbing & heating issues.',
-      iconUrl: '/icons/emergency.png',
+      icon: Siren,
       color: 'text-red-600 bg-red-50 border-red-100',
       slug: 'emergency-callouts'
     },
     {
       title: 'Installations',
       description: 'Boilers, bathrooms, and heating system installations.',
-      iconUrl: '/icons/installations.png',
+      icon: Wrench,
       color: 'text-blue-600 bg-blue-50 border-blue-100',
       slug: 'gas-installations'
     }
@@ -824,12 +824,8 @@ export default function Home() {
                   >
                     <div className="space-y-4 flex flex-col items-center w-full">
                       {/* Clean Icon sitting directly on the card */}
-                      <div className="w-16 h-16 flex items-center justify-center transition-transform duration-300 group-hover:scale-105">
-                        <img 
-                          src={service.iconUrl} 
-                          alt={service.title} 
-                          className="w-14 h-14 object-contain"
-                        />
+                      <div className={`w-16 h-16 flex items-center justify-center rounded-2xl border ${service.color} transition-transform duration-300 group-hover:scale-105`}>
+                        <service.icon className="w-8 h-8" />
                       </div>
 
                       {/* Info */}

@@ -7,8 +7,11 @@ import { Phone, BookOpen, ArrowRight } from 'lucide-react'
 import { siteConfig } from '@/lib/site-config'
 
 export const metadata = {
-  title: 'Heating & Plumbing Blog',
-  description: 'Expert advice and helpful guides on boiler maintenance, gas safety, and plumbing from Rob Holton.',
+  title: 'Plumbing Tips & Expert Advice Blog',
+  description: 'Explore expert plumbing tips, boiler maintenance advice, energy-saving guides, and home care insights from our experienced plumbing professionals.',
+  alternates: {
+    canonical: '/blog',
+  },
 }
 
 export default async function BlogPage() {
@@ -93,9 +96,17 @@ export default async function BlogPage() {
                       <div>
                         {/* Image Preview Container */}
                         <div className="aspect-[16/10] w-full overflow-hidden bg-slate-100 border-b border-border/60 relative">
-                          <img
+                           <img
                             src={p.imageUrl || fallbacks[idx % 3]}
-                            alt={p.title}
+                            alt={
+                              p.slug === 'boiler-making-noises-when-to-worry'
+                                ? 'Plumber inspecting a residential boiler'
+                                : p.slug === 'landlord-gas-safety-rules-explained'
+                                ? 'Landlord Gas Safety Record CP12 certificate'
+                                : p.slug === 'what-to-do-if-you-smell-gas'
+                                ? 'Professional gas safe engineer checking pipes'
+                                : p.title
+                            }
                             className="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-500"
                           />
                         </div>

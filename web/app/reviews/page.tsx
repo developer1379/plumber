@@ -6,8 +6,11 @@ import { Phone, Star } from 'lucide-react'
 import { siteConfig } from '@/lib/site-config'
 
 export const metadata = {
-  title: 'Customer Reviews',
-  description: 'Read customer reviews and feedback for Rob Holton\'s boiler servicing, gas repairs, and heating work in Gillingham.',
+  title: 'Customer Reviews | Trusted Plumbing Services',
+  description: 'Read genuine customer reviews and discover why homeowners trust us for professional plumbing, boiler repairs, gas installations, and emergency plumbing services.',
+  alternates: {
+    canonical: '/reviews',
+  },
 }
 
 const REVIEWS = [
@@ -71,35 +74,45 @@ export default function ReviewsPage() {
               </div>
 
               <div className="space-y-6">
-                {REVIEWS.map((r, idx) => (
-                  <div key={idx} className="rounded-2xl border border-border bg-white p-6 shadow-sm space-y-4">
-                    <div className="flex items-center justify-between">
-                      <div className="font-bold text-primary">{r.authorName}</div>
-                      <div className="flex items-center text-amber-500">
-                        {Array.from({ length: r.rating }).map((_, starIdx) => (
-                          <Star key={starIdx} className="h-4 w-4 fill-current" />
-                        ))}
+                <h2 className="text-2xl font-bold text-primary">Recent Feedback from Homeowners</h2>
+                <div className="space-y-6">
+                  {REVIEWS.map((r, idx) => (
+                    <div key={idx} className="rounded-2xl border border-border bg-white p-6 shadow-sm space-y-4">
+                      <div className="flex items-center justify-between">
+                        <div className="font-bold text-primary">{r.authorName}</div>
+                        <div className="flex items-center text-amber-500">
+                          {Array.from({ length: r.rating }).map((_, starIdx) => (
+                            <Star key={starIdx} className="h-4 w-4 fill-current" />
+                          ))}
+                        </div>
+                      </div>
+                      <p className="text-slate-700 text-sm leading-relaxed italic">
+                        "{r.body}"
+                      </p>
+                      <div className="text-xs text-muted">
+                        Published: {new Date(r.datePublished).toLocaleDateString('en-GB', {
+                          day: 'numeric',
+                          month: 'short',
+                          year: 'numeric',
+                        })}
                       </div>
                     </div>
-                    <p className="text-slate-700 text-sm leading-relaxed italic">
-                      "{r.body}"
-                    </p>
-                    <div className="text-xs text-muted">
-                      Published: {new Date(r.datePublished).toLocaleDateString('en-GB', {
-                        day: 'numeric',
-                        month: 'short',
-                        year: 'numeric',
-                      })}
-                    </div>
-                  </div>
-                ))}
+                  ))}
+                </div>
+
+                <div className="pt-8 space-y-4">
+                  <h2 className="text-2xl font-bold text-primary font-serif">Why Choose BMV Plumbing?</h2>
+                  <p className="text-slate-700 text-sm leading-relaxed">
+                    We pride ourselves on offering a reliable, professional service across Gillingham and the surrounding North Dorset area. From boiler maintenance to emergency response, our goal is to deliver quality workmanship and clear communication on every job.
+                  </p>
+                </div>
               </div>
             </div>
 
             {/* Sidebar */}
             <div className="space-y-6">
               <div className="rounded-2xl border border-border bg-card p-6 shadow-sm">
-                <h3 className="text-lg font-bold text-primary">Leave a Review</h3>
+                <h2 className="text-lg font-bold text-primary">Share Your Experience</h2>
                 <p className="mt-2 text-sm text-muted leading-relaxed">
                   If you have recently had work done by Rob Holton, we would appreciate your feedback.
                 </p>

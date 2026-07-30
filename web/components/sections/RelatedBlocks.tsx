@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { sanityClient } from '@/lib/sanity/client'
-import { MapPin, ArrowRight } from 'lucide-react'
+import { MapPin, ArrowRight, Flame, ShieldCheck, Wrench, Siren } from 'lucide-react'
 
 // ─────────────────────────────────────────────────────────
 // RelatedAreas (renders nearby areas covered, excluding current)
@@ -127,26 +127,34 @@ export function RelatedServices({ excludeSlug }: { excludeSlug?: string } = {}) 
       <span className="text-xs font-bold uppercase tracking-wider text-[#ff6b00]">Related Services</span>
       <h2 className="mt-3 text-2xl font-bold text-slate-900 md:text-3xl">Other services you might need</h2>
       <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-        {filteredItems.map((s) => (
-          <Link
-            key={s._id}
-            href={`/services/${s.slug}`}
-            className="group flex flex-col justify-between rounded-2xl border border-slate-100 p-6 hover:-translate-y-1 hover:shadow-xl hover:border-slate-200 transition-all duration-300 bg-white min-h-[290px] shadow-xs"
-          >
-            <div className="space-y-4">
-              {/* Clean Icon */}
-              <div className="w-12 h-12 flex items-center justify-center transition-transform duration-300 group-hover:scale-105">
-                <img 
-                  src={
-                    s.slug === 'boiler-servicing-installation-repairs' ? '/icons/boiler.png' :
-                    s.slug === 'landlord-safety-checks' ? '/icons/usp_gassafe.png' :
-                    s.slug === 'gas-installations' ? '/icons/installations.png' :
-                    s.slug === 'emergency-callouts' ? '/icons/emergency.png' : '/icons/plumbing.png'
-                  } 
-                  alt={s.title} 
-                  className="w-10 h-10 object-contain"
-                />
-              </div>
+        {filteredItems.map((s) => {
+          const getServiceIcon = (slug: string) => {
+            switch (slug) {
+              case 'boiler-servicing-installation-repairs':
+                return { Icon: Flame, color: 'text-orange-500 bg-orange-50 border-orange-100' }
+              case 'landlord-safety-checks':
+                return { Icon: ShieldCheck, color: 'text-emerald-500 bg-emerald-50 border-emerald-100' }
+              case 'gas-installations':
+                return { Icon: Wrench, color: 'text-blue-500 bg-blue-50 border-blue-100' }
+              case 'emergency-callouts':
+                return { Icon: Siren, color: 'text-red-500 bg-red-50 border-red-100' }
+              default:
+                return { Icon: Wrench, color: 'text-blue-500 bg-blue-50 border-blue-100' }
+            }
+          }
+          const { Icon, color } = getServiceIcon(s.slug)
+
+          return (
+            <Link
+              key={s._id}
+              href={`/services/${s.slug}`}
+              className="group flex flex-col justify-between rounded-2xl border border-slate-100 p-6 hover:-translate-y-1 hover:shadow-xl hover:border-slate-200 transition-all duration-300 bg-white min-h-[290px] shadow-xs"
+            >
+              <div className="space-y-4">
+                {/* Clean Icon */}
+                <div className={`w-12 h-12 flex items-center justify-center rounded-xl border ${color} transition-transform duration-300 group-hover:scale-105`}>
+                  <Icon className="w-6 h-6" />
+                </div>
 
               <div className="space-y-2">
                 <h3 className="text-[17px] font-black text-slate-850 group-hover:text-blue-600 transition-colors leading-snug tracking-tight">
@@ -164,7 +172,8 @@ export function RelatedServices({ excludeSlug }: { excludeSlug?: string } = {}) 
               <span>View details &rarr;</span>
             </span>
           </Link>
-        ))}
+        )
+      })}
       </div>
     </section>
   )
@@ -267,7 +276,15 @@ export function RelatedPosts({ excludeSlug }: { excludeSlug?: string } = {}) {
             <div className="aspect-[4/3] w-full overflow-hidden relative bg-slate-100 border-b border-slate-100">
               <img 
                 src={p.imageUrl || fallbacks[idx % 3]} 
-                alt={p.title}
+                alt={
+                  p.slug === 'boiler-making-noises-when-to-worry'
+                    ? 'Plumber inspecting a residential boiler'
+                    : p.slug === 'landlord-gas-safety-rules-explained'
+                    ? 'Landlord Gas Safety Record CP12 certificate'
+                    : p.slug === 'what-to-do-if-you-smell-gas'
+                    ? 'Professional gas safe engineer checking pipes'
+                    : p.title
+                }
                 className="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-500"
               />
             </div>

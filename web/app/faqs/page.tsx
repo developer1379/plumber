@@ -8,6 +8,9 @@ import { siteConfig } from '@/lib/site-config'
 export const metadata = {
   title: 'Frequently Asked Questions',
   description: 'Find answers to common plumbing, heating, boiler servicing, landlord safety checks, and emergency callout questions in Gillingham.',
+  alternates: {
+    canonical: '/faqs',
+  },
 }
 
 const FAQS_DATABASE = [

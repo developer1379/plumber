@@ -3,19 +3,23 @@ import { Header } from '@/components/chrome/Header'
 import { Footer } from '@/components/chrome/Footer'
 import { RelatedAreas } from '@/components/sections/RelatedBlocks'
 import { siteConfig } from '@/lib/site-config'
-import { CheckCircle2, ShieldAlert, BadgeCheck, Wrench } from 'lucide-react'
+import { CheckCircle2, ShieldCheck, Wrench, Flame, Siren } from 'lucide-react'
 
 export const metadata = {
   title: 'Our Services',
   description: 'Professional plumbing, heating, boiler servicing, landlord safety checks, and emergency callouts by Rob Holton in Gillingham.',
+  alternates: {
+    canonical: '/services',
+  },
 }
 
 export default function ServicesPage() {
   const serviceList = [
     {
-      icon: Wrench,
+      icon: Flame,
       title: 'Boiler Servicing, Installation & Repairs',
       slug: 'boiler-servicing-installation-repairs',
+      imageUrl: '/boiler-advice.png',
       summary: 'Annual system servicing to maintain warranty, custom boiler installations, and diagnostics for broken boilers.',
       points: [
         'Annual boiler inspections and visual flue checks',
@@ -23,11 +27,13 @@ export default function ServicesPage() {
         'System conversions and power flushing',
         'Emergency breakdown troubleshooting and repairs',
       ],
+      color: 'text-orange-500 bg-orange-50 border-orange-100',
     },
     {
-      icon: BadgeCheck,
+      icon: ShieldCheck,
       title: 'Landlord Safety Checks (CP12)',
       slug: 'landlord-safety-checks',
+      imageUrl: 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=600&q=80',
       summary: 'Legally required annual gas safety checks for rental properties across North Dorset. Direct certification upload.',
       points: [
         'Full check of all gas pipework, flues, and appliances',
@@ -35,11 +41,13 @@ export default function ServicesPage() {
         'Official CP12 Certificate issued on the spot',
         'Reminders for annual safety check renewals',
       ],
+      color: 'text-emerald-500 bg-emerald-50 border-emerald-100',
     },
     {
-      icon: CheckCircle2,
+      icon: Wrench,
       title: 'Gas Installations',
       slug: 'gas-installations',
+      imageUrl: '/plumber-hero.png',
       summary: 'Certified installation of new gas appliances including hobs, cookers, and heating pipework extensions.',
       points: [
         'Gas cooker, range, and hob installations',
@@ -47,11 +55,13 @@ export default function ServicesPage() {
         'Pipework capping, relocation, and testing',
         'Full safety commissioning upon completion',
       ],
+      color: 'text-blue-500 bg-blue-50 border-blue-100',
     },
     {
-      icon: ShieldAlert,
+      icon: Siren,
       title: 'Emergency Callouts',
       slug: 'emergency-callouts',
+      imageUrl: '/van-hero.png',
       summary: 'Fast local response for plumbing and gas heating emergencies. No hidden callout charges.',
       points: [
         'Burst pipes, central heating leaks, and flooding',
@@ -59,6 +69,7 @@ export default function ServicesPage() {
         'Suspected gas leaks or gas pressure drop-offs',
         'Blocked local waste lines or overflow issues',
       ],
+      color: 'text-red-500 bg-red-50 border-red-100',
     },
   ]
 
@@ -73,7 +84,7 @@ export default function ServicesPage() {
           {/* Header */}
           <div className="max-w-3xl">
             <span className="text-xs font-bold uppercase tracking-wider text-secondary">Our Capabilities</span>
-            <h1 className="mt-3 text-4xl font-extrabold tracking-tight text-primary sm:text-5xl">
+            <h1 className="mt-3 text-4xl font-extrabold tracking-tight text-primary sm:text-5xl font-serif">
               Plumbing & Heating Services in Gillingham
             </h1>
             <p className="mt-6 text-lg text-muted leading-relaxed">
@@ -81,46 +92,61 @@ export default function ServicesPage() {
             </p>
           </div>
 
-          {/* Service grid */}
-          <div className="mt-16 grid gap-8 lg:grid-cols-2">
-            {serviceList.map((s) => (
-              <div
-                key={s.slug}
-                className="flex flex-col justify-between rounded-2xl border border-border bg-white p-8 shadow-sm hover:shadow-md transition-shadow"
-              >
-                <div>
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-secondary/10 text-secondary">
-                    <s.icon className="h-6 w-6" />
+          {/* Service Stack */}
+          <div className="mt-16 space-y-12">
+            {serviceList.map((s, idx) => {
+              const isEven = idx % 2 === 0
+              return (
+                <div
+                  key={s.slug}
+                  className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-stretch rounded-3xl border border-border bg-white overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 min-h-[420px]"
+                >
+                  {/* Image Column */}
+                  <div className={`w-full lg:w-[45%] min-h-[280px] lg:min-h-full relative overflow-hidden bg-slate-100 ${isEven ? 'lg:order-first' : 'lg:order-last'}`}>
+                    <img 
+                      src={s.imageUrl} 
+                      alt={s.title}
+                      className="w-full h-full object-cover absolute inset-0 group-hover:scale-105 transition-transform duration-500"
+                    />
                   </div>
-                  <h2 className="mt-6 text-2xl font-bold text-primary">{s.title}</h2>
-                  <p className="mt-3 text-muted text-sm leading-relaxed">{s.summary}</p>
-                  
-                  <ul className="mt-6 space-y-3">
-                    {s.points.map((p, idx) => (
-                      <li key={idx} className="flex items-start gap-2 text-sm text-slate-700">
-                        <CheckCircle2 className="h-4 w-4 text-secondary mt-0.5 flex-shrink-0" />
-                        <span>{p}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
 
-                <div className="mt-8 pt-6 border-t border-border flex items-center justify-between">
-                  <Link
-                    href={`/services/${s.slug}`}
-                    className="text-sm font-bold text-secondary hover:underline"
-                  >
-                    Read full service brief &rarr;
-                  </Link>
-                  <Link
-                    href="/contact"
-                    className="rounded-full bg-primary px-4 py-2 text-xs font-semibold text-white hover:bg-primary-hover transition-colors"
-                  >
-                    Book Rob
-                  </Link>
+                  {/* Content Column */}
+                  <div className="flex-1 p-8 sm:p-10 flex flex-col justify-between">
+                    <div>
+                      <div className={`flex h-12 w-12 items-center justify-center rounded-xl border ${s.color}`}>
+                        <s.icon className="h-6 w-6" />
+                      </div>
+                      <h2 className="mt-6 text-2xl sm:text-3xl font-extrabold text-primary font-serif">{s.title}</h2>
+                      <p className="mt-4 text-sm sm:text-base leading-relaxed text-slate-600 font-medium">{s.summary}</p>
+                      
+                      <ul className="mt-6 grid sm:grid-cols-2 gap-4">
+                        {s.points.map((p, pIdx) => (
+                          <li key={pIdx} className="flex items-start gap-2 text-sm text-slate-700">
+                            <CheckCircle2 className="h-4 w-4 text-secondary mt-0.5 flex-shrink-0" />
+                            <span>{p}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+
+                    <div className="mt-8 pt-6 border-t border-border flex items-center justify-between">
+                      <Link
+                        href={`/services/${s.slug}`}
+                        className="text-sm font-black text-secondary hover:underline"
+                      >
+                        Read full service brief &rarr;
+                      </Link>
+                      <Link
+                        href="/contact"
+                        className="rounded-full bg-primary px-5 py-2.5 text-xs font-bold uppercase tracking-wider text-white hover:bg-secondary active:scale-95 transition-all shadow-sm"
+                      >
+                        Book Rob
+                      </Link>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            ))}
+              )
+            })}
           </div>
 
           {/* Area coverage block */}

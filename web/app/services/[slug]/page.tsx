@@ -10,6 +10,7 @@ import { Phone, ChevronRight } from 'lucide-react'
 
 type ServicePageData = {
   title: string
+  seoTitle?: string
   h1: string
   metaDescription: string
   subsections: { title: string; content: string[] }[]
@@ -20,8 +21,9 @@ type ServicePageData = {
 const SERVICES_MAP: Record<string, ServicePageData> = {
   'boiler-servicing-installation-repairs': {
     title: 'Boiler Servicing, Installation & Repairs',
+    seoTitle: 'Boiler Servicing, Installation & Repairs | Expert Plumbers',
     h1: 'Boiler Servicing, Installation and Repairs in Gillingham and North Dorset',
-    metaDescription: 'Local boiler servicing, installation and repairs across Gillingham, Shaftesbury, Wincanton and Sturminster Newton. Call Rob Holton for a fixed quote.',
+    metaDescription: 'Keep your boiler running efficiently with expert boiler servicing, installation, and repair services. Fast, reliable, and affordable solutions from trusted engineers.',
     serviceType: 'Boiler servicing, installation and repair',
     subsections: [
       {
@@ -71,8 +73,9 @@ const SERVICES_MAP: Record<string, ServicePageData> = {
   },
   'landlord-safety-checks': {
     title: 'Landlord Safety Checks (CP12)',
+    seoTitle: 'Landlord Gas Safety Checks & CP12 Certificates',
     h1: 'Landlord Gas Safety Checks (CP12) in Gillingham and North Dorset',
-    metaDescription: 'Annual landlord gas safety certificates (CP12) for rental properties across North Dorset. Legally required, Gas Safe engineer, fast turnaround.',
+    metaDescription: 'Ensure your property is compliant with professional landlord gas safety checks and CP12 certificates. Reliable inspections completed by qualified Gas Safe engineers.',
     serviceType: 'Landlord gas safety certificate (CP12)',
     subsections: [
       {
@@ -122,8 +125,9 @@ const SERVICES_MAP: Record<string, ServicePageData> = {
   },
   'gas-installations': {
     title: 'Gas Installations',
+    seoTitle: 'Professional Gas Installation Services | Gas Safe Engineers',
     h1: 'Gas Installations in Gillingham and North Dorset',
-    metaDescription: 'Safe, certified gas installations for cookers, hobs, fires and central heating across North Dorset. Book Rob Holton for a quote.',
+    metaDescription: 'Professional gas installation services for homes and businesses. Our qualified Gas Safe engineers provide safe, efficient, and fully compliant installations.',
     serviceType: 'Gas installation',
     subsections: [
       {
@@ -172,8 +176,9 @@ const SERVICES_MAP: Record<string, ServicePageData> = {
   },
   'emergency-callouts': {
     title: 'Emergency Callouts',
+    seoTitle: '24/7 Emergency Plumbing Services | Fast Response',
     h1: 'Emergency Plumbing Callouts in Gillingham and North Dorset',
-    metaDescription: 'Fast local response for plumbing and gas emergencies across Gillingham, Shaftesbury, Wincanton and Sturminster Newton. Call now.',
+    metaDescription: 'Need an emergency plumber? Our rapid response team is available for urgent plumbing repairs, leaks, boiler breakdowns, and gas emergencies when you need us most.',
     serviceType: 'Emergency plumbing callout',
     subsections: [
       {
@@ -232,7 +237,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   if (!data) return {}
 
   return {
-    title: data.title,
+    title: data.seoTitle || data.title,
     description: data.metaDescription,
     alternates: {
       canonical: `/services/${slug}`,

@@ -6,6 +6,9 @@ import { siteConfig } from '@/lib/site-config'
 export const metadata = {
   title: 'Privacy Policy',
   description: 'Privacy policy for BMV Plumbing (RH Plumbing & Heating) based in Gillingham, Dorset.',
+  alternates: {
+    canonical: '/privacy-policy',
+  },
 }
 
 export default function PrivacyPolicyPage() {

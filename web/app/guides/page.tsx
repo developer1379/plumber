@@ -9,6 +9,9 @@ import { siteConfig } from '@/lib/site-config'
 export const metadata = {
   title: 'Evergreen Plumbing & Heating Guides',
   description: 'Pillar guides and expert instructions on heating maintenance, boiler settings, and winter preparations.',
+  alternates: {
+    canonical: '/guides',
+  },
 }
 
 type GuideSummary = {

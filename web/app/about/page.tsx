@@ -6,8 +6,11 @@ import { siteConfig } from '@/lib/site-config'
 import { Check, ShieldCheck, Phone, Wrench, Award, MapPin } from 'lucide-react'
 
 export const metadata = {
-  title: 'About Rob Holton',
-  description: 'Learn about Rob Holton, the independent plumbing and gas engineer behind BMV Plumbing in Gillingham.',
+  title: 'About Us | Professional Plumbing & Gas Engineers',
+  description: 'Learn about our experienced plumbing team dedicated to delivering reliable boiler services, gas installations, emergency repairs, and exceptional customer care.',
+  alternates: {
+    canonical: '/about',
+  },
 }
 
 export default function AboutPage() {

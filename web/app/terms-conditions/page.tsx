@@ -6,6 +6,9 @@ import { siteConfig } from '@/lib/site-config'
 export const metadata = {
   title: 'Terms & Conditions',
   description: 'Terms and conditions of trade for BMV Plumbing (RH Plumbing & Heating) based in Gillingham, Dorset.',
+  alternates: {
+    canonical: '/terms-conditions',
+  },
 }
 
 export default function TermsConditionsPage() {

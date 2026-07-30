@@ -31,10 +31,8 @@ const roboto = Roboto({
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url.production),
-  title: {
-    default: `${siteConfig.brand.name} — ${siteConfig.address.display}`,
-    template: `%s | ${siteConfig.brand.name}`,
-  },
+  title: 'Trusted Plumber | Emergency Plumbing, Boiler & Gas Services',
+  description: 'Need a trusted plumber? We provide emergency plumbing, boiler repairs, gas installations, landlord safety checks, and fast, reliable service. Contact us today!',
   robots: robotsMetadata(),
   alternates: {
     canonical: '/',

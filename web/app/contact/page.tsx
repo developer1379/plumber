@@ -7,8 +7,11 @@ import { siteConfig } from '@/lib/site-config'
 import { Phone, Mail, MapPin, AlertCircle } from 'lucide-react'
 
 export const metadata = {
-  title: 'Contact Rob Holton',
-  description: 'Get in touch with Rob Holton at BMV Plumbing for boiler repairs, safety inspections, gas hobs and pipe installations in Gillingham.',
+  title: 'Contact Our Plumbing Experts | Free Quotes Available',
+  description: 'Contact our friendly plumbing team for expert boiler repairs, gas installations, emergency plumbing, and landlord safety checks. Request your free quote today.',
+  alternates: {
+    canonical: '/contact',
+  },
 }
 
 export default function ContactPage() {
