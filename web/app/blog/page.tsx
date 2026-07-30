@@ -1,10 +1,10 @@
-import Link from 'next/link'
 import { Header } from '@/components/chrome/Header'
 import { Footer } from '@/components/chrome/Footer'
 import { Breadcrumbs } from '@/components/layout/Breadcrumbs'
 import { getAllInsightsSummaries } from '@/lib/sanity/queries'
-import { Phone, BookOpen, ArrowRight } from 'lucide-react'
+import { Phone } from 'lucide-react'
 import { siteConfig } from '@/lib/site-config'
+import { BlogGrid } from '@/components/sections/BlogGrid'
 
 export const metadata = {
   title: 'Plumbing Tips & Expert Advice Blog',
@@ -67,83 +67,15 @@ export default async function BlogPage() {
             <div className="lg:col-span-2 space-y-12">
               <div>
                 <span className="text-[13px] font-bold uppercase tracking-[0.08em] pl-[0.08em] text-secondary">Expert Resources</span>
-                <h1 className="mt-3 text-4xl font-extrabold tracking-tight text-primary sm:text-5xl font-serif">
+                <h1 className="mt-3 text-4xl font-extrabold tracking-tight text-primary sm:text-5xl font-serif animate-fade-in">
                   Heating &amp; Plumbing Blog
                 </h1>
-                <p className="mt-6 text-lg text-muted leading-relaxed">
+                <p className="mt-6 text-lg text-slate-650 leading-relaxed font-medium">
                   Browse my collection of articles, tips, and safety guides to keep your home warm and your plumbing operating efficiently.
                 </p>
               </div>
 
-              {posts.length === 0 ? (
-                <div className="rounded-2xl border border-border p-8 bg-card text-center space-y-4">
-                  <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-secondary/10 text-secondary">
-                    <BookOpen className="h-6 w-6" />
-                  </div>
-                  <h3 className="text-lg font-bold text-primary font-serif">Articles Coming Soon</h3>
-                  <p className="text-sm text-slate-600 max-w-sm mx-auto leading-relaxed">
-                    I am currently drafting guides on boiler efficiency and plumbing maintenance. Check back soon for safety tips and advice.
-                  </p>
-                </div>
-              ) : (
-                <div className="grid gap-8 sm:grid-cols-2">
-                  {posts.map((p, idx) => (
-                    <Link
-                      key={p._id}
-                      href={`/blog/${p.slug}`}
-                      className="group flex flex-col justify-between rounded-2xl border border-border/80 p-0 bg-card overflow-hidden hover:border-slate-300 hover:shadow-[0_16px_32px_rgba(0,0,0,0.04)] hover:-translate-y-1.5 transition-all duration-300 ease-out"
-                    >
-                      <div>
-                        {/* Image Preview Container */}
-                        <div className="aspect-[16/10] w-full overflow-hidden bg-slate-100 border-b border-border/60 relative">
-                           <img
-                            src={p.imageUrl || fallbacks[idx % 3]}
-                            alt={
-                              p.slug === 'boiler-making-noises-when-to-worry'
-                                ? 'Plumber inspecting a residential boiler'
-                                : p.slug === 'landlord-gas-safety-rules-explained'
-                                ? 'Landlord Gas Safety Record CP12 certificate'
-                                : p.slug === 'what-to-do-if-you-smell-gas'
-                                ? 'Professional gas safe engineer checking pipes'
-                                : p.title
-                            }
-                            className="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-500"
-                          />
-                        </div>
-
-                        {/* Text Details */}
-                        <div className="p-6 md:p-8 space-y-3">
-                          {p.publishedAt && (
-                            <time dateTime={p.publishedAt} className="text-[10px] font-bold uppercase tracking-[0.08em] pl-[0.08em] text-[#a16207]">
-                              {new Date(p.publishedAt).toLocaleDateString('en-GB', {
-                                day: 'numeric',
-                                month: 'short',
-                                year: 'numeric',
-                              }).toUpperCase()}
-                            </time>
-                          )}
-                          <h2 className="text-xl font-serif font-normal text-primary group-hover:text-secondary transition-colors line-clamp-2 leading-snug">
-                            {p.title}
-                          </h2>
-                          {p.summary && (
-                            <p className="text-sm text-slate-600 leading-relaxed line-clamp-3 pt-1">
-                              {p.summary}
-                            </p>
-                          )}
-                        </div>
-                      </div>
-
-                      {/* Footer Actions */}
-                      <div className="px-6 pb-6 md:px-8 md:pb-8 pt-2">
-                        <span className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-[0.06em] pl-[0.06em] text-primary group-hover:text-secondary transition-colors">
-                          <span>Read article</span>
-                          <ArrowRight className="h-4 w-4 transition-transform duration-300 ease-out group-hover:translate-x-1.5" />
-                        </span>
-                      </div>
-                    </Link>
-                  ))}
-                </div>
-              )}
+              <BlogGrid posts={posts} fallbacks={fallbacks} />
             </div>
 
             {/* Sidebar */}
