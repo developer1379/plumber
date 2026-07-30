@@ -884,14 +884,14 @@ export default function Home() {
         </section>
 
         {/* THREE-COLUMN INFO SECTION */}
-        <section className="py-20 bg-slate-50/50 border-t border-slate-100">
+        <section className="py-20 bg-[#fafafa] border-t border-slate-100">
           <div className="mx-auto max-w-7xl px-6 md:px-12">
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 items-stretch divide-y lg:divide-y-0 lg:divide-x divide-slate-100">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-stretch divide-y lg:divide-y-0 lg:divide-x divide-slate-100">
               
               {/* Col 1: Why Choose Us */}
-              <div className="lg:pr-8 space-y-6 flex flex-col justify-between h-full">
-                <div className="space-y-2">
-                  <p className="text-xs font-bold uppercase tracking-[0.12em] text-[#ff6b00]">
+              <div className="lg:pr-8 space-y-8 flex flex-col justify-between h-full">
+                <div className="space-y-3">
+                  <p className="text-xs font-black uppercase tracking-[0.15em] text-[#ff6b00]">
                     WHY CHOOSE US?
                   </p>
                 </div>
@@ -906,8 +906,8 @@ export default function Home() {
                     'Work Guaranteed for Peace of Mind'
                   ].map((item, idx) => (
                     <li key={idx} className="flex items-center gap-3">
-                      <div className="w-5.5 h-5.5 rounded-full bg-slate-800 text-white flex items-center justify-center flex-shrink-0">
-                        <Check className="w-3.5 h-3.5 stroke-[3]" />
+                      <div className="w-6 h-6 rounded-full bg-blue-50 border border-blue-100 text-[#0d4c92] flex items-center justify-center flex-shrink-0 shadow-2xs">
+                        <Check className="w-4 h-4 stroke-[3]" />
                       </div>
                       <span className="text-[13.5px] text-slate-700 font-bold tracking-tight">
                         {item}
@@ -917,26 +917,26 @@ export default function Home() {
                 </ul>
 
                 {/* 10 Year Guarantee card */}
-                <div className="rounded-xl border border-blue-600 bg-white overflow-hidden flex items-stretch max-w-sm mt-6 shadow-xs">
+                <div className="rounded-2xl border border-blue-100 bg-[#f8fafc] overflow-hidden flex items-stretch max-w-sm mt-8 shadow-xs hover:shadow-sm transition-shadow duration-300">
                   {/* Blue left-side icon badge */}
-                  <div className="w-16 bg-[#0d4c92] text-white flex items-center justify-center flex-shrink-0">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="h-7 w-7">
+                  <div className="w-16 bg-[#0c4c92] text-white flex items-center justify-center flex-shrink-0">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" className="h-6 w-6">
                       <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-                      <polyline points="9 11 11 13 15 9" strokeWidth="3" />
+                      <polyline points="9 11 11 13 15 9" strokeWidth="2.5" />
                     </svg>
                   </div>
                   {/* Right-side text */}
-                  <div className="p-3.5 flex flex-col justify-center">
-                    <h4 className="font-extrabold text-[15px] text-[#0d4c92] leading-tight">10 Year Guarantee</h4>
-                    <p className="text-[11.5px] text-slate-400 font-semibold mt-0.5">On selected boiler installations*</p>
+                  <div className="p-4 flex flex-col justify-center">
+                    <h4 className="font-extrabold text-[14px] text-slate-900 leading-tight">10 Year Guarantee</h4>
+                    <p className="text-[11px] text-slate-500 font-semibold mt-1">On selected boiler installations*</p>
                   </div>
                 </div>
               </div>
 
               {/* Col 2: Our Simple Process */}
-              <div className="lg:px-8 pt-8 lg:pt-0 space-y-6 flex flex-col justify-between h-full">
-                <div className="space-y-2">
-                  <p className="text-xs font-bold uppercase tracking-[0.12em] text-[#ff6b00]">
+              <div className="lg:px-10 pt-8 lg:pt-0 space-y-8 flex flex-col justify-between h-full">
+                <div className="space-y-3">
+                  <p className="text-xs font-black uppercase tracking-[0.15em] text-[#ff6b00]">
                     OUR SIMPLE PROCESS
                   </p>
                 </div>
@@ -944,16 +944,16 @@ export default function Home() {
                 {/* Timeline block */}
                 <div className="relative pl-10 space-y-8 pt-2">
                   {/* Dotted vertical line */}
-                  <div className="absolute left-[20px] top-4 bottom-4 w-0.5 border-l-2 border-dashed border-slate-250" />
+                  <div className="absolute left-[20px] top-4 bottom-4 w-0.5 border-l-2 border-dashed border-slate-200" />
 
                   {/* Step 1 */}
                   <div className="relative">
-                    <div className="absolute -left-9 top-0 w-8 h-8 rounded-full bg-[#0d4c92] text-white flex items-center justify-center text-xs font-black">
+                    <div className="absolute -left-[29px] top-0 w-7.5 h-7.5 rounded-full bg-blue-50 border-2 border-[#0d4c92] text-[#0d4c92] flex items-center justify-center text-xs font-black shadow-2xs">
                       1
                     </div>
                     <div className="space-y-1">
-                      <h4 className="text-[14px] font-extrabold text-slate-800 leading-tight">Get in Touch</h4>
-                      <p className="text-[12.5px] leading-relaxed text-slate-450 font-medium">
+                      <h4 className="text-[14px] font-extrabold text-slate-950 leading-tight">Get in Touch</h4>
+                      <p className="text-[12.5px] leading-relaxed text-slate-500 font-semibold">
                         Call us or fill out our quick form and tell us what you need.
                       </p>
                     </div>
@@ -961,12 +961,12 @@ export default function Home() {
 
                   {/* Step 2 */}
                   <div className="relative">
-                    <div className="absolute -left-9 top-0 w-8 h-8 rounded-full bg-[#f97316] text-white flex items-center justify-center text-xs font-black">
+                    <div className="absolute -left-[29px] top-0 w-7.5 h-7.5 rounded-full bg-orange-50 border-2 border-[#f97316] text-[#f97316] flex items-center justify-center text-xs font-black shadow-2xs">
                       2
                     </div>
                     <div className="space-y-1">
-                      <h4 className="text-[14px] font-extrabold text-slate-800 leading-tight">We Assess</h4>
-                      <p className="text-[12.5px] leading-relaxed text-slate-450 font-medium">
+                      <h4 className="text-[14px] font-extrabold text-slate-950 leading-tight">We Assess</h4>
+                      <p className="text-[12.5px] leading-relaxed text-slate-500 font-semibold">
                         We&apos;ll assess the issue and provide clear options and pricing.
                       </p>
                     </div>
@@ -974,12 +974,12 @@ export default function Home() {
 
                   {/* Step 3 */}
                   <div className="relative">
-                    <div className="absolute -left-9 top-0 w-8 h-8 rounded-full bg-[#d9383a] text-white flex items-center justify-center text-xs font-black">
+                    <div className="absolute -left-[29px] top-0 w-7.5 h-7.5 rounded-full bg-red-50 border-2 border-[#d9383a] text-[#d9383a] flex items-center justify-center text-xs font-black shadow-2xs">
                       3
                     </div>
                     <div className="space-y-1">
-                      <h4 className="text-[14px] font-extrabold text-slate-800 leading-tight">We Get It Done</h4>
-                      <p className="text-[12.5px] leading-relaxed text-slate-450 font-medium">
+                      <h4 className="text-[14px] font-extrabold text-slate-950 leading-tight">We Get It Done</h4>
+                      <p className="text-[12.5px] leading-relaxed text-slate-500 font-semibold">
                         Our expert team gets the job done right, on time.
                       </p>
                     </div>
@@ -989,15 +989,15 @@ export default function Home() {
               </div>
 
               {/* Col 3: Testimonial */}
-              <div className="lg:pl-8 pt-8 lg:pt-0 space-y-6 flex flex-col justify-between h-full">
-                <div className="space-y-2">
-                  <p className="text-xs font-bold uppercase tracking-[0.12em] text-[#ff6b00]">
+              <div className="lg:pl-10 pt-8 lg:pt-0 space-y-8 flex flex-col justify-between h-full">
+                <div className="space-y-3">
+                  <p className="text-xs font-black uppercase tracking-[0.15em] text-[#ff6b00]">
                     WHAT OUR CUSTOMERS SAY
                   </p>
                 </div>
 
                 {/* Testimonial Card */}
-                <div className="relative rounded-xl border border-slate-100 bg-white p-6 md:p-8 shadow-xs space-y-5 flex flex-col justify-between h-full">
+                <div className="relative rounded-2xl border border-slate-100 bg-white p-6 md:p-8 shadow-xs hover:shadow-sm transition-shadow duration-300 space-y-5 flex flex-col justify-between h-full">
                   <div>
                     {/* Top line with Stars and Quote mark */}
                     <div className="flex items-center justify-between">
@@ -1008,11 +1008,11 @@ export default function Home() {
                         <Star className="h-4.5 w-4.5 fill-current" />
                         <Star className="h-4.5 w-4.5 fill-current" />
                       </div>
-                      <Quote className="h-8 w-8 text-slate-100 stroke-[3]" />
+                      <Quote className="h-8 w-8 text-slate-100 stroke-[2.5]" />
                     </div>
 
                     {/* Review Text */}
-                    <p className="text-[13.5px] leading-relaxed text-slate-500 font-medium mt-4">
+                    <p className="text-[13.5px] leading-relaxed text-slate-600 font-semibold italic mt-4">
                       Brilliant service from start to finish. Quick response, great communication and the work was completed to a very high standard. Highly recommended!
                     </p>
                   </div>
@@ -1020,12 +1020,12 @@ export default function Home() {
                   {/* Author footer */}
                   <div className="pt-4 border-t border-slate-50 flex items-center justify-between">
                     <div>
-                      <h5 className="font-extrabold text-sm text-slate-800 leading-tight">Sarah T.</h5>
+                      <h5 className="font-extrabold text-sm text-slate-900 leading-tight">Sarah T.</h5>
                       <p className="text-[11.5px] text-slate-400 font-semibold mt-0.5">Bedford</p>
                     </div>
 
                     {/* Google G Logo */}
-                    <div className="w-6 h-6 flex items-center justify-center rounded-full bg-slate-50 border border-slate-100 flex-shrink-0">
+                    <div className="w-6.5 h-6.5 flex items-center justify-center rounded-full bg-slate-50 border border-slate-100 flex-shrink-0">
                       <svg viewBox="0 0 24 24" className="w-3.5 h-3.5">
                         <path
                           d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
@@ -1049,7 +1049,6 @@ export default function Home() {
                 </div>
 
               </div>
-
             </div>
           </div>
         </section>
