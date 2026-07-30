@@ -20,9 +20,12 @@ export function middleware(req: NextRequest) {
 
   const host = req.headers.get('host') ?? ''
   const isCanonical = host === siteConfig.url.productionHost
+  const isStaging = host.includes('plumber-web-phi.vercel.app')
   const indexingEnabled = process.env.INDEXING_ENABLED === 'true'
 
-  if (!isCanonical || !indexingEnabled) {
+  if (!isCanonical && !isStaging) {
+    res.headers.set('X-Robots-Tag', 'noindex, nofollow')
+  } else if (!indexingEnabled && !isStaging) {
     res.headers.set('X-Robots-Tag', 'noindex, nofollow')
   }
 
