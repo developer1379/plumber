@@ -948,7 +948,7 @@ export default function Home() {
 
                   {/* Step 1 */}
                   <div className="relative">
-                    <div className="absolute -left-[29px] top-0 w-7.5 h-7.5 rounded-full bg-blue-50 border-2 border-[#0d4c92] text-[#0d4c92] flex items-center justify-center text-xs font-black shadow-2xs">
+                    <div className="absolute -left-10 top-0 w-7.5 h-7.5 rounded-full bg-blue-50 border-2 border-[#0d4c92] text-[#0d4c92] flex items-center justify-center text-xs font-black shadow-2xs">
                       1
                     </div>
                     <div className="space-y-1">
@@ -961,7 +961,7 @@ export default function Home() {
 
                   {/* Step 2 */}
                   <div className="relative">
-                    <div className="absolute -left-[29px] top-0 w-7.5 h-7.5 rounded-full bg-orange-50 border-2 border-[#f97316] text-[#f97316] flex items-center justify-center text-xs font-black shadow-2xs">
+                    <div className="absolute -left-10 top-0 w-7.5 h-7.5 rounded-full bg-orange-50 border-2 border-[#f97316] text-[#f97316] flex items-center justify-center text-xs font-black shadow-2xs">
                       2
                     </div>
                     <div className="space-y-1">
@@ -974,7 +974,7 @@ export default function Home() {
 
                   {/* Step 3 */}
                   <div className="relative">
-                    <div className="absolute -left-[29px] top-0 w-7.5 h-7.5 rounded-full bg-red-50 border-2 border-[#d9383a] text-[#d9383a] flex items-center justify-center text-xs font-black shadow-2xs">
+                    <div className="absolute -left-10 top-0 w-7.5 h-7.5 rounded-full bg-red-50 border-2 border-[#d9383a] text-[#d9383a] flex items-center justify-center text-xs font-black shadow-2xs">
                       3
                     </div>
                     <div className="space-y-1">
