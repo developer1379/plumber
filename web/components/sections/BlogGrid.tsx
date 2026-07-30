@@ -2,6 +2,7 @@
 
 import { useState, useMemo } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { ArrowRight, Search, BookOpen } from 'lucide-react'
 
 type Post = {
@@ -100,10 +101,12 @@ export function BlogGrid({ posts, fallbacks }: { posts: Post[], fallbacks: strin
                 <div>
                   {/* Image Preview Container */}
                   <div className="aspect-[16/10] w-full overflow-hidden bg-slate-100 border-b border-border/60 relative">
-                    <img
+                    <Image
                       src={p.imageUrl || fallbacks[idx % 3]}
                       alt={p.title}
-                      className="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-500"
+                      fill
+                      sizes="(max-width: 768px) 100vw, 40vw"
+                      className="object-cover group-hover:scale-[1.03] transition-transform duration-500"
                     />
                     
                     {/* Category Overlay Tag */}

@@ -1,5 +1,6 @@
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
+import Image from 'next/image'
 import { Header } from '@/components/chrome/Header'
 import { Footer } from '@/components/chrome/Footer'
 import { Breadcrumbs } from '@/components/layout/Breadcrumbs'
@@ -293,7 +294,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
 
               {/* Service Featured Image */}
               <div className="relative aspect-[16/9] w-full overflow-hidden rounded-2xl border border-slate-100 shadow-md">
-                <img 
+                <Image 
                   src={
                     slug === 'boiler-servicing-installation-repairs' ? '/boiler-advice.webp' :
                     slug === 'landlord-safety-checks' ? 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1200&q=80' :
@@ -301,7 +302,10 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
                     slug === 'emergency-callouts' ? '/van-hero.webp' : '/plumber-hero.webp'
                   }
                   alt={data.title}
-                  className="w-full h-full object-cover"
+                  fill
+                  priority
+                  sizes="(max-width: 1024px) 100vw, 66vw"
+                  className="object-cover"
                 />
               </div>
 

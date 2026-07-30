@@ -1,4 +1,5 @@
 import { Header } from '@/components/chrome/Header'
+import Image from 'next/image'
 import { Footer } from '@/components/chrome/Footer'
 import { Breadcrumbs } from '@/components/layout/Breadcrumbs'
 import { RelatedServices, RelatedAreas } from '@/components/sections/RelatedBlocks'
@@ -71,10 +72,12 @@ export default function AboutPage() {
 
               {/* Profile Featured Image */}
               <div className="relative aspect-[21/9] w-full overflow-hidden rounded-2xl border border-slate-100 shadow-md">
-                <img 
+                <Image 
                   src="/plumber-hero.webp" 
                   alt="Rob Holton - Gas Safe Engineer" 
-                  className="w-full h-full object-cover object-center"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 66vw"
+                  className="object-cover object-center"
                 />
                 <div className="absolute bottom-4 left-4 bg-slate-900/80 backdrop-blur-xs text-white text-xs font-black uppercase tracking-wider px-3.5 py-1.5 rounded-lg border border-white/10">
                   Rob Holton | Registered Gas Safe Engineer

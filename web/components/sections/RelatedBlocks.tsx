@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { sanityClient } from '@/lib/sanity/client'
 import { MapPin, ArrowRight, Flame, ShieldCheck, Wrench, Siren } from 'lucide-react'
 
@@ -274,7 +275,7 @@ export function RelatedPosts({ excludeSlug }: { excludeSlug?: string } = {}) {
             className="group flex flex-col border border-slate-200 bg-white rounded-xl hover:border-slate-800 transition-colors duration-300 overflow-hidden shadow-[0_2px_8px_rgba(0,0,0,0.03)]"
           >
             <div className="aspect-[4/3] w-full overflow-hidden relative bg-slate-100 border-b border-slate-100">
-              <img 
+              <Image 
                 src={p.imageUrl || fallbacks[idx % 3]} 
                 alt={
                   p.slug === 'boiler-making-noises-when-to-worry'
@@ -283,9 +284,11 @@ export function RelatedPosts({ excludeSlug }: { excludeSlug?: string } = {}) {
                     ? 'Landlord Gas Safety Record CP12 certificate'
                     : p.slug === 'what-to-do-if-you-smell-gas'
                     ? 'Professional gas safe engineer checking pipes'
-                    : p.title
+                    : 'Plumbing and heating service advice blog post image'
                 }
-                className="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-500"
+                fill
+                sizes="(max-width: 768px) 100vw, 33vw"
+                className="object-cover group-hover:scale-[1.03] transition-transform duration-500"
               />
             </div>
 

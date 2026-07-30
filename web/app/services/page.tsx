@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { Header } from '@/components/chrome/Header'
 import { Footer } from '@/components/chrome/Footer'
 import { RelatedAreas } from '@/components/sections/RelatedBlocks'
@@ -123,12 +124,13 @@ export default function ServicesPage() {
                   key={s.slug}
                   className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-stretch rounded-3xl border border-border bg-white overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 min-h-[420px]"
                 >
-                  {/* Image Column */}
                   <div className={`w-full lg:w-[45%] min-h-[280px] lg:min-h-full relative overflow-hidden bg-slate-100 ${isEven ? 'lg:order-first' : 'lg:order-last'}`}>
-                    <img 
+                    <Image 
                       src={s.imageUrl} 
                       alt={s.title}
-                      className="w-full h-full object-cover absolute inset-0 group-hover:scale-105 transition-transform duration-500"
+                      fill
+                      sizes="(max-width: 1024px) 100vw, 45vw"
+                      className="object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                   </div>
 

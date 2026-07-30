@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { Header } from '@/components/chrome/Header'
 import { Footer } from '@/components/chrome/Footer'
 import { RelatedAreas, RelatedServices, RelatedPosts } from '@/components/sections/RelatedBlocks'
@@ -276,11 +277,13 @@ export default function Home() {
           {/* Family Plumber Background Image (Exact Match to Reference Screenshot) */}
           <div className="absolute right-[4%] lg:right-[4%] xl:right-[10%] 2xl:right-[12%] top-0 bottom-0 w-[56%] lg:w-[52%] xl:w-[52%] h-full z-0 lg:block hidden overflow-hidden pointer-events-none">
             <div className="relative w-full h-full">
-              <img 
+              <Image 
                 src="/family-hero.webp" 
                 alt="RH Plumbing &amp; Heating family" 
-                className="w-full h-full object-cover object-top"
-                fetchPriority="high"
+                fill
+                priority
+                sizes="(max-width: 1024px) 100vw, 52vw"
+                className="object-cover object-top"
               />
               {/* Left smooth gradient overlay fading kitchen background behind text */}
               <div className="absolute inset-y-0 left-0 w-48 sm:w-60 lg:w-72 bg-gradient-to-r from-white via-white/95 via-white/70 to-transparent z-10" />
@@ -437,11 +440,13 @@ export default function Home() {
                 {/* Mobile Family Image Card */}
                 <div className="lg:hidden flex justify-center w-full">
                   <div className="relative w-full max-w-[440px] aspect-[16/10] rounded-2xl overflow-hidden shadow-md">
-                    <img 
+                    <Image 
                       src="/family-hero.webp" 
                       alt="RH Plumbing &amp; Heating family" 
-                      className="w-full h-full object-cover object-top"
-                      fetchPriority="high"
+                      fill
+                      priority
+                      sizes="(max-width: 640px) 100vw, 440px"
+                      className="object-cover object-top"
                     />
                     {/* Google rating overlay for mobile */}
                     <div className="absolute bottom-3 left-3 bg-white/95 backdrop-blur-xs border border-slate-100 rounded-xl p-2 px-3 shadow-md">
@@ -656,10 +661,12 @@ export default function Home() {
               <div className="lg:col-span-7 relative rounded-3xl overflow-hidden bg-white shadow-xl border border-slate-200/80 flex flex-col justify-between p-6 sm:p-9 min-h-[380px]">
                 {/* Background Layer with Van Photo & Slanted Mask with Motion Blur Edge (Hidden on Mobile) */}
                 <div className="absolute inset-0 z-0 hidden sm:block">
-                  <img 
+                  <Image 
                     src="/van-hero.webp" 
                     alt="RH Plumbing &amp; Heating Service Van" 
-                    className="w-full h-full object-cover object-right"
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 40vw"
+                    className="object-cover object-right"
                   />
                   {/* White Left Background Mask with Angled Slanted Cut */}
                   <div className="absolute inset-y-0 left-0 w-[78%] sm:w-[68%] lg:w-[62%] bg-white z-10 [clip-path:polygon(0_0,100%_0,84%_100%,0_100%)] sm:[clip-path:polygon(0_0,100%_0,74%_100%,0_100%)]" />
