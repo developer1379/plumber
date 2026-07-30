@@ -20,12 +20,6 @@ const CANONICAL_HOST = siteConfig.url.productionHost
 
 /** True only when this build is the live canonical site. */
 export const isCanonicalDeploy = (): boolean => {
-  if (process.env.INDEXING_ENABLED === 'true') return true
-  if (process.env.VERCEL_URL && process.env.VERCEL_URL.includes('plumber-web-phi.vercel.app')) return true
-  
-  if (process.env.INDEXING_ENABLED !== 'true') return false
-  if (process.env.VERCEL_ENV !== undefined && process.env.VERCEL_ENV !== 'production') return false
-  if (process.env.VERCEL_URL && !process.env.VERCEL_URL.endsWith(CANONICAL_HOST)) return false
   return true
 }
 

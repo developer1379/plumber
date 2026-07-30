@@ -280,6 +280,7 @@ export default function Home() {
                 src="/family-hero.webp" 
                 alt="RH Plumbing &amp; Heating family" 
                 className="w-full h-full object-cover object-top"
+                fetchPriority="high"
               />
               {/* Left smooth gradient overlay fading kitchen background behind text */}
               <div className="absolute inset-y-0 left-0 w-48 sm:w-60 lg:w-72 bg-gradient-to-r from-white via-white/95 via-white/70 to-transparent z-10" />
@@ -440,6 +441,7 @@ export default function Home() {
                       src="/family-hero.webp" 
                       alt="RH Plumbing &amp; Heating family" 
                       className="w-full h-full object-cover object-top"
+                      fetchPriority="high"
                     />
                     {/* Google rating overlay for mobile */}
                     <div className="absolute bottom-3 left-3 bg-white/95 backdrop-blur-xs border border-slate-100 rounded-xl p-2 px-3 shadow-md">
