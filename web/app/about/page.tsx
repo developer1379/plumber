@@ -69,22 +69,39 @@ export default function AboutPage() {
                 </p>
               </div>
 
-              <div className="space-y-6 text-slate-700 leading-relaxed text-base">
-                <p>
+              {/* Profile Featured Image */}
+              <div className="relative aspect-[21/9] w-full overflow-hidden rounded-2xl border border-slate-100 shadow-md">
+                <img 
+                  src="/plumber-hero.webp" 
+                  alt="Rob Holton - Gas Safe Engineer" 
+                  className="w-full h-full object-cover object-center"
+                />
+                <div className="absolute bottom-4 left-4 bg-slate-900/80 backdrop-blur-xs text-white text-xs font-black uppercase tracking-wider px-3.5 py-1.5 rounded-lg border border-white/10">
+                  Rob Holton | Registered Gas Safe Engineer
+                </div>
+              </div>
+
+              <div className="space-y-8 text-slate-700 leading-relaxed text-base font-semibold">
+                <p className="font-medium text-slate-600">
                   Before founding my own business, I underwent extensive technical training in gas safety regulations, heating mechanics, and system installations. I established the business to provide a straightforward, customer-first alternative to national utilities and high-overhead corporations.
                 </p>
-                <h2 className="text-2xl font-bold text-primary pt-4 font-serif">My Local Service Philosophy</h2>
-                <p>
-                  I believe that trade services should be reliable and transparent. When you call me, you aren&apos;t talking to a national call operator or salesperson. You talk directly with the engineer who will be doing the work.
-                </p>
-                <p>
-                  This owner-operator approach allows me to keep rates fair, give accurate arrival times, and build long-term relationships with homeowners and local landlords.
-                </p>
                 
-                <h2 className="text-2xl font-bold text-primary pt-4 font-serif">Scope of Expertise</h2>
-                <p>
-                  I cover all aspects of domestic gas heating and plumbing, specializing in annual boiler servicing to maintain warranties, troubleshooting system breakdowns, gas installations for cookers and fires, and annual CP12 checks for rental properties.
-                </p>
+                <div className="relative pl-6 border-l-2 border-slate-200 space-y-3 hover:border-secondary transition-colors duration-300">
+                  <h2 className="text-2xl font-bold text-primary font-serif">My Local Service Philosophy</h2>
+                  <p className="font-medium text-slate-650">
+                    I believe that trade services should be reliable and transparent. When you call me, you aren&apos;t talking to a national call operator or salesperson. You talk directly with the engineer who will be doing the work.
+                  </p>
+                  <p className="font-medium text-slate-650">
+                    This owner-operator approach allows me to keep rates fair, give accurate arrival times, and build long-term relationships with homeowners and local landlords.
+                  </p>
+                </div>
+                
+                <div className="relative pl-6 border-l-2 border-slate-200 space-y-3 hover:border-secondary transition-colors duration-300">
+                  <h2 className="text-2xl font-bold text-primary font-serif">Scope of Expertise</h2>
+                  <p className="font-medium text-slate-655">
+                    I cover all aspects of domestic gas heating and plumbing, specializing in annual boiler servicing to maintain warranties, troubleshooting system breakdowns, gas installations for cookers and fires, and annual CP12 checks for rental properties.
+                  </p>
+                </div>
               </div>
 
               {/* 2x2 Interactive Badges Grid */}
@@ -94,7 +111,7 @@ export default function AboutPage() {
                   {badges.map((b, i) => (
                     <div 
                       key={i} 
-                      className="group/badge flex gap-4 rounded-xl border border-border/80 p-5 bg-card transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-md hover:border-slate-300"
+                      className="group/badge flex gap-4 rounded-xl border border-border/85 p-5 bg-card transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-md hover:border-slate-300"
                     >
                       <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-secondary/5 text-secondary flex-shrink-0 transition-all duration-300 group-hover/badge:bg-secondary/10 group-hover/badge:scale-105">
                         <b.icon className="h-5 w-5 transition-transform duration-300 group-hover/badge:rotate-3" />
@@ -109,15 +126,17 @@ export default function AboutPage() {
               </div>
 
               {/* Credentials / Independent Card */}
-              <div className="group/credentials rounded-2xl border border-border/80 p-8 bg-card shadow-sm hover:shadow-[0_16px_32px_rgba(0,0,0,0.03)] hover:border-slate-300/80 transition-all duration-300 ease-out space-y-5">
-                <h3 className="text-lg font-bold text-primary flex items-center gap-2 font-serif transition-colors duration-300 group-hover/credentials:text-secondary">
-                  <ShieldCheck className="h-5.5 w-5.5 text-secondary transition-transform duration-300 group-hover/credentials:scale-110" /> 
+              <div className="group/credentials rounded-2xl border border-slate-100 bg-slate-50/50 p-8 shadow-xs hover:shadow-sm transition-all duration-300 ease-out space-y-5">
+                <h3 className="text-xl font-bold text-primary flex items-center gap-2.5 font-serif transition-colors duration-300 group-hover/credentials:text-secondary">
+                  <ShieldCheck className="h-6 w-6 text-secondary transition-transform duration-300 group-hover/credentials:scale-105" /> 
                   <span>Why Choose an Independent Engineer?</span>
                 </h3>
-                <ul className="grid gap-3 sm:grid-cols-2 text-sm text-slate-700">
+                <ul className="grid gap-4 sm:grid-cols-2 text-sm text-slate-700 font-semibold">
                   {credentials.map((c, idx) => (
-                    <li key={idx} className="flex items-center gap-3 transition-transform duration-300 hover:translate-x-1">
-                      <Check className="h-4 w-4 text-secondary flex-shrink-0" />
+                    <li key={idx} className="flex items-center gap-3 transition-transform duration-300 hover:translate-x-1.5">
+                      <div className="h-5 w-5 rounded-full bg-emerald-50 border border-emerald-100 text-emerald-500 flex items-center justify-center flex-shrink-0">
+                        <Check className="h-3 w-3 stroke-[3]" />
+                      </div>
                       <span className="transition-colors duration-300 group-hover/credentials:text-slate-800">{c}</span>
                     </li>
                   ))}
