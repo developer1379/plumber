@@ -281,7 +281,8 @@ export default function Home() {
                 src="/family-hero.webp" 
                 alt="RH Plumbing &amp; Heating family" 
                 fill
-                sizes="(max-width: 1024px) 100vw, 52vw"
+                sizes="(max-width: 1024px) 100vw, 65vw"
+                quality={90}
                 className="object-cover object-top"
               />
               {/* Left smooth gradient overlay fading kitchen background behind text */}
@@ -444,7 +445,8 @@ export default function Home() {
                       alt="RH Plumbing &amp; Heating family" 
                       fill
                       priority
-                      sizes="(max-width: 640px) 100vw, 440px"
+                      sizes="(max-width: 640px) 100vw, 600px"
+                      quality={90}
                       className="object-cover object-top"
                     />
                     {/* Google rating overlay for mobile */}
@@ -664,7 +666,8 @@ export default function Home() {
                     src="/van-hero.webp" 
                     alt="RH Plumbing &amp; Heating Service Van" 
                     fill
-                    sizes="(max-width: 1024px) 100vw, 40vw"
+                    sizes="(max-width: 1024px) 100vw, 70vw"
+                    quality={90}
                     className="object-cover object-right"
                   />
                   {/* White Left Background Mask with Angled Slanted Cut */}
