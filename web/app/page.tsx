@@ -281,7 +281,6 @@ export default function Home() {
                 src="/family-hero.webp" 
                 alt="RH Plumbing &amp; Heating family" 
                 fill
-                priority
                 sizes="(max-width: 1024px) 100vw, 52vw"
                 className="object-cover object-top"
               />
