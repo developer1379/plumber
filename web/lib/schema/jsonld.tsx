@@ -61,6 +61,21 @@ export const organizationSchema = () => {
       ...siteConfig.address.full,
     },
     founder: { '@id': PERSON_ID },
+    openingHoursSpecification: [
+      {
+        '@type': 'OpeningHoursSpecification',
+        dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+        opens: '08:00',
+        closes: '18:00',
+      },
+      {
+        '@type': 'OpeningHoursSpecification',
+        dayOfWeek: ['Saturday', 'Sunday'],
+        opens: '00:00',
+        closes: '23:59',
+        description: 'Available for out-of-hours emergencies',
+      },
+    ],
     knowsAbout: [], // populate from services array if useful
     sameAs: [
       siteConfig.social.facebook,

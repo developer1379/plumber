@@ -222,7 +222,7 @@ const SERVICES_MAP: Record<string, ServicePageData> = {
       },
       {
         question: 'Do you offer emergency callouts out of hours or on weekends?',
-        answer: 'Contact Rob directly to check current out-of-hours and weekend availability, and to get a fast answer on your specific emergency.',
+        answer: 'Rob is available Monday to Friday from 8:00am to 6:00pm for regular calls, and is available on Saturdays and Sundays for out-of-hours emergency support. Contact Rob directly to check current availability and get a fast response.',
       },
     ],
   },
@@ -314,7 +314,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
                 <div className="space-y-1">
                   <span className="text-[10px] font-extrabold uppercase tracking-wider text-slate-400">Response Time</span>
                   <p className="text-sm font-black text-slate-800">
-                    {slug === 'emergency-callouts' ? 'Under 60 Mins' : 'Same / Next Day'}
+                    {slug === 'emergency-callouts' ? 'Rapid Response' : 'Same / Next Day'}
                   </p>
                 </div>
                 <div className="space-y-1 border-l border-slate-200/60">

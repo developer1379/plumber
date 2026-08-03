@@ -232,7 +232,7 @@ export default function Home() {
   const servicesList = [
     {
       title: 'Plumbing',
-      description: 'From leaks and drips to full bathroom installations.',
+      description: 'From leaks and drips to general plumbing repairs.',
       icon: Droplets,
       color: 'text-blue-500 bg-blue-50 border-blue-100',
       slug: 'emergency-callouts'
@@ -260,7 +260,7 @@ export default function Home() {
     },
     {
       title: 'Installations',
-      description: 'Boilers, bathrooms, and heating system installations.',
+      description: 'Boilers, gas appliances, and heating system installations.',
       icon: Wrench,
       color: 'text-blue-600 bg-blue-50 border-blue-100',
       slug: 'gas-installations'
@@ -278,11 +278,10 @@ export default function Home() {
           <div className="absolute right-[4%] lg:right-[4%] xl:right-[10%] 2xl:right-[12%] top-0 bottom-0 w-[56%] lg:w-[52%] xl:w-[52%] h-full z-0 lg:block hidden overflow-hidden pointer-events-none">
             <div className="relative w-full h-full">
               <Image 
-                src="/family-hero.webp" 
-                alt="RH Plumbing &amp; Heating family" 
+                src="/rob-hero.webp" 
+                alt="Rob Holton - Professional plumber in kitchen" 
                 fill
-                sizes="100vw"
-                quality={98}
+                unoptimized
                 className="object-cover object-top"
               />
               {/* Left smooth gradient overlay fading kitchen background behind text */}
@@ -626,7 +625,7 @@ export default function Home() {
           <div className="mx-auto max-w-[1600px] px-6 md:px-12 lg:px-16 text-center space-y-8">
             <div>
               <p className="text-[11.5px] font-extrabold uppercase tracking-[0.2em] text-slate-400">
-                Authorized &amp; Certified Installers For Leading UK Brands
+                Installing &amp; Servicing Leading UK Boiler Brands
               </p>
             </div>
 

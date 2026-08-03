@@ -135,11 +135,11 @@ export function Footer() {
                 </div>
                 <div className="space-y-1">
                   <p className="font-serif text-[18px] md:text-[20px] font-medium leading-snug text-white">
-                    Mon &ndash; Sun
+                    Mon &ndash; Fri
                   </p>
                   <p className="text-[12.5px] text-slate-400 font-medium leading-normal">
                     8:00am &ndash; 6:00pm <br />
-                    <span className="text-[10px] text-secondary-light font-bold uppercase tracking-wider block mt-1">Emergency calls out of hours</span>
+                    <span className="text-[10px] text-secondary-light font-bold uppercase tracking-wider block mt-1">Sat &amp; Sun: Available for Out of Hours</span>
                   </p>
                 </div>
               </div>

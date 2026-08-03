@@ -110,7 +110,7 @@ const FAQS_DATABASE = [
       },
       {
         question: 'Do you offer emergency callouts out of hours or on weekends?',
-        answer: 'Contact Rob directly to check current out-of-hours and weekend availability, and to get a fast answer on your specific emergency.',
+        answer: 'Rob is available Monday to Friday from 8:00am to 6:00pm for regular calls, and is available on Saturdays and Sundays for out-of-hours emergency support. Contact Rob directly to check current availability and get a fast response.',
       },
     ],
   },
