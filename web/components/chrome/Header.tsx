@@ -65,6 +65,8 @@ export function Header() {
           <img 
             src="/logo-new.png" 
             alt="RH Plumbing & Heating" 
+            width={205}
+            height={77}
             className="h-11 md:h-14 w-auto object-contain transition-transform duration-300 group-hover:scale-105" 
           />
         </Link>
@@ -194,6 +196,8 @@ export function Header() {
                 <img 
                   src="/logo-new.png" 
                   alt="RH Plumbing & Heating" 
+                  width={150}
+                  height={56}
                   className="h-9 w-auto object-contain" 
                 />
               </Link>

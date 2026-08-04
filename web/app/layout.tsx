@@ -10,6 +10,7 @@
 
 import type { Metadata } from 'next'
 import { Roboto } from 'next/font/google'
+import dynamic from 'next/dynamic'
 import { siteConfig } from '@/lib/site-config'
 import { robotsMetadata } from '@/lib/seo/canonical'
 import {
@@ -19,14 +20,18 @@ import {
   type PersonInput,
 } from '@/lib/schema/jsonld'
 import { getOwnerPerson } from '@/lib/sanity/queries'
-import { FloatingQuote } from '@/components/chrome/FloatingQuote'
 import './globals.css'
+
+const FloatingQuote = dynamic(
+  () => import('@/components/chrome/FloatingQuote').then((mod) => mod.FloatingQuote)
+)
 
 const roboto = Roboto({
   subsets: ['latin'],
-  weight: ['100', '300', '400', '500', '700', '900'],
+  weight: ['400', '500', '700'],
   variable: '--font-sans',
   display: 'swap',
+  preload: true,
 })
 
 export const metadata: Metadata = {

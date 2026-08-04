@@ -1,13 +1,23 @@
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import Image from 'next/image'
+import dynamic from 'next/dynamic'
 import { Header } from '@/components/chrome/Header'
 import { Footer } from '@/components/chrome/Footer'
 import { Breadcrumbs } from '@/components/layout/Breadcrumbs'
-import { RelatedAreas, RelatedServices, RelatedPosts } from '@/components/sections/RelatedBlocks'
 import { siteConfig } from '@/lib/site-config'
 import { serviceSchema, faqPageSchema } from '@/lib/schema/jsonld'
 import { Phone, ChevronRight } from 'lucide-react'
+
+const RelatedAreas = dynamic(
+  () => import('@/components/sections/RelatedBlocks').then((mod) => mod.RelatedAreas)
+)
+const RelatedServices = dynamic(
+  () => import('@/components/sections/RelatedBlocks').then((mod) => mod.RelatedServices)
+)
+const RelatedPosts = dynamic(
+  () => import('@/components/sections/RelatedBlocks').then((mod) => mod.RelatedPosts)
+)
 
 type ServicePageData = {
   title: string
@@ -297,7 +307,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
                 <Image 
                   src={
                     slug === 'boiler-servicing-installation-repairs' ? '/boiler-advice.webp' :
-                    slug === 'landlord-safety-checks' ? 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1200&q=80' :
+                    slug === 'landlord-safety-checks' ? '/family-hero.webp' :
                     slug === 'gas-installations' ? '/plumber-hero.webp' :
                     slug === 'emergency-callouts' ? '/van-hero.webp' : '/plumber-hero.webp'
                   }
