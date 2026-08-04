@@ -281,6 +281,8 @@ export default function Home() {
                 src="/rob-hero.webp" 
                 alt="Rob Holton - Professional plumber in kitchen" 
                 fill
+                priority
+                fetchPriority="high"
                 unoptimized
                 className="object-cover object-top"
               />
@@ -444,8 +446,9 @@ export default function Home() {
                       alt="RH Plumbing &amp; Heating family" 
                       fill
                       priority
-                      sizes="100vw"
-                      quality={98}
+                      fetchPriority="high"
+                      sizes="(max-width: 768px) 100vw, 440px"
+                      quality={80}
                       className="object-cover object-top"
                     />
                     {/* Google rating overlay for mobile */}

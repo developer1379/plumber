@@ -63,7 +63,7 @@ export function Header() {
         {/* Left: Brand Logo / Identity */}
         <Link href="/" className="group flex items-center focus:outline-none">
           <img 
-            src="/logo-new.png" 
+            src="/logo-new.webp" 
             alt="RH Plumbing & Heating" 
             width={205}
             height={77}
