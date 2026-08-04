@@ -45,7 +45,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
       suppressHydrationWarning
     >
       <head>
-        <link rel="preload" href="/family-hero.webp" as="image" type="image/webp" fetchPriority="high" />
+        <link rel="preload" href="/family-hero-mobile.webp" as="image" type="image/webp" fetchPriority="high" />
       </head>
       <body suppressHydrationWarning>
         {organizationSchema()}

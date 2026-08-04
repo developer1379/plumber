@@ -178,14 +178,14 @@ export default function Home() {
                 {/* Mobile Family Image Card */}
                 <div className="lg:hidden flex justify-center w-full">
                   <div className="relative w-full max-w-[440px] aspect-[16/10] rounded-2xl overflow-hidden shadow-md">
-                    <Image 
-                      src="/family-hero.webp" 
+                    <img 
+                      src="/family-hero-mobile.webp" 
                       alt="RH Plumbing &amp; Heating family" 
-                      fill
-                      priority
+                      width="440"
+                      height="275"
                       fetchPriority="high"
-                      unoptimized
-                      className="object-cover object-top"
+                      decoding="sync"
+                      className="w-full h-full object-cover object-top"
                     />
                     {/* Google rating overlay for mobile */}
                     <div className="absolute bottom-3 left-3 bg-white/95 backdrop-blur-xs border border-slate-100 rounded-xl p-2 px-3 shadow-md">
