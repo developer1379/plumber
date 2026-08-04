@@ -353,8 +353,7 @@ export default function Home() {
                       fill
                       priority
                       fetchPriority="high"
-                      sizes="(max-width: 768px) 100vw, 440px"
-                      quality={80}
+                      unoptimized
                       className="object-cover object-top"
                     />
                     {/* Google rating overlay for mobile */}
