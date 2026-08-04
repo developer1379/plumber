@@ -28,10 +28,11 @@ const FloatingQuote = dynamic(
 
 const roboto = Roboto({
   subsets: ['latin'],
-  weight: ['400', '500', '700'],
+  weight: ['400', '700'],
   variable: '--font-sans',
   display: 'swap',
   preload: true,
+  adjustFontFallback: true,
 })
 
 export const metadata: Metadata = {
