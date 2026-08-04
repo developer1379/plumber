@@ -43,7 +43,7 @@ const nextConfig: NextConfig = {
   },
 
   experimental: {
-    // Tune as needed
+    optimizePackageImports: ['lucide-react', '@tabler/icons-react', 'react-icons'],
   },
 }
 
