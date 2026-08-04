@@ -1,10 +1,6 @@
-'use client'
-
-import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import { sanityClient } from '@/lib/sanity/client'
-import { MapPin, ArrowRight, Flame, ShieldCheck, Wrench, Siren } from 'lucide-react'
+import { MapPin, Flame, ShieldCheck, Wrench, Siren } from 'lucide-react'
 
 // ─────────────────────────────────────────────────────────
 // RelatedAreas (renders nearby areas covered, excluding current)
@@ -26,26 +22,7 @@ const defaultAreas: Area[] = [
 ]
 
 export function RelatedAreas({ excludeSlug }: { excludeSlug?: string } = {}) {
-  const [items, setItems] = useState<Area[]>(defaultAreas)
-
-  useEffect(() => {
-    const query = `*[_type == "area" ${excludeSlug ? '&& slug.current != $exclude' : ''}] | order(distanceFromHqMiles asc)[0...4]{
-      _id,
-      title,
-      "slug": slug.current,
-      county,
-      distanceFromHqMiles
-    }`
-
-    sanityClient
-      .fetch<Area[]>(query, excludeSlug ? { exclude: excludeSlug } : {})
-      .then((res) => {
-        if (res && res.length > 0) setItems(res)
-      })
-      .catch(() => {})
-  }, [excludeSlug])
-
-  const filteredItems = excludeSlug ? items.filter(i => i.slug !== excludeSlug) : items
+  const filteredItems = excludeSlug ? defaultAreas.filter(i => i.slug !== excludeSlug) : defaultAreas
 
   if (!filteredItems || filteredItems.length === 0) return null
 
@@ -101,25 +78,7 @@ const defaultServices: Service[] = [
 ]
 
 export function RelatedServices({ excludeSlug }: { excludeSlug?: string } = {}) {
-  const [items, setItems] = useState<Service[]>(defaultServices)
-
-  useEffect(() => {
-    const query = `*[_type == "service" ${excludeSlug ? '&& slug.current != $exclude' : ''}] | order(order asc, title asc)[0...4]{
-      _id,
-      title,
-      "slug": slug.current,
-      summary
-    }`
-
-    sanityClient
-      .fetch<Service[]>(query, excludeSlug ? { exclude: excludeSlug } : {})
-      .then((res) => {
-        if (res && res.length > 0) setItems(res)
-      })
-      .catch(() => {})
-  }, [excludeSlug])
-
-  const filteredItems = excludeSlug ? items.filter(s => s.slug !== excludeSlug) : items
+  const filteredItems = excludeSlug ? defaultServices.filter(s => s.slug !== excludeSlug) : defaultServices
 
   if (!filteredItems || filteredItems.length === 0) return null
 
@@ -157,24 +116,24 @@ export function RelatedServices({ excludeSlug }: { excludeSlug?: string } = {}) 
                   <Icon className="w-6 h-6" />
                 </div>
 
-              <div className="space-y-2">
-                <h3 className="text-[17px] font-black text-slate-850 group-hover:text-blue-600 transition-colors leading-snug tracking-tight">
-                  {s.title}
-                </h3>
-                {s.summary && (
-                  <p className="text-[12.5px] text-slate-450 font-semibold leading-relaxed line-clamp-3">
-                    {s.summary}
-                  </p>
-                )}
+                <div className="space-y-2">
+                  <h3 className="text-[17px] font-black text-slate-850 group-hover:text-blue-600 transition-colors leading-snug tracking-tight">
+                    {s.title}
+                  </h3>
+                  {s.summary && (
+                    <p className="text-[12.5px] text-slate-450 font-semibold leading-relaxed line-clamp-3">
+                      {s.summary}
+                    </p>
+                  )}
+                </div>
               </div>
-            </div>
 
-            <span className="inline-flex items-center gap-1 text-[13px] font-bold text-blue-600 group-hover:text-blue-800 transition-colors mt-4">
-              <span>View details &rarr;</span>
-            </span>
-          </Link>
-        )
-      })}
+              <span className="inline-flex items-center gap-1 text-[13px] font-bold text-blue-600 group-hover:text-blue-800 transition-colors mt-4">
+                <span>View details &rarr;</span>
+              </span>
+            </Link>
+          )
+        })}
       </div>
     </section>
   )
@@ -222,34 +181,13 @@ const defaultPosts: Post[] = [
 ]
 
 export function RelatedPosts({ excludeSlug }: { excludeSlug?: string } = {}) {
-  const [items, setItems] = useState<Post[]>(defaultPosts)
-
-  useEffect(() => {
-    const query = `*[_type in ["post"] ${excludeSlug ? '&& slug.current != $exclude' : ''} && status == "published"] | order(publishedAt desc)[0...3]{
-      _id,
-      title,
-      "slug": slug.current,
-      excerpt,
-      publishedAt,
-      "imageUrl": mainImage.asset->url,
-      _type
-    }`
-
-    sanityClient
-      .fetch<Post[]>(query, excludeSlug ? { exclude: excludeSlug } : {})
-      .then((res) => {
-        if (res && res.length > 0) setItems(res)
-      })
-      .catch(() => {})
-  }, [excludeSlug])
-
   const fallbacks = [
     '/boiler-advice.webp',
     'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=600&q=80',
     '/plumber-hero.webp'
   ]
 
-  const filteredItems = excludeSlug ? items.filter(p => p.slug !== excludeSlug) : items
+  const filteredItems = excludeSlug ? defaultPosts.filter(p => p.slug !== excludeSlug) : defaultPosts
 
   if (!filteredItems || filteredItems.length === 0) return null
 
