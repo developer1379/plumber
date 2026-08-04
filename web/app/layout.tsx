@@ -9,7 +9,6 @@
  */
 
 import type { Metadata } from 'next'
-import { Roboto } from 'next/font/google'
 import dynamic from 'next/dynamic'
 import { siteConfig } from '@/lib/site-config'
 import { robotsMetadata } from '@/lib/seo/canonical'
@@ -25,15 +24,6 @@ import './globals.css'
 const FloatingQuote = dynamic(
   () => import('@/components/chrome/FloatingQuote').then((mod) => mod.FloatingQuote)
 )
-
-const roboto = Roboto({
-  subsets: ['latin'],
-  weight: ['400', '700'],
-  variable: '--font-sans',
-  display: 'swap',
-  preload: true,
-  adjustFontFallback: true,
-})
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url.production),
@@ -51,7 +41,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   return (
     <html 
       lang={siteConfig.locale} 
-      className={roboto.variable}
+      className="font-sans"
       suppressHydrationWarning
     >
       <body suppressHydrationWarning>
