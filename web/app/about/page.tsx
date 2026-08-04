@@ -73,9 +73,12 @@ export default function AboutPage() {
               {/* Profile Featured Image */}
               <div className="relative aspect-[21/9] w-full overflow-hidden rounded-2xl border border-slate-100 shadow-md">
                 <Image 
-                  src="/plumber-hero.webp" 
+                  src="/plumber-hero-opt.webp" 
                   alt="Rob Holton - Gas Safe Engineer" 
                   fill
+                  priority
+                  loading="eager"
+                  fetchPriority="high"
                   sizes="(max-width: 1024px) 100vw, 66vw"
                   className="object-cover object-center"
                 />
