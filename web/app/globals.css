@@ -30,8 +30,8 @@
   --color-border: var(--border);
   --color-card: var(--card);
   
-  --font-serif: 'Roboto', system-ui, sans-serif;
-  --font-sans: 'Roboto', system-ui, sans-serif;
+  --font-serif: var(--font-sans), system-ui, -apple-system, sans-serif;
+  --font-sans: var(--font-sans), system-ui, -apple-system, sans-serif;
 }
 
 

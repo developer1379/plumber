@@ -192,7 +192,7 @@ export function Footer() {
             <div className="space-y-4">
               <Link href="/" className="inline-block focus:outline-none group">
                 <img
-                  src="/logos/footer_logo.png"
+                  src="/logos/footer_logo.webp"
                   alt="RH Plumbing & Heating"
                   width={150}
                   height={56}

@@ -3,11 +3,15 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
+import dynamic from 'next/dynamic'
 import { Header } from '@/components/chrome/Header'
 import { Footer } from '@/components/chrome/Footer'
-import { RelatedAreas, RelatedServices, RelatedPosts } from '@/components/sections/RelatedBlocks'
 import { siteConfig } from '@/lib/site-config'
 import { Check, Phone, Mail, Star, Quote, ArrowRight, HelpCircle, Droplets, Flame, Thermometer, Siren, Wrench } from 'lucide-react'
+
+const RelatedAreas = dynamic(() => import('@/components/sections/RelatedBlocks').then((mod) => mod.RelatedAreas))
+const RelatedServices = dynamic(() => import('@/components/sections/RelatedBlocks').then((mod) => mod.RelatedServices))
+const RelatedPosts = dynamic(() => import('@/components/sections/RelatedBlocks').then((mod) => mod.RelatedPosts))
 
 // INFINTELY CRISP VECTOR BRAND LOGO COMPONENTS
 const WorcesterLogo = ({ className }: { className?: string }) => (
