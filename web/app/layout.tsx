@@ -10,6 +10,7 @@
 
 import type { Metadata } from 'next'
 import dynamic from 'next/dynamic'
+import { Plus_Jakarta_Sans } from 'next/font/google'
 import { siteConfig } from '@/lib/site-config'
 import { robotsMetadata } from '@/lib/seo/canonical'
 import {
@@ -20,6 +21,13 @@ import {
 } from '@/lib/schema/jsonld'
 import { getOwnerPerson } from '@/lib/sanity/queries'
 import './globals.css'
+
+const plusJakartaSans = Plus_Jakarta_Sans({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-plus-jakarta',
+  weight: ['400', '500', '600', '700', '800'],
+})
 
 const FloatingQuote = dynamic(
   () => import('@/components/chrome/FloatingQuote').then((mod) => mod.FloatingQuote)
@@ -41,10 +49,10 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   return (
     <html 
       lang={siteConfig.locale} 
-      className="font-sans"
+      className={`${plusJakartaSans.variable} font-sans`}
       suppressHydrationWarning
     >
-      <body suppressHydrationWarning>
+      <body className={plusJakartaSans.className} suppressHydrationWarning>
         {organizationSchema()}
         {websiteSchema()}
         {owner ? personSchema(owner) : null}
