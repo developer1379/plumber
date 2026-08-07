@@ -305,8 +305,8 @@ export default async function AreaPage({ params }: { params: Promise<{ slug: str
           </div>
 
           {/* Related Linking Blocks */}
-          <div className="mt-16 pt-8 border-t border-border">
-            <RelatedAreas excludeSlug={slug} />
+          <div className="mt-16 border-t border-border">
+            <RelatedAreas excludeSlug={slug} className="mt-10" />
             <RelatedServices />
             <RelatedPosts />
           </div>

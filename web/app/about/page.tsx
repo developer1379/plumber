@@ -172,8 +172,8 @@ export default function AboutPage() {
             </div>
           </div>
 
-          <div className="mt-16 pt-8 border-t border-border">
-            <RelatedServices />
+          <div className="mt-16 border-t border-border">
+            <RelatedServices className="mt-10" />
             <RelatedAreas />
           </div>
         </div>

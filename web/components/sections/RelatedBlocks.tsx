@@ -21,13 +21,13 @@ const defaultAreas: Area[] = [
   { _id: 'a4', title: 'Sturminster Newton', slug: 'sturminster-newton', county: 'Dorset', distanceFromHqMiles: 9 },
 ]
 
-export function RelatedAreas({ excludeSlug }: { excludeSlug?: string } = {}) {
+export function RelatedAreas({ excludeSlug, className = "mt-16 border-t border-slate-100 pt-12" }: { excludeSlug?: string; className?: string } = {}) {
   const filteredItems = excludeSlug ? defaultAreas.filter(i => i.slug !== excludeSlug) : defaultAreas
 
   if (!filteredItems || filteredItems.length === 0) return null
 
   return (
-    <section className="mt-16 border-t border-slate-100 pt-12">
+    <section className={className}>
       <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-secondary">
         <MapPin className="h-4 w-4 text-[#ff6b00]" />
         <span>Areas We Cover</span>
@@ -77,13 +77,13 @@ const defaultServices: Service[] = [
   { _id: 's4', title: 'Emergency Callouts', slug: 'emergency-callouts', summary: 'Rapid, same-day local response for burst pipes and heating failures.' },
 ]
 
-export function RelatedServices({ excludeSlug }: { excludeSlug?: string } = {}) {
+export function RelatedServices({ excludeSlug, className = "mt-16 border-t border-slate-100 pt-12" }: { excludeSlug?: string; className?: string } = {}) {
   const filteredItems = excludeSlug ? defaultServices.filter(s => s.slug !== excludeSlug) : defaultServices
 
   if (!filteredItems || filteredItems.length === 0) return null
 
   return (
-    <section className="mt-16 border-t border-slate-100 pt-12">
+    <section className={className}>
       <span className="text-xs font-bold uppercase tracking-wider text-[#ff6b00]">Related Services</span>
       <h2 className="mt-3 text-2xl font-bold text-slate-900 md:text-3xl">Other services you might need</h2>
       <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
@@ -180,7 +180,7 @@ const defaultPosts: Post[] = [
   }
 ]
 
-export function RelatedPosts({ excludeSlug }: { excludeSlug?: string } = {}) {
+export function RelatedPosts({ excludeSlug, className = "mt-20 border-t border-slate-100 pt-16" }: { excludeSlug?: string; className?: string } = {}) {
   const fallbacks = [
     '/boiler-advice.webp',
     'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=600&q=80',
@@ -192,7 +192,7 @@ export function RelatedPosts({ excludeSlug }: { excludeSlug?: string } = {}) {
   if (!filteredItems || filteredItems.length === 0) return null
 
   return (
-    <section className="mt-20 border-t border-slate-100 pt-16">
+    <section className={className}>
       <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-10 pb-4 border-b border-slate-100">
         <h2 className="font-serif text-[28px] md:text-[32px] lg:text-[36px] text-slate-900 font-normal leading-[1.05] tracking-tight">
           Practical <span className="text-[#ff6b00]">heating &amp; plumbing advice.</span>

@@ -678,11 +678,9 @@ export default function Home() {
           </div>
         </section>
 
-
-
         {/* Linking Blocks */}
-        <div className="mx-auto max-w-7xl px-6 md:px-12 pb-16 pt-8 border-t border-slate-50">
-          <RelatedServices />
+        <div className="mx-auto max-w-7xl px-6 md:px-12 pb-16 border-t border-slate-100">
+          <RelatedServices className="mt-10" />
           <RelatedPosts />
         </div>
       </main>

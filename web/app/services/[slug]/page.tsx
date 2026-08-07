@@ -414,8 +414,8 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
           </div>
 
           {/* Related Linking Blocks */}
-          <div className="mt-16 pt-8 border-t border-border">
-            <RelatedAreas />
+          <div className="mt-16 border-t border-border">
+            <RelatedAreas className="mt-10" />
             <RelatedServices excludeSlug={slug} />
             <RelatedPosts />
           </div>
